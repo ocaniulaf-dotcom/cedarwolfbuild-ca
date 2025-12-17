@@ -17,7 +17,7 @@ const projects = [
     <!-- HERO -->
     <section class="relative isolate">
       <div class="absolute inset-0 -z-10">
-        <img src="/images/lake-sunset.png" alt="Kelowna lake sunset" class="h-[70vh] w-full object-cover" />
+        <img src={import.meta.env.BASE_URL . "images/lake-sunset.png"} alt="Kelowna lake sunset" class="h-[70vh] w-full object-cover" />
         <div class="absolute inset-0 bg-slate-950/55"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
       </div>
@@ -37,11 +37,11 @@ const projects = [
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/contact"
+            <a href="contact"
               class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
               Get a quote
             </a>
-            <a href="/portfolio"
+            <a href="portfolio"
               class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
               View projects
             </a>
@@ -75,7 +75,7 @@ const projects = [
           <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Featured projects</h2>
           <p class="mt-2 text-slate-600">A few recent examples. More in the portfolio.</p>
         </div>
-        <a href="/portfolio" class="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex">
+        <a href="portfolio" class="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex">
           Portfolio
         </a>
       </div>
@@ -101,7 +101,7 @@ const projects = [
             <p class="text-lg font-semibold text-slate-900">Want a quote with a clear scope?</p>
             <p class="mt-1 text-sm text-slate-600">Tell us what you’re planning. We’ll respond with next steps.</p>
           </div>
-          <a href="/contact"
+          <a href="contact"
             class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
             Contact
           </a>
