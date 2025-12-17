@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="About | CedarWolf Build + Design">
+  <Nav />
+
+  <main class="bg-stone-100">
+    <section class="mx-auto max-w-7xl px-6 py-14">
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">About</h1>
+      <p class="mt-4 max-w-2xl text-slate-600">
+        CedarWolf Build + Design focuses on residential renovations with clean execution, durable finishes, and clear communication.
+      </p>
+
+      <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:items-stretch">
+        <div class="space-y-6">
+          <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+            <h2 class="text-xl font-semibold text-slate-900">What we care about</h2>
+            <p class="mt-4 text-slate-600">
+              Tight details, proper prep, and a finished look that stays looking good after the first week. We keep the scope clear and the jobsite respectful.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+            <h2 class="text-xl font-semibold text-slate-900">How we work</h2>
+            <ul class="mt-4 space-y-3 text-slate-700">
+              <li><span class="font-semibold text-slate-900">Scope first.</span> We define what is included and what is not.</li>
+              <li><span class="font-semibold text-slate-900">Protect the home.</span> Clean edges, dust control, and tidy finishes.</li>
+              <li><span class="font-semibold text-slate-900">Finish strong.</span> Trim, transitions, and the small details that show quality.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+            <h2 class="text-xl font-semibold text-slate-900">Service area</h2>
+            <p class="mt-4 text-slate-600">
+              Kelowna and the Okanagan. For larger scopes, travel is possible depending on schedule.
+            </p>
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm min-h-[520px]">
+          <img class="h-full w-full object-cover" src="/images/Collage-1.png" alt="Project collage" class="h-full w-full object-cover min-h-[520px]" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Contact | CedarWolf Build + Design">
+  <Nav />
+
+  <main class="bg-stone-100">
+    <section class="relative overflow-hidden bg-stone-100">
+  <div class="absolute inset-0 bg-[url(/images/service-framing.png)] bg-cover bg-center opacity-[0.06]"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-14">
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Contact</h1>
+      <p class="mt-4 max-w-2xl text-slate-600">
+        Send your project details. You’ll get a clear next step, not a vague “we’ll see”.
+      </p>
+
+      <div class="mt-10 grid gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2 rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+          <form class="space-y-4">
+            <div>
+              <label class="text-sm font-semibold text-slate-900">Name</label>
+              <input class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-slate-900">Email</label>
+              <input class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-slate-900">Project details</label>
+              <textarea rows="6" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25"></textarea>
+            </div>
+            <button type="button" class="rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
+              Send
+            </button>
+            <p class="text-xs text-slate-500">This form is UI-only right now. We can wire it to email later.</p>
+          </form>
+        </div>
+
+        <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+          <h2 class="text-lg font-semibold text-slate-900">Direct contact</h2>
+          <div class="mt-4 space-y-2 text-sm text-slate-700">
+            <p><span class="font-semibold text-slate-900">Phone:</span> +1 778 594 1722</p>
+            <p><span class="font-semibold text-slate-900">Email:</span> projects@cedarwolfbuild.ca</p>
+            <p class="pt-2"><span class="font-semibold text-slate-900">Service area:</span> Kelowna, West Kelowna, Lake Country, Peachland, Vernon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+  </main>
+
+  <Footer />
+</BaseLayout>

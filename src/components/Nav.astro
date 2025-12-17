@@ -1,0 +1,29 @@
+---
+const items = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/work", label: "Portfolio" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+---
+<header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a class="text-lg font-semibold tracking-tight text-slate-900" href="/">
+      CedarWolf <span class="text-brand-700">Build + Design</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex">
+      {items.map((i) => (
+        <a class="text-base text-slate-700 hover:text-brand-800" href={i.href}>{i.label}</a>
+      ))}
+    </nav>
+
+    <a
+      class="rounded-xl bg-brand-700 px-5 py-3 text-base font-medium text-white shadow-soft hover:bg-brand-800"
+      href="/contact"
+    >
+      Get a quote
+    </a>
+  </div>
+</header>

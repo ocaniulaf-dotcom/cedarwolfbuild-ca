@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "CedarWolf Build + Design",
+  description = "Residential renovations and small builds in Kelowna and the Okanagan.",
+  canonicalPath = "/",
+} = Astro.props;
+
+const site = "https://cedarwolfbuild.ca";
+const canonical = new URL(canonicalPath, site).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased min-h-screen bg-white text-slate-900">
+    <slot />
+  <script>
+  document.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+</body>
+</html>

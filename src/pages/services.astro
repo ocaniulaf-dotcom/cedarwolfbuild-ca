@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+
+const services = [
+  {
+    label: "Residential Renovations",
+    title: "Kitchen Renovations",
+    description: "Cabinet installs, lighting, finish carpentry, and layout upgrades. Built for daily use, not just photos.",
+    bullets: ["Clear scope and sequencing", "Cabinetry and millwork install", "Clean, durable finishes"],
+    image: "/images/service-kitchen.png",
+    accent: "emerald",
+  },
+  {
+    label: "Millwork",
+    title: "Cabinets and Built-ins",
+    description: "Custom-looking results with clean lines and tight reveals. Storage that actually works in real homes.",
+    bullets: ["Built-ins and feature walls", "Cabinet upgrades and installs", "Trim and finishing details"],
+    image: "/images/service-cabinets.png",
+    accent: "slate",
+  },
+  {
+    label: "Interiors",
+    title: "Flooring",
+    description: "Solid prep, clean transitions, and a finished look that makes the whole home feel upgraded.",
+    bullets: ["Subfloor prep and leveling", "Install and transitions", "Baseboards and trim as needed"],
+    image: "/images/service-flooring.png",
+    accent: "amber",
+  },
+  {
+    label: "Finishes",
+    title: "Painting",
+    description: "Sharp lines, smooth walls, and a clean jobsite. The fastest way to make a home feel new again.",
+    bullets: ["Patch, prep, sand properly", "Interior walls and trim", "Clean edges and even coverage"],
+    image: "/images/service-painting.png",
+    accent: "sky",
+  },
+];
+---
+
+<BaseLayout title="Services | CedarWolf Build + Design">
+  <Nav />
+
+  <main class="bg-slate-50">
+    <section class="mx-auto max-w-7xl px-6 py-14">
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Services</h1>
+      <p class="mt-4 max-w-2xl text-slate-600">
+        High-end residential renovations in the Okanagan. Clear scope, solid execution, clean finishes.
+      </p>
+
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        {services.map((s) => (
+          <ServiceCard {...s} />
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

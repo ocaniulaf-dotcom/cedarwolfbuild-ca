@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = [
+  {
+    title: "Kitchen refresh",
+    location: "Kelowna, BC",
+    tag: "Kitchen",
+    img: "/images/project-kitchen-1.png",
+    desc: "Updated layout, cabinetry, trim, and finishing details for a cleaner, brighter space.",
+  },
+  {
+    title: "Flooring and baseboards",
+    location: "West Kelowna, BC",
+    tag: "Interior",
+    img: "/images/project-flooring-1.png",
+    desc: "Full flooring replacement with proper prep, transitions, and crisp baseboards.",
+  },
+  {
+    title: "Deck rebuild",
+    location: "Lake Country, BC",
+    tag: "Exterior",
+    img: "/images/project-deck-1.png",
+    desc: "Repaired framing, replaced boards, and refreshed rails for safe long-term use.",
+  },
+
+  // New portfolio items
+  {
+    title: "Backyard office build",
+    location: "Kelowna, BC",
+    tag: "Backyard Office",
+    img: "/images/backyard-office.png",
+    desc: "Standalone backyard workspace with clean exterior, warm interior lighting, and a focused layout.",
+  },
+  {
+    title: "Media wall. TV + electric fireplace",
+    location: "West Kelowna, BC",
+    tag: "Media Wall",
+    img: "/images/chimney-tv.png",
+    desc: "Custom wall with hidden wiring, balanced proportions, and a modern electric fireplace focal point.",
+  },
+  {
+    title: "Cinema room build",
+    location: "Lake Country, BC",
+    tag: "Cinema",
+    img: "/images/cinema-room.png",
+    desc: "Dark, immersive theater vibe with layered lighting and clean AV integration.",
+  },
+  {
+    title: "Game center setup",
+    location: "Kelowna, BC",
+    tag: "Gaming",
+    img: "/images/game-center.png",
+    desc: "High-end gamer setup with LED accents, cable management, and a cohesive modern finish.",
+  },
+];
+---
+<BaseLayout title="Portfolio. CedarWolf Build + Design" canonicalPath="/work">
+  <Nav />
+  <main class="mx-auto max-w-6xl px-4 py-14">
+    <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl font-semibold tracking-tight">Portfolio</h1>
+        <p class="mt-3 text-slate-700">
+          Real work. Clean finishes. Replace the placeholder photos with your projects as you go.
+        </p>
+      </div>
+      <a class="rounded-xl border px-4 py-3 text-sm font-medium hover:bg-slate-50" href="/contact">Get a quote</a>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {projects.map(p => (
+        <article class="overflow-hidden rounded-2xl border bg-white shadow-sm">
+          <img src={p.img} alt={p.title} class="h-52 w-full object-cover" loading="lazy" />
+          <div class="p-6">
+            <div class="text-xs text-slate-500">{p.tag} . {p.location}</div>
+            <h3 class="mt-2 text-lg font-semibold">{p.title}</h3>
+            <p class="mt-2 text-sm text-slate-700">{p.desc}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

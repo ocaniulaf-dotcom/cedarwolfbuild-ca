@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = [
+  {
+    title: "Kitchen Renovation",
+    tag: "Kitchens",
+    image: "/images/wm/collage/project-kitchen-collage.png",
+    description: "Updated layout and finishes with a clean, durable look. Tight details and a jobsite you can live with.",
+    highlights: ["Scope clarity", "Millwork alignment", "Finish details"],
+    gallery: ["/images/wm/project-kitchen-1.png", "/images/wm/service-kitchen.png", "/images/wm/chimney-tv.png"],
+  },
+  {
+    title: "Deck Build",
+    tag: "Outdoor",
+    image: "/images/wm/collage/project-deck-collage.png",
+    description: "Outdoor build focused on structure, clean lines, and long-term durability. Built to handle real weather.",
+    highlights: ["Solid framing", "Clean edges", "Durable materials"],
+    gallery: ["/images/wm/project-deck-1.png", "/images/wm/backyard-office.png", "/images/wm/service-fullreno.png"],
+  },
+  {
+    title: "Flooring Install",
+    tag: "Interiors",
+    image: "/images/wm/collage/project-flooring-collage.png",
+    description: "Prep first, then install. Clean transitions, consistent reveals, and a finished look that feels upgraded.",
+    highlights: ["Subfloor prep", "Transitions", "Trim finish"],
+    gallery: ["/images/wm/project-flooring-1.png", "/images/wm/service-flooring.png", "/images/wm/service-painting.png"],
+  },
+  {
+    title: "Interior Upgrades",
+    tag: "Living spaces",
+    image: "/images/wm/collage/project-interiors-collage.png",
+    description: "Targeted interior upgrades that improve daily living. Clean work, sharp lines, and good flow.",
+    highlights: ["Function first", "Clean finishes", "Respectful jobsite"],
+    gallery: ["/images/wm/cinema-room.png", "/images/wm/game-center.png", "/images/wm/chimney-tv.png"],
+  },
+];
+---
+
+<BaseLayout title="Portfolio | CedarWolf Build + Design">
+  <Nav />
+
+  <main class="bg-slate-50">
+    <section class="mx-auto max-w-7xl px-6 py-14">
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Portfolio</h1>
+      <p class="mt-4 max-w-2xl text-slate-600">
+        A selection of recent work. If you want something similar, send your scope and photos. We will reply with clear next steps.
+      </p>
+
+      <div class="mt-10 grid gap-10 lg:grid-cols-2">
+        {projects.map((p) => (
+          <article class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm">
+            <div class="relative">
+              <img src={p.image} alt={p.title} class="h-72 w-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/25 to-transparent"></div>
+              <div class="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-900 ring-1 ring-white/30">
+                {p.tag}
+              </div>
+            </div>
+
+            <div class="p-6">
+              <h2 class="text-xl font-semibold tracking-tight text-slate-900">{p.title}</h2>
+              <p class="mt-3 text-slate-600">{p.description}</p>
+
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {p.highlights.map((h) => (
+                  <li class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200/60">{h}</li>
+                ))}
+              </ul>
+
+              <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                {p.gallery.map((g) => (
+                  <div class="overflow-hidden rounded-xl ring-1 ring-slate-200/70">
+                    <img src={g} alt="" class="h-28 w-full object-cover" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-slate-900">Want something like this?</p>
+            <p class="mt-1 text-sm text-slate-600">Send your scope, rough dimensions, and a few photos. We will respond with next steps.</p>
+          </div>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

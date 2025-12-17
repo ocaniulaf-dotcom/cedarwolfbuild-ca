@@ -1,0 +1,54 @@
+---
+const {
+  label,
+  title,
+  description,
+  bullets = [],
+  image,
+  accent = "emerald",
+} = Astro.props;
+
+const ACCENT = {
+  emerald: { bar: "bg-emerald-800", label: "text-emerald-800", dot: "bg-emerald-800", btn: "bg-emerald-800 hover:bg-emerald-700 focus:ring-emerald-800/30" },
+  slate:   { bar: "bg-slate-900",   label: "text-slate-900",   dot: "bg-slate-900",   btn: "bg-slate-900 hover:bg-slate-800 focus:ring-slate-900/25" },
+  amber:   { bar: "bg-amber-800",   label: "text-amber-800",   dot: "bg-amber-800",   btn: "bg-amber-800 hover:bg-amber-700 focus:ring-amber-800/25" },
+  sky:     { bar: "bg-sky-800",     label: "text-sky-800",     dot: "bg-sky-800",     btn: "bg-sky-800 hover:bg-sky-700 focus:ring-sky-800/25" },
+};
+
+const a = ACCENT[accent] ?? ACCENT.emerald;
+---
+
+<article class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+  <div class="relative">
+    <img src={image} alt={title} class="h-56 w-full object-cover" loading="lazy" />
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+  </div>
+
+  <div class={"h-1 w-full " + a.bar}></div>
+
+  <div class="p-6">
+    <p class={"text-xs font-semibold uppercase tracking-wider " + a.label}>{label}</p>
+
+    <h3 class="mt-2 text-xl font-semibold tracking-tight text-slate-900">{title}</h3>
+
+    <p class="mt-3 text-slate-600">{description}</p>
+
+    <ul class="mt-5 space-y-2 text-slate-700">
+      {bullets.map((b) => (
+        <li class="flex items-start gap-2">
+          <span class={"mt-2 h-1.5 w-1.5 shrink-0 rounded-full " + a.dot}></span>
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-6">
+      <a
+        href="/contact"
+        class={"inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition focus:outline-none focus:ring-2 " + a.btn}
+      >
+        Request a quote
+      </a>
+    </div>
+  </div>
+</article>

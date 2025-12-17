@@ -2,11 +2,41 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import ServiceCard from "../components/ServiceCard.astro";
 
-const projects = [
-  { title: "Kitchen renovation", image: "/images/project-kitchen-1.png", tag: "Kitchens" },
-  { title: "Deck build", image: "/images/project-deck-1.png", tag: "Outdoor" },
-  { title: "Flooring install", image: "/images/project-flooring-1.png", tag: "Interiors" },
+const services = [
+  {
+    label: "Residential Renovations",
+    title: "Kitchen Renovations",
+    description: "Cabinet installs, lighting, finish carpentry, and layout upgrades. Built for daily use, not just photos.",
+    bullets: ["Clear scope and sequencing", "Cabinetry and millwork install", "Clean, durable finishes"],
+    image: "/images/service-kitchen.png",
+    accent: "emerald",
+  },
+  {
+    label: "Millwork",
+    title: "Cabinets and Built-ins",
+    description: "Custom-looking results with clean lines and tight reveals. Storage that actually works in real homes.",
+    bullets: ["Built-ins and feature walls", "Cabinet upgrades and installs", "Trim and finishing details"],
+    image: "/images/service-cabinets.png",
+    accent: "slate",
+  },
+  {
+    label: "Interiors",
+    title: "Flooring",
+    description: "Solid prep, clean transitions, and a finished look that makes the whole home feel upgraded.",
+    bullets: ["Subfloor prep and leveling", "Install and transitions", "Baseboards and trim as needed"],
+    image: "/images/service-flooring.png",
+    accent: "amber",
+  },
+  {
+    label: "Finishes",
+    title: "Painting",
+    description: "Sharp lines, smooth walls, and a clean jobsite. The fastest way to make a home feel new again.",
+    bullets: ["Patch, prep, sand properly", "Interior walls and trim", "Clean edges and even coverage"],
+    image: "/images/service-painting.png",
+    accent: "sky",
+  },
 ];
 ---
 
@@ -68,44 +98,22 @@ const projects = [
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- SERVICES -->
     <section class="mx-auto max-w-7xl px-6 pb-16">
       <div class="flex items-end justify-between gap-6">
         <div class="max-w-2xl">
-          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Featured projects</h2>
-          <p class="mt-2 text-slate-600">A few recent examples. More in the portfolio.</p>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">What we do</h2>
+          <p class="mt-2 text-slate-600">Focused services, done properly. No chaos, no shortcuts.</p>
         </div>
-        <a href="/portfolio" class="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex">
-          Portfolio
+        <a href="/services" class="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex">
+          All services
         </a>
       </div>
 
-      <div class="mt-8 grid gap-8 md:grid-cols-3">
-        {projects.map((p) => (
-          <article class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="relative">
-              <img src={p.image} alt={p.title} class="h-56 w-full object-cover" loading="lazy" />
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-            </div>
-            <div class="p-5">
-              <p class="text-xs font-semibold uppercase tracking-wider text-emerald-800">{p.tag}</p>
-              <h3 class="mt-2 text-base font-semibold text-slate-900">{p.title}</h3>
-            </div>
-          </article>
+      <div class="mt-8 grid gap-8 md:grid-cols-2">
+        {services.map((s) => (
+          <ServiceCard {...s} />
         ))}
-      </div>
-
-      <div class="mt-10 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="text-lg font-semibold text-slate-900">Want a quote with a clear scope?</p>
-            <p class="mt-1 text-sm text-slate-600">Tell us what you’re planning. We’ll respond with next steps.</p>
-          </div>
-          <a href="/contact"
-            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
-            Contact
-          </a>
-        </div>
       </div>
     </section>
   </main>

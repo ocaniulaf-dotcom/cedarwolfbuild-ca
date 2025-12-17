@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(15 23 42);
+}
