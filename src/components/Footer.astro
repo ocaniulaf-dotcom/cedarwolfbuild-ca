@@ -45,9 +45,9 @@ import SocialLinks from "./SocialLinks.astro";
       <div>
         <p class="text-sm font-semibold text-slate-900">Pages</p>
         <ul class="mt-4 space-y-2 text-sm text-slate-700">
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href="services">Services</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href="portfolio">Portfolio</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href="about">About</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={link("services/")}>Services</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={link("portfolio/")}>Portfolio</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={link("about/")}>About</a></li>
           <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href="privacy">Privacy</a></li>
         </ul>
       </div>
