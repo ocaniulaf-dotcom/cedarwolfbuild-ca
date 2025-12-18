@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -8,21 +9,21 @@ const projects = [
     title: "Kitchen refresh",
     location: "Kelowna, BC",
     tag: "Kitchen",
-    img: "/images/project-kitchen-1.png",
+    img: asset("images/project-kitchen-1.png"),
     desc: "Updated layout, cabinetry, trim, and finishing details for a cleaner, brighter space.",
   },
   {
     title: "Flooring and baseboards",
     location: "West Kelowna, BC",
     tag: "Interior",
-    img: "/images/project-flooring-1.png",
+    img: asset("images/project-flooring-1.png"),
     desc: "Full flooring replacement with proper prep, transitions, and crisp baseboards.",
   },
   {
     title: "Deck rebuild",
     location: "Lake Country, BC",
     tag: "Exterior",
-    img: "/images/project-deck-1.png",
+    img: asset("images/project-deck-1.png"),
     desc: "Repaired framing, replaced boards, and refreshed rails for safe long-term use.",
   },
 
@@ -31,28 +32,28 @@ const projects = [
     title: "Backyard office build",
     location: "Kelowna, BC",
     tag: "Backyard Office",
-    img: "/images/backyard-office.png",
+    img: asset("images/backyard-office.png"),
     desc: "Standalone backyard workspace with clean exterior, warm interior lighting, and a focused layout.",
   },
   {
     title: "Media wall. TV + electric fireplace",
     location: "West Kelowna, BC",
     tag: "Media Wall",
-    img: "/images/chimney-tv.png",
+    img: asset("images/chimney-tv.png"),
     desc: "Custom wall with hidden wiring, balanced proportions, and a modern electric fireplace focal point.",
   },
   {
     title: "Cinema room build",
     location: "Lake Country, BC",
     tag: "Cinema",
-    img: "/images/cinema-room.png",
+    img: asset("images/cinema-room.png"),
     desc: "Dark, immersive theater vibe with layered lighting and clean AV integration.",
   },
   {
     title: "Game center setup",
     location: "Kelowna, BC",
     tag: "Gaming",
-    img: "/images/game-center.png",
+    img: asset("images/game-center.png"),
     desc: "High-end gamer setup with LED accents, cable management, and a cohesive modern finish.",
   },
 ];

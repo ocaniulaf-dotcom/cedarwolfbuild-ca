@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -10,7 +11,7 @@ const services = [
     title: "Kitchen Renovations",
     description: "Cabinet installs, lighting, finish carpentry, and layout upgrades. Built for daily use, not just photos.",
     bullets: ["Clear scope and sequencing", "Cabinetry and millwork install", "Clean, durable finishes"],
-    image: "/images/service-kitchen.png",
+    image: asset("images/service-kitchen.png"),
     accent: "emerald",
   },
   {
@@ -18,7 +19,7 @@ const services = [
     title: "Cabinets and Built-ins",
     description: "Custom-looking results with clean lines and tight reveals. Storage that actually works in real homes.",
     bullets: ["Built-ins and feature walls", "Cabinet upgrades and installs", "Trim and finishing details"],
-    image: "/images/service-cabinets.png",
+    image: asset("images/service-cabinets.png"),
     accent: "slate",
   },
   {
@@ -26,7 +27,7 @@ const services = [
     title: "Flooring",
     description: "Solid prep, clean transitions, and a finished look that makes the whole home feel upgraded.",
     bullets: ["Subfloor prep and leveling", "Install and transitions", "Baseboards and trim as needed"],
-    image: "/images/service-flooring.png",
+    image: asset("images/service-flooring.png"),
     accent: "amber",
   },
   {
@@ -34,7 +35,7 @@ const services = [
     title: "Painting",
     description: "Sharp lines, smooth walls, and a clean jobsite. The fastest way to make a home feel new again.",
     bullets: ["Patch, prep, sand properly", "Interior walls and trim", "Clean edges and even coverage"],
-    image: "/images/service-painting.png",
+    image: asset("images/service-painting.png"),
     accent: "sky",
   },
 ];

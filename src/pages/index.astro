@@ -1,12 +1,13 @@
 ---
+import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 const projects = [
-  { title: "Kitchen renovation", image: "/images/project-kitchen-1.png", tag: "Kitchens" },
-  { title: "Deck build", image: "/images/project-deck-1.png", tag: "Outdoor" },
-  { title: "Flooring install", image: "/images/project-flooring-1.png", tag: "Interiors" },
+  { title: "Kitchen renovation", image: asset("images/project-kitchen-1.png"), tag: "Kitchens" },
+  { title: "Deck build", image: asset("images/project-deck-1.png"), tag: "Outdoor" },
+  { title: "Flooring install", image: asset("images/project-flooring-1.png"), tag: "Interiors" },
 ];
 ---
 

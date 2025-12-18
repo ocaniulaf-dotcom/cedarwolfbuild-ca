@@ -1,19 +1,20 @@
 ---
+import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 const collage = [
-  "/images/service-kitchen.png",
-  "/images/service-cabinets.png",
-  "/images/service-painting.png",
-  "/images/service-flooring.png",
-  "/images/service-framing.png",
-  "/images/service-fullreno.png",
-  "/images/service-designpm.png",
-  "/images/project-kitchen-1.png",
-  "/images/project-flooring-1.png",
-  "/images/project-deck-1.png",
+  asset("images/service-kitchen.png"),
+  asset("images/service-cabinets.png"),
+  asset("images/service-painting.png"),
+  asset("images/service-flooring.png"),
+  asset("images/service-framing.png"),
+  asset("images/service-fullreno.png"),
+  asset("images/service-designpm.png"),
+  asset("images/project-kitchen-1.png"),
+  asset("images/project-flooring-1.png"),
+  asset("images/project-deck-1.png"),
 ];
 ---
 

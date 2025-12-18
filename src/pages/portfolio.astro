@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -7,34 +8,34 @@ const projects = [
   {
     title: "Kitchen Renovation",
     tag: "Kitchens",
-    image: "/images/wm/collage/project-kitchen-collage.png",
+    image: asset("images/wm/collage/project-kitchen-collage.png"),
     description: "Updated layout and finishes with a clean, durable look. Tight details and a jobsite you can live with.",
     highlights: ["Scope clarity", "Millwork alignment", "Finish details"],
-    gallery: ["/images/wm/project-kitchen-1.png", "/images/wm/service-kitchen.png", "/images/wm/chimney-tv.png"],
+    gallery: [asset("images/wm/project-kitchen-1.png"), asset("images/wm/service-kitchen.png"), asset("images/wm/chimney-tv.png")],
   },
   {
     title: "Deck Build",
     tag: "Outdoor",
-    image: "/images/wm/collage/project-deck-collage.png",
+    image: asset("images/wm/collage/project-deck-collage.png"),
     description: "Outdoor build focused on structure, clean lines, and long-term durability. Built to handle real weather.",
     highlights: ["Solid framing", "Clean edges", "Durable materials"],
-    gallery: ["/images/wm/project-deck-1.png", "/images/wm/backyard-office.png", "/images/wm/service-fullreno.png"],
+    gallery: [asset("images/wm/project-deck-1.png"), asset("images/wm/backyard-office.png"), asset("images/wm/service-fullreno.png")],
   },
   {
     title: "Flooring Install",
     tag: "Interiors",
-    image: "/images/wm/collage/project-flooring-collage.png",
+    image: asset("images/wm/collage/project-flooring-collage.png"),
     description: "Prep first, then install. Clean transitions, consistent reveals, and a finished look that feels upgraded.",
     highlights: ["Subfloor prep", "Transitions", "Trim finish"],
-    gallery: ["/images/wm/project-flooring-1.png", "/images/wm/service-flooring.png", "/images/wm/service-painting.png"],
+    gallery: [asset("images/wm/project-flooring-1.png"), asset("images/wm/service-flooring.png"), asset("images/wm/service-painting.png")],
   },
   {
     title: "Interior Upgrades",
     tag: "Living spaces",
-    image: "/images/wm/collage/project-interiors-collage.png",
+    image: asset("images/wm/collage/project-interiors-collage.png"),
     description: "Targeted interior upgrades that improve daily living. Clean work, sharp lines, and good flow.",
     highlights: ["Function first", "Clean finishes", "Respectful jobsite"],
-    gallery: ["/images/wm/cinema-room.png", "/images/wm/game-center.png", "/images/wm/chimney-tv.png"],
+    gallery: [asset("images/wm/cinema-room.png"), asset("images/wm/game-center.png"), asset("images/wm/chimney-tv.png")],
   },
 ];
 ---
