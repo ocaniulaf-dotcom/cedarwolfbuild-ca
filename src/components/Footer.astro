@@ -1,5 +1,6 @@
 ---
-import { asset } from "../lib/asset";
+const BASE = import.meta.env.BASE_URL;
+const page = (p) => `${BASE}${String(p).replace(/^\/+/, "")}`;
 const year = new Date().getFullYear();
 ---
 
@@ -19,12 +20,12 @@ const year = new Date().getFullYear();
       <div>
         <div class="text-sm font-semibold text-slate-900">Pages</div>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("")}>Home</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("services/")}>Services</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("portfolio/")}>Portfolio</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("about/")}>About</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("contact/")}>Contact</a></li>
-          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={asset("privacy/")}>Privacy</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={BASE}>Home</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={page("services/")}>Services</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={page("portfolio/")}>Portfolio</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={page("about/")}>About</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={page("contact/")}>Contact</a></li>
+          <li><a class="underline decoration-slate-400 underline-offset-4 hover:text-slate-900" href={page("privacy/")}>Privacy</a></li>
         </ul>
       </div>
 
@@ -36,7 +37,7 @@ const year = new Date().getFullYear();
         <div class="mt-5">
           <a
             class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
-            href={asset("contact/")}
+            href={page("contact/")}
           >
             Contact
           </a>
