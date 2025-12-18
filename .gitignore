@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local backups
+backups/
+src_backup_*/
+*.bak
+*.bak.*
