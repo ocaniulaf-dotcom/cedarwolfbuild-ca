@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 const items = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -21,7 +22,7 @@ const items = [
 
     <a
       class="rounded-xl bg-brand-700 px-5 py-3 text-base font-medium text-white shadow-soft hover:bg-brand-800"
-      href={link("contact/")}
+      href={asset("contact/")}
     >
       Get a quote
     </a>
