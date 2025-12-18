@@ -1,16 +1,16 @@
 ---
 import { asset } from "../lib/asset";
 const items = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/work", label: "Portfolio" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: asset(""), label: "Home" },
+  { href: asset("services/"), label: "Services" },
+  { href: asset("portfolio/"), label: "Portfolio" },
+  { href: asset("about/"), label: "About" },
+  { href: asset("contact/"), label: "Contact" },
 ];
 ---
 <header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <a class="text-lg font-semibold tracking-tight text-slate-900" href="">
+    <a class="text-lg font-semibold tracking-tight text-slate-900" href={asset("")}>
       CedarWolf <span class="text-brand-700">Build + Design</span>
     </a>
 
