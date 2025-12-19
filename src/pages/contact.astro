@@ -54,7 +54,7 @@ import Footer from "../components/Footer.astro";
         <h2 class="text-xl font-semibold tracking-tight text-slate-900">Request a quote</h2>
         <p class="mt-2 text-sm text-slate-600">This form opens your email app and sends your details to projects@cedarwolfbuild.ca.</p>
 
-        <form id="cw-lead-form" class="mt-6 grid gap-4" autocomplete="on">
+        <form id="cw-lead-form" action="https://formspree.io/f/mzdpbapp" method="POST" class="mt-6 grid gap-4">
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="grid gap-1">
               <span class="text-sm font-semibold text-slate-900">Name</span>
@@ -86,24 +86,7 @@ import Footer from "../components/Footer.astro";
           </div>
         </form>
 
-        <script type="module">
-          const form = document.getElementById("cw-lead-form");
-          form?.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const name = (document.getElementById("cw-name")?.value || "").trim();
-            const reply = (document.getElementById("cw-reply")?.value || "").trim();
-            const location = (document.getElementById("cw-location")?.value || "").trim();
-            const scope = (document.getElementById("cw-scope")?.value || "").trim();
-
-            const subject = encodeURIComponent("CedarWolf quote request");
-            const body = encodeURIComponent(
-              `Name: ${name}\nReply: ${reply}\nLocation: ${location}\n\nScope:\n${scope}\n`
-            );
-
-            window.location.href = `mailto:projects@cedarwolfbuild.ca?subject=${subject}&body=${body}`;
-          });
-        </script>
-      </div>
+        </div>
 
 </main>
 
