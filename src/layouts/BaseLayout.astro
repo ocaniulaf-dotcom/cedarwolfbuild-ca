@@ -1,42 +1,54 @@
 ---
-import "../styles/global.css";
-import { asset } from "../lib/asset";
+const __title = Astro.props?.title ?? "CedarWolf Build + Design";
+const __description =
+  Astro.props?.description ??
+  "Design-build and renovations in Kelowna and the Okanagan.";
 
-const {
-  title = "CedarWolf Build + Design",
-  description = "Residential renovations and small builds in Kelowna and the Okanagan.",
-  canonicalPath = "/",
-} = Astro.props;
+const __image = Astro.props?.image ?? "/images/project-deck-1.png";
 
-const site = "https://cedarwolfbuild.ca";
-const canonical = new URL(canonicalPath, site).toString();
-const __cw_site = Astro.site ?? new URL("https://cedarwolfbuild.ca");
-const __cw_path = Astro.url?.pathname ?? "/";
-const __cw_canonical = new URL(__cw_path, __cw_site).toString();
-const __cw_og_image = new URL(asset("images/CEDARWOLF_BUILD_DESIGN_LOGO.png"), __cw_site).toString();
+const __base = import.meta.env.BASE_URL || "/";
+const __withBase = (p) => {
+  if (!p) return __base;
+  if (p.startsWith("http")) return p;
+  const b = __base.endsWith("/") ? __base.slice(0, -1) : __base;
+  const c = p.startsWith("/") ? p : ("/" + p);
+  return b + c;
+};
+
+const __canonicalPath = Astro.url?.pathname || "/";
+const __canonicalUrl = new URL(__withBase(__canonicalPath.replace(__base, "")), Astro.site).href;
+
+const __ogImageUrl = __image.startsWith("http")
+  ? __image
+  : new URL(__withBase(__image.replace(/^\//, "")), Astro.site).href;
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!-- SEO_TAGS_START -->
+    <link rel="canonical" href={__canonicalUrl} />
+    <meta name="description" content={__description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CedarWolf Build + Design" />
+    <meta property="og:title" content={__title} />
+    <meta property="og:description" content={__description} />
+    <meta property="og:url" content={__canonicalUrl} />
+    <meta property="og:image" content={__ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={__title} />
+    <meta name="twitter:description" content={__description} />
+    <meta name="twitter:image" content={__ogImageUrl} />
+    <!-- SEO_TAGS_END -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    
+    <title>{__title}</title>
+    <meta name="description" content={__description} />
 
-    <!-- Canonical + Social preview -->
-    <meta property="og:site_name" content="CedarWolf Build + Design" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={__cw_canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={__cw_og_image} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={__cw_og_image} />
-<base href={import.meta.env.BASE_URL} />
+
 </head>
   <body class="min-h-screen bg-slate-50 text-slate-900 antialiased min-h-screen bg-white text-slate-900">
     <slot />
