@@ -12,32 +12,18 @@ import Footer from "../components/Footer.astro";
   <div class="absolute inset-0 bg-[url(/images/service-framing.png)] bg-cover bg-center opacity-[0.06]"></div>
   <div class="relative mx-auto max-w-7xl px-6 py-14">
       <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Contact</h1>
+{Astro.url.searchParams.get("sent") === "1" && (
+  <div class="mb-6 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-900">
+    Thanks. Your request was sent. If you don’t hear back within 1 business day, call or email us.
+  </div>
+)}
       <p class="mt-4 max-w-2xl text-slate-600">
         Send your project details. You’ll get a clear next step, not a vague “we’ll see”.
       </p>
 
       <div class="mt-10 grid gap-8 lg:grid-cols-3">
         <div class="lg:col-span-2 rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
-          <form action="https://formspree.io/f/mzdpbapp" method="POST">
-            <div>
-              <label class="text-sm font-semibold text-slate-900">Name</label>
-              <input class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25" />
-            </div>
-            <div>
-              <label class="text-sm font-semibold text-slate-900">Email</label>
-              <input class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25" />
-            </div>
-            <div>
-              <label class="text-sm font-semibold text-slate-900">Project details</label>
-              <textarea rows="6" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:ring-2 focus:ring-emerald-700/25"></textarea>
-            </div>
-            <button type="button" class="rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
-              Send
-            </button>
-            <p class="text-xs text-slate-500">This form is UI-only right now. We can wire it to email later.</p>
           
-<input type="hidden" name="_redirect" value="/cedarwolfbuild-ca/thank-you" />
-</form>
         </div>
 
         <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
@@ -56,37 +42,71 @@ import Footer from "../components/Footer.astro";
         <h2 class="text-xl font-semibold tracking-tight text-slate-900">Request a quote</h2>
         <p class="mt-2 text-sm text-slate-600">This form opens your email app and sends your details to projects@cedarwolfbuild.ca.</p>
 
-        <form id="cw-lead-form" action="https://formspree.io/f/mzdpbapp" method="POST" class="mt-6 grid gap-4">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label class="grid gap-1">
-              <span class="text-sm font-semibold text-slate-900">Name</span>
-              <input id="cw-name" class="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30" required />
-            </label>
-            <label class="grid gap-1">
-              <span class="text-sm font-semibold text-slate-900">Phone or email</span>
-              <input id="cw-reply" class="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30" required />
-            </label>
-          </div>
+        <form action="https://formspree.io/f/mzdpbapp" method="POST" class="space-y-5">
+  <div class="grid gap-4 md:grid-cols-2">
+    <div>
+      <label class="block text-sm font-medium text-slate-800">Name</label>
+      <input
+        type="text"
+        name="name"
+        required
+        autocomplete="name"
+        class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+        placeholder="Your name"
+      />
+    </div>
 
-          <label class="grid gap-1">
-            <span class="text-sm font-semibold text-slate-900">Project location</span>
-            <input id="cw-location" class="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30" placeholder="Kelowna, West Kelowna, Lake Country…" />
-          </label>
+    <div>
+      <label class="block text-sm font-medium text-slate-800">Phone or email</label>
+      <input
+        type="text"
+        name="contact"
+        required
+        autocomplete="email"
+        class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+        placeholder="+1 778... or name@email.com"
+      />
+    </div>
+  </div>
 
-          <label class="grid gap-1">
-            <span class="text-sm font-semibold text-slate-900">Scope</span>
-            <textarea id="cw-scope" rows="5" class="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30" required placeholder="Tell us what you want done, rough dimensions, timeline, and any constraints."></textarea>
-          </label>
+  <div>
+    <label class="block text-sm font-medium text-slate-800">Project location</label>
+    <input
+      type="text"
+      name="location"
+      class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+      placeholder="Kelowna, West Kelowna, Lake Country..."
+    />
+  </div>
 
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
-              Send
-            </button>
-            <div class="text-xs text-slate-600">
-              Or call <span class="font-semibold">+1 778 594 1722</span> . Email <span class="font-semibold">projects@cedarwolfbuild.ca</span>
-            </div>
-          </div>
-        </form>
+  <div>
+    <label class="block text-sm font-medium text-slate-800">Scope</label>
+    <textarea
+      name="message"
+      rows="7"
+      required
+      class="mt-2 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+      placeholder="Tell us what you want done, rough dimensions, timeline, and any constraints. Attach photos by replying to the email you receive."
+    ></textarea>
+  </div>
+
+  <input type="hidden" name="_subject" value="New quote request - CedarWolf Build + Design" />
+  <input type="hidden" name="_redirect" value="/cedarwolfbuild-ca/contact?sent=1" />
+
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <button
+      type="submit"
+      class="inline-flex items-center justify-center rounded-xl bg-emerald-700 px-6 py-3 font-semibold text-white shadow-sm hover:bg-emerald-800"
+    >
+      Send
+    </button>
+
+    <p class="text-sm text-slate-600">
+      Or call <a class="font-semibold text-slate-800 hover:underline" href="tel:+17785941722">+1 778 594 1722</a>
+      . Email <a class="font-semibold text-slate-800 hover:underline" href="mailto:projects@cedarwolfbuild.ca">projects@cedarwolfbuild.ca</a>
+    </p>
+  </div>
+</form>
 
         </div>
 
