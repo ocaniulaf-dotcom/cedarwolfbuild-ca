@@ -26,23 +26,13 @@ import Footer from "../components/Footer.astro";
           
         </div>
 
-        <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
-          <h2 class="text-lg font-semibold text-slate-900">Direct contact</h2>
-          <div class="mt-4 space-y-2 text-sm text-slate-700">
-            <p><span class="font-semibold text-slate-900">Phone:</span> +1 778 594 1722</p>
-            <p><span class="font-semibold text-slate-900">Email:</span> projects@cedarwolfbuild.ca</p>
-            <p class="pt-2"><span class="font-semibold text-slate-900">Service area:</span> Kelowna, West Kelowna, Lake Country, Peachland, Vernon</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-  
-      <div class="mt-10 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
-        <h2 class="text-xl font-semibold tracking-tight text-slate-900">Request a quote</h2>
-        <p class="mt-2 text-sm text-slate-600">This form opens your email app and sends your details to projects@cedarwolfbuild.ca.</p>
-
-        <form action="https://formspree.io/f/mzdpbapp" method="POST" class="space-y-5">
+        <div class="rounded-2xl bg-white/90 p-6 shadow-sm ring-1 ring-slate-200">
+  <h2 class="text-xl font-semibold text-slate-900">Request a quote</h2>
+  <p class="mt-2 text-sm text-slate-600">
+    Send a short scope, rough dimensions, and photos. We’ll respond with next steps.
+  </p>
+  <div class="mt-6">
+    <form action="https://formspree.io/f/mzdpbapp" method="POST" class="space-y-5">
   <div class="grid gap-4 md:grid-cols-2">
     <div>
       <label class="block text-sm font-medium text-slate-800">Name</label>
@@ -107,10 +97,15 @@ import Footer from "../components/Footer.astro";
     </p>
   </div>
 </form>
-
+  </div>
+</div>
         </div>
-
-</main>
+      </div>
+    </div>
+</section>
+  
+      <div class="mt-10 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
+        </main>
 
   <Footer />
 </BaseLayout>
