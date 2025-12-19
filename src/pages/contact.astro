@@ -21,18 +21,64 @@ import Footer from "../components/Footer.astro";
         Send your project details. You’ll get a clear next step, not a vague “we’ll see”.
       </p>
 
-      <div class="mt-10 grid gap-8 lg:grid-cols-3">
+      <div class="mt-10 grid gap-8 lg:grid-cols-3 lg:items-start">
         <div class="lg:col-span-2 rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
   <div class="grid gap-6 lg:grid-cols-5">
-    <div class="lg:col-span-3 overflow-hidden rounded-2xl ring-1 ring-slate-200">
-      <img
-        src="/images/project-deck-1.png"
-        alt="CedarWolf Build + Design. Recent work in Kelowna and the Okanagan."
-        class="h-72 w-full object-cover lg:h-full"
-        loading="lazy"
-        decoding="async"
-      />
+    <div class="lg:col-span-3">
+      <div class="overflow-hidden rounded-2xl ring-1 ring-slate-200 shadow-sm">
+        <img
+          src={`${import.meta.env.BASE_URL}images/project-deck-1.png`}
+          alt="CedarWolf Build + Design. Recent work in Kelowna and the Okanagan."
+          class="h-72 w-full object-cover sm:h-80 lg:h-[420px]"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="mt-5 rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
+        <p class="text-sm font-semibold text-slate-900">Best results</p>
+        <p class="mt-1 text-sm text-slate-700">
+          Include rough dimensions, photos, and your target timeline. You can reply to our email to attach more photos.
+        </p>
+      </div>
     </div>
+
+    <div class="lg:col-span-2">
+      <h2 class="text-xl font-semibold text-slate-900">What to expect</h2>
+
+      <ol class="mt-4 space-y-3 text-sm text-slate-700">
+        <li class="flex gap-3">
+          <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">1</span>
+          <span>Reply within 1 business day.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">2</span>
+          <span>Quick call to confirm scope, budget range, and timeline.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">3</span>
+          <span>If it’s a fit, we book a short site visit and send next steps.</span>
+        </li>
+      </ol>
+
+      <div class="mt-6 rounded-xl bg-white p-4 ring-1 ring-slate-200 shadow-sm">
+        <p class="text-sm font-semibold text-slate-900">Service area</p>
+        <p class="mt-1 text-sm text-slate-700">Kelowna. West Kelowna. Lake Country. Peachland. Vernon.</p>
+
+        <div class="mt-4 space-y-2 text-sm text-slate-700">
+          <p>
+            <span class="font-semibold text-slate-900">Phone:</span>
+            <a class="hover:underline" href="tel:+17785941722">+1 778 594 1722</a>
+          </p>
+          <p>
+            <span class="font-semibold text-slate-900">Email:</span>
+            <a class="hover:underline" href="mailto:projects@cedarwolfbuild.ca">projects@cedarwolfbuild.ca</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="lg:col-span-2">
       <h2 class="text-xl font-semibold text-slate-900">What to expect</h2>
