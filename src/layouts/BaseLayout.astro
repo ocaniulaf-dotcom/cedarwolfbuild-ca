@@ -67,22 +67,5 @@ const __ogImageUrl = __image.startsWith("http")
     <slot />
   <script>
 </script>
-<!-- CEDARWOLF_PHONE_CONVERSION -->
-<script is:inline>
-  (function () {
-    document.addEventListener("click", function (e) {
-      const a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
-      if (!a) return;
-
-      if (typeof window.gtag === "function") {
-        window.gtag("event", "conversion", {
-          // TODO: replace with your Google Ads PHONE conversion label once created
-          send_to: "AW-17823183942/REPLACE_WITH_PHONE_LABEL"
-        });
-      }
-    }, { capture: true });
-  })();
-</script>
-
 </body>
 </html>
