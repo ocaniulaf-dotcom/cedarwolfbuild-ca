@@ -27,6 +27,18 @@ const __ogImageUrl = __image.startsWith("http")
 <html lang="en">
   <head>
 
+<!-- Google Ads tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17823183942');
+</script>
+
+<!-- Google Ads tag -->
+
+
     <!-- SEO_TAGS_START -->
     <link rel="canonical" href={__canonicalUrl} />
     <meta name="description" content={__description} />
@@ -54,7 +66,23 @@ const __ogImageUrl = __image.startsWith("http")
   <body class="min-h-screen bg-slate-50 text-slate-900 antialiased min-h-screen bg-white text-slate-900">
     <slot />
   <script>
-  document.addEventListener("contextmenu", e => e.preventDefault());
 </script>
+<!-- CEDARWOLF_PHONE_CONVERSION -->
+<script is:inline>
+  (function () {
+    document.addEventListener("click", function (e) {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      if (!a) return;
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {
+          // TODO: replace with your Google Ads PHONE conversion label once created
+          send_to: "AW-17823183942/REPLACE_WITH_PHONE_LABEL"
+        });
+      }
+    }, { capture: true });
+  })();
+</script>
+
 </body>
 </html>
