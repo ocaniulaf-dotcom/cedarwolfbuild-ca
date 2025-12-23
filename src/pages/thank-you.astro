@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Thank you | CedarWolf Build + Design" description="Thanks. We received your request.">
+  <section class="mx-auto max-w-3xl px-6 py-16">
+    <h1 class="text-3xl font-semibold tracking-tight">Thanks. We got it.</h1>
+    <p class="mt-4 text-slate-700">
+      We’ll review your message and get back to you shortly.
+    </p>
+
+    <a class="mt-8 inline-flex items-center rounded-xl border border-slate-200 px-5 py-3 font-medium hover:bg-slate-50"
+       href={base}>
+      Back to home
+    </a>
+  </section>
+
+  <script is:inline>
+    // Fire Google Ads conversion on thank-you page load
+    window.addEventListener("load", () => {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", { "send_to": "AW-17823183942/sOGCCI7Gt9UbEMbo4LJC" });
+      }
+    });
+  </script>
+</BaseLayout>
