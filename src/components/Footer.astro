@@ -4,59 +4,71 @@ import SocialLinks from "./SocialLinks.astro";
 const year = new Date().getFullYear();
 const phone = "+1 778 594 1722";
 const email = "projects@cedarwolfbuild.ca";
-const base = import.meta.env.BASE_URL;
 
+const baseRaw = import.meta.env.BASE_URL || "/";
+const base = baseRaw.endsWith("/") ? baseRaw : baseRaw + "/";
+const withBase = (p) => new URL(p, Astro.url.origin + base).pathname;
 ---
+
 <footer class="border-t">
-  <div class="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
-    <div>
-      <div class="font-semibold">CedarWolf Build + Design</div>
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <table class="w-full table-fixed border-collapse">
+      <tbody>
+        <tr class="align-top">
+          <td class="w-1/3 px-2">
+            <div class="font-semibold">CedarWolf Build + Design</div>
 
-      <p class="mt-2 text-sm text-slate-600">
-        Renovations and small builds in Kelowna and the Okanagan. Clear scope. Realistic schedule. Clean finish.
-      </p>
+            <p class="mt-2 text-sm text-slate-600">
+              Renovations and small builds in Kelowna and the Okanagan. Clear scope. Realistic schedule. Clean finish.
+            </p>
 
-<!-- TRUST_BADGES_START -->
-<div class="mt-6 w-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-  <p class="text-sm font-semibold text-slate-900">
-    CedarWolf Build + Design is licensed, insured, and WorkSafeBC registered.
-  </p>
-</div>
-<!-- TRUST_BADGES_END -->
+            <div class="mt-4">
+              <SocialLinks />
+            </div>
+          </td>
 
-      <div class="mt-4">
-        <SocialLinks />
-      </div>
-    </div>
+          <td class="w-1/3 px-2">
+            <div class="font-semibold">Contact</div>
+            <ul class="mt-2 space-y-2 text-sm">
+              <li><span class="text-slate-500">Phone:</span> {phone}</li>
+              <li>
+                <span class="text-slate-500">Email:</span>{" "}
+                <a class="underline" href={`mailto:${email}`}>{email}</a>
+              </li>
+              <li>
+                <span class="text-slate-500">Service area:</span>{" "}
+                Kelowna. West Kelowna. Lake Country. Peachland. Vernon
+              </li>
+            </ul>
+          </td>
 
-    <div>
-      <div class="font-semibold">Contact</div>
-      <ul class="mt-2 space-y-2 text-sm">
-        <li><span class="text-slate-500">Phone:</span> {phone}</li>
-        <li>
-          <span class="text-slate-500">Email:</span>
-          <a class="underline" href={`mailto:${email}`}>{email}</a>
-        </li>
-        <li>
-          <span class="text-slate-500">Service area:</span>
-          Kelowna. West Kelowna. Lake Country. Peachland. Vernon
-        </li>
-      </ul>
-    </div>
+          <td class="w-1/3 px-2">
+            <div class="font-semibold">Pages</div>
+            <ul class="mt-2 space-y-2 text-sm">
+              <li><a class="underline" href={withBase("/services/")}>Services</a></li>
+              <li><a class="underline" href={withBase("/portfolio/")}>Portfolio</a></li>
+              <li><a class="underline" href={withBase("/about/")}>About</a></li>
+              <li><a class="underline" href={withBase("/privacy/")}>Privacy</a></li>
+            </ul>
+          </td>
+        </tr>
 
-    <div>
-      <div class="font-semibold">Pages</div>
-      <ul class="mt-2 space-y-2 text-sm">
-        <li><a class="underline" href={`${base}services/`}>Services</a></li>
-        <li><a class="underline" href={`${base}work/`}>Portfolio</a></li>
-        <li><a class="underline" href={`${base}about/`}>About</a></li>
-        <li><a class="underline" href={`${base}privacy/`}>Privacy</a></li>
-      </ul>
-    </div>
+        <tr>
+          <td colspan="3" class="px-2 pt-6">
+            <!-- TRUST_BADGES_START -->
+            <div class="w-full rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+              <p class="text-sm font-semibold text-slate-900">
+                CedarWolf Build + Design is licensed, insured, and WorkSafeBC registered.
+              </p>
+            </div>
+            <!-- TRUST_BADGES_END -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="mx-auto max-w-6xl px-4 pb-10 text-xs text-slate-500">
     © {year} CedarWolf Build + Design. All rights reserved.
   </div>
-
 </footer>

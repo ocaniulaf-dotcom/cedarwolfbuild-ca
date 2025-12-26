@@ -1,33 +1,59 @@
 ---
-const nav = [
+const SITE_NAME = "CedarWolf Build + Design";
+
+const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services/" },
   { label: "Portfolio", href: "/portfolio/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
-const base = import.meta.env.BASE_URL;
 
+const CTA = { label: "Get a quote", href: "/contact/" };
+
+const baseRaw = import.meta.env.BASE_URL || "/";
+const base = baseRaw.endsWith("/") ? baseRaw : baseRaw + "/";
+const withBase = (p) => new URL(p, Astro.url.origin + base).pathname;
+
+const current = Astro.url.pathname;
 ---
+
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-    <a href={base} class="text-sm font-semibold tracking-tight text-slate-900 hover:text-slate-700">
-      CedarWolf Build + Design
+    <a
+      href={withBase("/")}
+      class="text-sm font-semibold tracking-tight text-slate-900 hover:text-slate-700"
+    >
+      {SITE_NAME}
     </a>
 
     <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
-      {nav.map((item) => (
-        <a href={item.href} class="text-sm font-medium text-slate-700 hover:text-slate-900">
-          {item.label}
-        </a>
-      ))}
+      {
+        NAV_ITEMS.map(({ label, href }) => {
+          const target = withBase(href);
+          const isActive =
+            current === target || (href !== "/" && current.startsWith(target));
+          return (
+            <a
+              href={target}
+              class={`text-sm font-medium transition ${
+                isActive
+                  ? "text-slate-900 underline underline-offset-4"
+                  : "text-slate-700 hover:text-slate-900"
+              }`}
+            >
+              {label}
+            </a>
+          );
+        })
+      }
     </nav>
 
     <a
-      href={`${base}contact/`}
+      href={withBase(CTA.href)}
       class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
     >
-      Get a quote
+      {CTA.label}
     </a>
   </div>
 </header>
