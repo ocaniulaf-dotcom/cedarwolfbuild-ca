@@ -44,10 +44,45 @@ const __ogImageUrl = __image.startsWith("http")
     <meta name="twitter:image" content={__ogImageUrl} />
     <!-- SEO_TAGS_END -->
 
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "CedarWolf Build + Design Inc.",
+  "url": "https://www.cedarwolfbuild.ca/",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Kelowna, BC"
+    },
+    {
+      "@type": "City",
+      "name": "West Kelowna, BC"
+    },
+    {
+      "@type": "City",
+      "name": "Lake Country, BC"
+    },
+    {
+      "@type": "City",
+      "name": "Peachland, BC"
+    },
+    {
+      "@type": "City",
+      "name": "Vernon, BC"
+    }
+  ],
+  "telephone": "+1-778-594-1722",
+  "email": "projects@cedarwolfbuild.ca"
+}
+    </script>
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{__title}</title>
-    <meta name="description" content={__description} />
+
 
 
 
@@ -61,7 +96,7 @@ const __ogImageUrl = __image.startsWith("http")
 </script>
 
 </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased min-h-screen bg-white text-slate-900">
+  <body class="min-h-screen bg-white text-slate-900 antialiased">
     <slot />
   <script>
 </script>
