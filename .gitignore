@@ -28,3 +28,7 @@ backups/
 src_backup_*/
 *.bak
 *.bak.*
+
+# Astro safety backups
+*.astro.bak.*
+backups/
