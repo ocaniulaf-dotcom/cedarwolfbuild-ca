@@ -44,9 +44,11 @@ const withBase = (p) => new URL(p, Astro.url.origin + base).pathname;
 
           <td class="w-1/3 px-2">
             <div class="font-semibold">Pages</div>
-            <ul class="mt-2 space-y-2 text-sm">
+            <ul class="mt-2 space-y-2 text-sm">              <li><a class="underline" href={withBase("/")}>Home</a></li>
+
               <li><a class="underline" href={withBase("/services/")}>Services</a></li>
-              <li><a class="underline" href={withBase("/portfolio/")}>Portfolio</a></li>
+                            <li><a class="underline" href={withBase("/small-projects/")}>Small Projects</a></li>
+<li><a class="underline" href={withBase("/portfolio/")}>Portfolio</a></li>
               <li><a class="underline" href={withBase("/about/")}>About</a></li>
               <li><a class="underline" href={withBase("/privacy/")}>Privacy</a></li>
             </ul>
