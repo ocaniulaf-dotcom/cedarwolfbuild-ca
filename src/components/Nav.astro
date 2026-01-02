@@ -10,51 +10,130 @@ const NAV_ITEMS = [
   { label: "Contact", href: "/contact/" },
 ];
 
-const CTA = { label: "Get a quote", href: "/contact/" };
+const CTA = {
+  label: "Get a quote",
+  href: "/contact/",
+};
 
-const baseRaw = import.meta.env.BASE_URL || "/";
-const base = baseRaw.endsWith("/") ? baseRaw : baseRaw + "/";
-const withBase = (p) => new URL(p, Astro.url.origin + base).pathname;
+const { pathname } = Astro.url;
 
-const current = Astro.url.pathname;
+const isActive = (href) => {
+  // Treat "/" as exact match, others as prefix match
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+};
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-    <a
-      href={withBase("/")}
-      class="text-sm font-semibold tracking-tight text-slate-900 hover:text-slate-700"
-    >
+    <a href="/" class="text-sm font-semibold tracking-tight text-slate-900 hover:text-slate-700">
       {SITE_NAME}
     </a>
 
+    <!-- Desktop nav -->
     <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
-      {
-        NAV_ITEMS.map(({ label, href }) => {
-          const target = withBase(href);
-          const isActive =
-            current === target || (href !== "/" && current.startsWith(target));
-          return (
-            <a
-              href={target}
-              class={`text-sm font-medium transition ${
-                isActive
-                  ? "text-slate-900 underline underline-offset-4"
-                  : "text-slate-700 hover:text-slate-900"
-              }`}
-            >
-              {label}
-            </a>
-          );
-        })
-      }
+      {NAV_ITEMS.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "text-sm font-medium transition",
+            isActive(item.href)
+              ? "text-slate-900 underline underline-offset-4"
+              : "text-slate-700 hover:text-slate-900",
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
     </nav>
 
+    <!-- Desktop CTA -->
     <a
-      href={withBase(CTA.href)}
-      class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+      href={CTA.href}
+      class="hidden md:inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
     >
       {CTA.label}
     </a>
+
+    <!-- Mobile menu button -->
+    <button
+      id="navToggle"
+      type="button"
+      class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-900 shadow-sm hover:bg-slate-50 md:hidden"
+      aria-label="Open menu"
+      aria-controls="mobileNav"
+      aria-expanded="false"
+    >
+      <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
+
+  <!-- Mobile panel -->
+  <div id="mobileNav" class="hidden border-t border-slate-200 bg-white md:hidden">
+    <div class="mx-auto max-w-6xl px-4 py-4">
+      <nav class="flex flex-col gap-3" aria-label="Mobile navigation">
+        {NAV_ITEMS.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "rounded-xl px-3 py-2 text-sm font-medium transition",
+              isActive(item.href)
+                ? "bg-slate-100 text-slate-900"
+                : "text-slate-700 hover:bg-slate-50 hover:text-slate-900",
+            ]}
+            data-nav-link="true"
+          >
+            {item.label}
+          </a>
+        ))}
+
+        <a
+          href={CTA.href}
+          class="mt-2 inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+          data-nav-link="true"
+        >
+          {CTA.label}
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const btn = document.getElementById("navToggle");
+      const panel = document.getElementById("mobileNav");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
+      if (!btn || !panel) return;
+
+      const setOpen = (open) => {
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        panel.classList.toggle("hidden", !open);
+        iconOpen?.classList.toggle("hidden", open);
+        iconClose?.classList.toggle("hidden", !open);
+        document.body.style.overflow = open ? "hidden" : "";
+      };
+
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        setOpen(!isOpen);
+      });
+
+      // Close after clicking a link
+      panel.addEventListener("click", (e) => {
+        const a = e.target.closest('a[data-nav-link="true"]');
+        if (a) setOpen(false);
+      });
+
+      // Close on ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </header>
