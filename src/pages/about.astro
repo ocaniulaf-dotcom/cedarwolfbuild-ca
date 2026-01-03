@@ -1,9 +1,6 @@
 ---
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-
 const collage = [
   asset("images/service-kitchen.png"),
   asset("images/service-cabinets.png"),
@@ -19,8 +16,6 @@ const collage = [
 ---
 
 <BaseLayout title="About | CedarWolf Build + Design">
-  <Nav />
-
   <main class="bg-stone-50">
     <section class="mx-auto max-w-7xl px-6 py-14">
       <h1 class="text-4xl font-semibold tracking-tight text-slate-900">About</h1>
@@ -67,6 +62,4 @@ const collage = [
       </div>
     </section>
   </main>
-
-  <Footer />
 </BaseLayout>

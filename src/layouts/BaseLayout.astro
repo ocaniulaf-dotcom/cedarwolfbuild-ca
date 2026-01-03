@@ -1,104 +1,49 @@
 ---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const __title = Astro.props?.title ?? "CedarWolf Build + Design";
-const __description =
-  Astro.props?.description ??
-  "Design-build and renovations in Kelowna and the Okanagan.";
 
-const __image = Astro.props?.image ?? "/images/project-deck-1.png";
+const {
+  title = "CedarWolf Build + Design",
+  description = "",
+  image = "/images/og.jpg",
+  canonical = "",
+} = Astro.props;
 
-const __base = import.meta.env.BASE_URL || "/";
-const __withBase = (p) => {
-  if (!p) return __base;
-  if (p.startsWith("http")) return p;
-  const b = __base.endsWith("/") ? __base.slice(0, -1) : __base;
-  const c = p.startsWith("/") ? p : ("/" + p);
-  return b + c;
-};
-
-const __canonicalPath = Astro.url?.pathname || "/";
-const __canonicalUrl = new URL(__withBase(__canonicalPath.replace(__base, "")), Astro.site).href;
-
-const __ogImageUrl = __image.startsWith("http")
-  ? __image
-  : new URL(__withBase(__image.replace(/^\//, "")), Astro.site).href;
+const url = Astro.url;
+const canonicalUrl = canonical || url.toString();
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
 
-<!-- SEO_TAGS_START -->
-    <link rel="canonical" href={__canonicalUrl} />
-    <meta name="description" content={__description} />
+    <link rel="canonical" href={canonicalUrl} />
 
+    <!-- Basic social -->
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="CedarWolf Build + Design" />
-    <meta property="og:title" content={__title} />
-    <meta property="og:description" content={__description} />
-    <meta property="og:url" content={__canonicalUrl} />
-    <meta property="og:image" content={__ogImageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image} />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={__title} />
-    <meta name="twitter:description" content={__description} />
-    <meta name="twitter:image" content={__ogImageUrl} />
-    <!-- SEO_TAGS_END -->
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={image} />
+  </head>
 
-    <!-- LocalBusiness Schema -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  "name": "CedarWolf Build + Design Inc.",
-  "url": "https://www.cedarwolfbuild.ca/",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Kelowna, BC"
-    },
-    {
-      "@type": "City",
-      "name": "West Kelowna, BC"
-    },
-    {
-      "@type": "City",
-      "name": "Lake Country, BC"
-    },
-    {
-      "@type": "City",
-      "name": "Peachland, BC"
-    },
-    {
-      "@type": "City",
-      "name": "Vernon, BC"
-    }
-  ],
-  "telephone": "+1-778-594-1722",
-  "email": "projects@cedarwolfbuild.ca"
-}
-    </script>
+  <body class="min-h-screen bg-white text-slate-900">
+    <Nav />
 
+    <main>
+      <slot />
+    </main>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{__title}</title>
-
-
-
-
-<!-- Google Ads tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "AW-17823183942");
-</script>
-
-</head>
-  <body class="min-h-screen bg-white text-slate-900 antialiased">
-    <slot />
-  <script>
-</script>
-</body>
+    <Footer />
+  </body>
 </html>

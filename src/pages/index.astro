@@ -1,9 +1,6 @@
 ---
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-
 const projects = [
   { title: "Kitchen renovation", image: asset("images/project-kitchen-1.png"), tag: "Kitchens" },
   { title: "Deck build", image: asset("images/project-deck-1.png"), tag: "Outdoor" },
@@ -15,8 +12,6 @@ const projects = [
   title="General Contractor in Kelowna | CedarWolf Build + Design"
   description="Licensed general contractor in Kelowna specializing in residential renovations, kitchens, bathrooms, flooring, and finish carpentry. Clear scope. Clean execution."
 >
-  <Nav />
-
   <main class="bg-slate-50">
     <!-- HERO -->
     <section class="relative isolate">
@@ -134,6 +129,4 @@ const projects = [
       </div>
     </section>
   </main>
-
-  <Footer />
 </BaseLayout>

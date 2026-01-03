@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kitchen Renovations in Kelowna | CedarWolf Build + Design";
+const description =
+  "Kitchen renovations in Kelowna. Full renovations, cabinet upgrades, islands, pantry pull-outs, and functional storage solutions.";
+
+const images = [
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-kitchen-renovation-island-before-after-cedarwolf-build.jpg",
+    title: "Kitchen Renovation. Before and After",
+    caption:
+      "Complete transformation with updated layout, cabinetry, finishes, and improved functionality.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-full-house-kitchen-renovation-before-during-after-cedarwolf-build.jpg",
+    title: "Full House Kitchen Renovation",
+    caption:
+      "Full renovation scope. Demolition, new cabinets, updated finishes, and cleaner, brighter lighting.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-basement-kitchen-renovation-white-cabinets-cedarwolf-build.jpg",
+    title: "Basement Kitchen Renovation",
+    caption:
+      "New cabinets, repaired and painted walls, updated lighting, engineered flooring, and appliance installation for tenant-ready turnover.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-kitchen-island-replacement-new-cabinets-countertop-flooring-cedarwolf-build.jpg",
+    title: "Kitchen Island Replacement",
+    caption:
+      "New island cabinets and countertop with updated flooring and fresh wall paint for a clean, modern finish.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-custom-kitchen-island-quartz-countertop-cedarwolf-build.jpg",
+    title: "Custom Kitchen Island. Quartz Countertop",
+    caption:
+      "Custom island upgrade designed for daily use, seating, and durable prep space.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-two-tone-kitchen-cabinets-under-cabinet-lighting-cedarwolf-build.jpg",
+    title: "Two-Tone Cabinets and Lighting",
+    caption:
+      "Two-tone cabinet update with improved lighting for better task visibility and a more modern look.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-modern-kitchen-island-dark-cabinets-cedarwolf-build.jpg",
+    title: "Modern Kitchen Island",
+    caption:
+      "Modern island design paired with darker cabinetry for contrast and a higher-end feel.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-custom-kitchen-pantry-pull-out-drawers-cedarwolf-build.jpg",
+    title: "Pantry Pull-Out Drawers",
+    caption:
+      "Pull-out pantry drawers for full-depth access and better organization.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-kitchen-cabinet-upgrade-full-extension-soft-close-drawers-cedarwolf-build.jpg",
+    title: "Cabinet Upgrade. Full Extension Drawers",
+    caption:
+      "Converted base cabinet storage to full-extension, soft-close drawers for easier access and daily convenience.",
+  },
+  {
+    src: "/images/portfolio/kitchen-renovations/kelowna-kitchen-drawer-organization-custom-cabinetry-cedarwolf-build.jpg",
+    title: "Drawer Organization",
+    caption:
+      "Custom drawer layout to keep tools and kitchen items organized and easy to reach.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <header class="mb-10">
+      <h1 class="text-3xl font-semibold tracking-tight">Kitchen Renovations in Kelowna</h1>
+      <p class="mt-4 max-w-3xl text-slate-600">
+        From full house renovations to basement kitchens and cabinet upgrades. We build durable, functional kitchens with clean finishes and smart storage.
+      </p>
+    </header>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {images.map((img) => (
+        <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <img
+            src={img.src}
+            alt={`Kitchen renovation in Kelowna. ${img.title}. CedarWolf Build + Design.`}
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <figcaption class="p-4">
+            <h3 class="text-sm font-semibold">{img.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{img.caption}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

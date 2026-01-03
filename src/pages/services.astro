@@ -1,8 +1,6 @@
 ---
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 
 const services = [
@@ -42,8 +40,6 @@ const services = [
 ---
 
 <BaseLayout title="Services | CedarWolf Build + Design">
-  <Nav />
-
   <main class="bg-slate-50">
     <section class="mx-auto max-w-7xl px-6 py-14">
       <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Services</h1>
@@ -58,6 +54,4 @@ const services = [
       </div>
     </section>
   </main>
-
-  <Footer />
 </BaseLayout>
