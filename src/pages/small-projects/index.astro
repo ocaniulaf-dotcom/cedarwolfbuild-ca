@@ -1,262 +1,142 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const page = {
-  title: "Small Projects in Kelowna | CedarWolf Build + Design",
-  description:
-    "Professional small projects in Kelowna and West Kelowna. Deck stairs, railings, fences, pergolas, doors, and trim. Built properly and managed professionally.",
-};
+const PHONE_DISPLAY = "778-594-1722";
+const PHONE_TEL = "+17785941722";
+const EMAIL = "projects@cedarwolfbuild.ca";
+
+const IMAGES = [
+  {
+    src: "/images/handyman-deck-railing-stair-repairs-kelowna.jpg",
+    alt: "Deck railing and stair repairs in Kelowna",
+    label: "Deck railings + stairs",
+  },
+  {
+    src: "/images/handyman-deck-safety-code-repairs-kelowna.jpg",
+    alt: "Deck safety and code repairs in Kelowna",
+    label: "Deck safety upgrades",
+  },
+  {
+    src: "/images/handyman-deck-stair-repairs-kelowna.jpg",
+    alt: "Deck stair repairs in Kelowna",
+    label: "Deck stair repairs",
+  },
+  {
+    src: "/images/handyman-fence-repairs-installation-kelowna.jpg",
+    alt: "Fence repairs and installation in Kelowna",
+    label: "Fence repairs",
+  },
+  {
+    src: "/images/handyman-interior-door-trim-repairs-kelowna.jpg",
+    alt: "Interior door and trim repairs in Kelowna",
+    label: "Interior doors + trim",
+  },
+  {
+    src: "/images/handyman-pergola-outdoor-structures-kelowna.jpg",
+    alt: "Pergola and outdoor structures in Kelowna",
+    label: "Pergolas + outdoor builds",
+  },
+];
 ---
 
-<BaseLayout title={page.title} description={page.description}>
-
-  <main class="bg-slate-50">
+<BaseLayout
+  title="Small Projects and Repairs in Kelowna | CedarWolf Build + Design"
+  description="Small projects and repairs in Kelowna and the Okanagan. Deck repairs, stairs, railings, fences, doors, trim, and outdoor structures. Email-first quotes."
+>
+  <main class="mx-auto max-w-6xl px-4 py-10">
     <!-- HERO -->
-    <section class="relative isolate overflow-hidden bg-slate-800">
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
+    <section class="grid gap-8 md:grid-cols-2 md:items-center">
+      <div class="space-y-5">
+        <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700">
+          Small projects . Repairs . Punch-lists
+        </p>
+
+        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+          Small Projects in Kelowna and the Okanagan
+        </h1>
+
+        <p class="text-base leading-relaxed text-slate-700 md:text-lg">
+          The jobs that never get finished. We handle repairs and small builds with clean execution and durable results.
+          Email works best while we’re on site. We respond within 1 business day.
+        </p>
+
+        <ul class="grid gap-2 text-sm text-slate-700">
+          <li>Deck repairs . stairs . railings . safety fixes</li>
+          <li>Fence repairs and installation</li>
+          <li>Interior door and trim repairs</li>
+          <li>Pergolas and outdoor structures</li>
+        </ul>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href={"mailto:" + EMAIL + "?subject=Small Project Request&body=Hi CedarWolf,%0D%0A%0D%0AI’d like a quote for:%0D%0A- Location (Kelowna/West Kelowna/etc.):%0D%0A- What needs to be done:%0D%0A- Photos attached:%0D%0A- Timeline:%0D%0A%0D%0AThanks,"}
+            class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+          >
+            Request availability by email
+          </a>
+
+          <a
+            href={"tel:" + PHONE_TEL}
+            class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+          >
+            Call if urgent
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-500">
+          Email: <a class="underline hover:no-underline" href={"mailto:" + EMAIL}>{EMAIL}</a> . Phone is answered when available.
+        </p>
       </div>
 
-      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
-        <div class="max-w-3xl">
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/25">
-            Kelowna & West Kelowna • Small Projects
-          </p>
-
-          <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl drop-shadow-sm">
-            Small Projects in Kelowna
-          </h1>
-
-          <p class="mt-4 text-lg text-white/95 sm:text-xl">
-            The same standards we use on renovations. Applied to the work that keeps your home safe, solid, and looking right.
-          </p>
-
-          <p class="mt-6 text-base leading-relaxed text-white/90 sm:text-lg">
-            Deck stairs and railings, fence repairs, pergolas, doors, trim, and small carpentry upgrades.
-            Clear scope, clean execution, and professional project management.
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h2 class="text-base font-semibold text-slate-900">Fast quote checklist</h2>
+        <ol class="mt-3 grid gap-2 text-sm text-slate-700">
+          <li><span class="font-semibold">1.</span> 2–4 photos</li>
+          <li><span class="font-semibold">2.</span> Your city (Kelowna, West Kelowna, etc.)</li>
+          <li><span class="font-semibold">3.</span> What you want done + timeline</li>
+        </ol>
+        <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p class="text-sm font-semibold text-slate-900">Heads-up</p>
+          <p class="mt-1 text-sm text-slate-700">
+            Small projects are scheduled around larger renovations. If it’s urgent, call and we’ll tell you straight.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="mx-auto max-w-7xl px-6 py-14">
-      <div class="max-w-3xl">
-        <h2 class="text-2xl font-semibold text-slate-900">What we handle</h2>
-        <p class="mt-3 text-slate-600 leading-relaxed">
-          Small to medium work that still needs to be done properly. We focus on structure, safety, clean lines, and a finished look.
-        </p>
+    <!-- IMAGE GRID -->
+    <section class="mt-14">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="text-xl font-semibold text-slate-900">Examples of small projects</h2>
+          <p class="mt-1 text-sm text-slate-600">Real project photos. Click “Get a quote” to send details by email.</p>
+        </div>
+        <a
+          href="/contact/?service=small-projects"
+          class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+        >
+          Get a quote
+        </a>
       </div>
 
-      <div class="mt-10 space-y-6">
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-pergola-outdoor-structures-kelowna.jpg"
-              alt="Pergolas & Outdoor Structures"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Pergolas & Outdoor Structures</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Clean, square, and properly anchored outdoor structures built for Okanagan weather.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Pergolas (small to mid-size)</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>BBQ / outdoor kitchen framing support</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Privacy screens and small enclosures</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Repairs to existing structures</span></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Deck Safety & Code Repairs</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Structural fixes and safety upgrades that eliminate wobble and worry.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Guard / handrail corrections</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Stair rise-run corrections</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Post and beam reinforcement</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Ledger and connection fixes</span></li>
-            </ul>
-          </div>
-
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-deck-safety-code-repairs-kelowna.jpg"
-              alt="Deck Safety & Code Repairs"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-deck-railing-stair-repairs-kelowna.jpg"
-              alt="Deck Railings & Stair Repairs"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Deck Railings & Stair Repairs</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Straight, solid stairs and railings with clean lines and durable fastening.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Railing replacement or rebuild</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Stair rebuilds</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Post base and anchoring fixes</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Wobbly handrail upgrades</span></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Deck Stair Repairs</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Safe stairs built with proper layout, consistent cuts, and clean finishing.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Tread / riser replacement</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Stringer rebuilds</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Stair landing repairs</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Non-slip and durability upgrades</span></li>
-            </ul>
-          </div>
-
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-deck-stair-repairs-kelowna.jpg"
-              alt="Deck Stair Repairs"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-fence-repairs-installation-kelowna.jpg"
-              alt="Fence Repairs & Installation"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Fence Repairs & Installation</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">New sections, repairs, and gates built with clean layout and tight joinery.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Fence section replacement</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Gate repairs and alignment</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Post repairs / resets</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Cedar fence upgrades</span></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 md:grid-cols-2">
-
-          <div class="rounded-2xl bg-slate-50 p-7 shadow-sm ring-1 ring-slate-100">
-            <h3 class="text-xl font-semibold text-slate-900">Interior Door & Trim Repairs</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Tighter reveals, clean casing lines, and doors that close properly.</p>
-            <ul class="mt-5 space-y-2 text-slate-700">
-              <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Door install / replacement</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Trim and casing repairs</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Latch / strike alignment</span></li><li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>Patch and prep for paint</span></li>
-            </ul>
-          </div>
-
-
-          <div class="relative overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="/images/handyman-interior-door-trim-repairs-kelowna.jpg"
-              alt="Interior Door & Trim Repairs"
-              class="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-        </div>
-
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {IMAGES.map((img) => (
+          <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div class="aspect-[4/3] bg-slate-100">
+              <img
+                src={img.src}
+                alt={img.alt}
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="p-4">
+              <p class="text-sm font-semibold text-slate-900">{img.label}</p>
+              <p class="mt-1 text-xs text-slate-600">Kelowna + Okanagan</p>
+            </figcaption>
+          </figure>
+        ))}
       </div>
-
-      <div class="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-        <div class="max-w-3xl">
-          <h2 class="text-2xl font-semibold text-slate-900">How requests work</h2>
-          <ol class="mt-4 space-y-3 text-slate-700">
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-white text-sm">1</span><span>Send photos and a short description of what you need fixed or built.</span></li>
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-white text-sm">2</span><span>We confirm scope, constraints, and a realistic schedule.</span></li>
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-white text-sm">3</span><span>Work is completed cleanly, safely, and to a professional standard.</span></li>
-          </ol>
-
-
-
-          <p class="mt-4 text-sm text-slate-500">
-            Serving Kelowna and West Kelowna. Additional areas by request.
-          </p>
-        </div>
-      </div>
-    
-      <!-- INTERNAL LINKS / SEO -->
-      <div class="mt-14 max-w-3xl">
-        <h2 class="text-xl font-semibold text-slate-900">
-          Related services
-        </h2>
-        <p class="mt-3 text-slate-600">
-          Looking for larger renovation work or full project management?
-        </p>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li>
-            <a href="/services/" class="underline underline-offset-4 hover:text-slate-900">
-              Residential construction and renovation services
-            </a>
-          </li>
-          <li>
-            <a href="/portfolio/" class="underline underline-offset-4 hover:text-slate-900">
-              View completed projects and case studies
-            </a>
-          </li>
-          <li>
-            <a href="/contact/" class="underline underline-offset-4 hover:text-slate-900">
-              Request a quote or discuss your project
-            </a>
-          </li>
-        </ul>
-      </div>
-
-</section>
+    </section>
   </main>
-
-  
-      <!-- LEAD CTA -->
-      <div class="mt-16 rounded-3xl bg-slate-900 p-10 text-white">
-        <h2 class="text-2xl font-semibold">
-          Have a small project that needs to be done properly?
-        </h2>
-        <p class="mt-3 max-w-2xl text-white/85">
-          Send photos and a short description. We’ll confirm scope, timeline, and next steps.
-          No pressure. No vague estimates.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-4">
-          <a
-            href="/contact/"
-            class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-          >
-            Request a quote
-          </a>
-          <a
-            href="mailto:projects@cedarwolfbuild.ca"
-            class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 hover:bg-white/15"
-          >
-            projects@cedarwolfbuild.ca
-          </a>
-        </div>
-      </div>
-
-
 </BaseLayout>
