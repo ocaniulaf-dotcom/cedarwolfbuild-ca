@@ -138,5 +138,51 @@ const IMAGES = [
         ))}
       </div>
     </section>
-  </main>
+    <dialog id="lightbox" class="backdrop:bg-black/70 rounded-2xl p-0 max-w-5xl w-[min(92vw,1100px)]">
+    <div class="relative overflow-hidden rounded-2xl bg-white">
+      <button id="lightboxClose" type="button" class="absolute right-3 top-3 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold text-slate-900 shadow hover:bg-white">
+        Close
+      </button>
+      <img id="lightboxImg" src="" alt="" class="block h-auto w-full max-h-[82vh] object-contain bg-slate-950" />
+      <div class="border-t border-slate-200 bg-white px-5 py-3">
+        <p id="lightboxCaption" class="text-sm text-slate-700"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const dlg = document.getElementById("lightbox");
+    const imgEl = document.getElementById("lightboxImg");
+    const capEl = document.getElementById("lightboxCaption");
+    const closeBtn = document.getElementById("lightboxClose");
+
+    function openLightbox(src, alt) {
+      imgEl.src = src;
+      imgEl.alt = alt || "";
+      capEl.textContent = alt || "";
+      if (typeof dlg.showModal === "function") dlg.showModal();
+      else dlg.setAttribute("open", "");
+    }
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-src]");
+      if (!btn) return;
+      openLightbox(btn.getAttribute("data-src"), btn.getAttribute("data-alt"));
+    });
+
+    closeBtn.addEventListener("click", () => dlg.close());
+
+    // Click outside content to close
+    dlg.addEventListener("click", (e) => {
+      const rect = dlg.getBoundingClientRect();
+      const inDialog = (
+        e.clientX >= rect.left && e.clientX <= rect.right &&
+        e.clientY >= rect.top  && e.clientY <= rect.bottom
+      );
+      if (!inDialog) dlg.close();
+    });
+
+    // Esc closes by default with <dialog>
+  </script>
+</main>
 </BaseLayout>
