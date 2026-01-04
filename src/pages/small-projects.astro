@@ -106,10 +106,16 @@ const IMAGES = [
 
     <!-- IMAGE GRID -->
     <section class="mt-14">
-      <div class="flex items-end justify-between gap-4">
-        <h2 class="text-xl font-semibold text-slate-900">Examples of small projects</h2>
-        <a class="text-sm font-semibold text-slate-900 underline hover:no-underline" href="/contact/">
-          Contact
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="text-xl font-semibold text-slate-900">Examples of small projects</h2>
+          <p class="mt-1 text-sm text-slate-600">Real project photos. Click “Get a quote” to send details by email.</p>
+        </div>
+        <a
+          href="/contact/?service=small-projects"
+          class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+        >
+          Get a quote
         </a>
       </div>
 
@@ -120,7 +126,7 @@ const IMAGES = [
               <img
                 src={img.src}
                 alt={img.alt}
-                class="h-full w-full object-cover"
+                class="h-full w-full object-contain"
                 loading="lazy"
               />
             </div>
