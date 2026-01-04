@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const PHONE_DISPLAY = "778-594-1722";
+const PHONE_TEL = "+17785941722";
+const EMAIL = "projects@cedarwolfbuild.ca";
+---
+
+<BaseLayout
+  title="Small Projects and Repairs in Kelowna | CedarWolf Build + Design"
+  description="Small projects and repairs in Kelowna and the Okanagan. Doors, drywall, flooring, deck repairs. Email-first quotes for faster response."
+>
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    <section class="grid gap-8 md:grid-cols-2 md:items-center">
+      <div class="space-y-5">
+        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+          Small Projects in Kelowna and the Okanagan
+        </h1>
+
+        <p class="text-base leading-relaxed text-slate-700 md:text-lg">
+          Small repairs and upgrades handled professionally.
+          Email is the fastest way to reach us while we’re on job sites.
+        </p>
+
+        <ul class="grid gap-2 text-sm text-slate-700">
+          <li>Doors, trim, drywall repairs</li>
+          <li>Deck repairs, railings, stairs</li>
+          <li>Flooring fixes and punch-lists</li>
+        </ul>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href={"mailto:" + EMAIL + "?subject=Small Project Request"}
+            class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+          >
+            Request availability by email
+          </a>
+
+          <a
+            href={"tel:" + PHONE_TEL}
+            class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+          >
+            Call if urgent
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-500">
+          Email: <a class="underline hover:no-underline" href={"mailto:" + EMAIL}>{EMAIL}</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
