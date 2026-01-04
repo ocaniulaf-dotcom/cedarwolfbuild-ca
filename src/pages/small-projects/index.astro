@@ -8,33 +8,39 @@ const EMAIL = "projects@cedarwolfbuild.ca";
 const IMAGES = [
   {
     src: "/images/handyman-deck-railing-stair-repairs-kelowna.jpg",
+    title: "Deck railings + stairs",
     alt: "Deck railing and stair repairs in Kelowna",
-    label: "Deck railings + stairs",
+    caption: "Stable railings and stair repairs. Safety focused, clean finish.",
   },
   {
     src: "/images/handyman-deck-safety-code-repairs-kelowna.jpg",
+    title: "Deck safety upgrades",
     alt: "Deck safety and code repairs in Kelowna",
-    label: "Deck safety upgrades",
+    caption: "Wobble fixes, reinforcement, and code-aware upgrades.",
   },
   {
     src: "/images/handyman-deck-stair-repairs-kelowna.jpg",
+    title: "Deck stair repairs",
     alt: "Deck stair repairs in Kelowna",
-    label: "Deck stair repairs",
+    caption: "Rebuilt or repaired steps for safe daily use.",
   },
   {
     src: "/images/handyman-fence-repairs-installation-kelowna.jpg",
+    title: "Fence repairs",
     alt: "Fence repairs and installation in Kelowna",
-    label: "Fence repairs",
+    caption: "Repair or replace sections. Straight lines, solid posts.",
   },
   {
     src: "/images/handyman-interior-door-trim-repairs-kelowna.jpg",
+    title: "Interior doors + trim",
     alt: "Interior door and trim repairs in Kelowna",
-    label: "Interior doors + trim",
+    caption: "Doors hung right. Trim lines clean. No gaps, no mess.",
   },
   {
     src: "/images/handyman-pergola-outdoor-structures-kelowna.jpg",
+    title: "Pergolas + outdoor builds",
     alt: "Pergola and outdoor structures in Kelowna",
-    label: "Pergolas + outdoor builds",
+    caption: "Outdoor structures built square, anchored properly, finished clean.",
   },
 ];
 ---
@@ -56,8 +62,8 @@ const IMAGES = [
         </h1>
 
         <p class="text-base leading-relaxed text-slate-700 md:text-lg">
-          The jobs that never get finished. We handle repairs and small builds with clean execution and durable results.
-          Email works best while we’re on site. We respond within 1 business day.
+          Repairs and small upgrades handled professionally. Email is the fastest way to reach us while we’re on job sites.
+          We respond within 1 business day.
         </p>
 
         <ul class="grid gap-2 text-sm text-slate-700">
@@ -72,7 +78,7 @@ const IMAGES = [
             href={"mailto:" + EMAIL + "?subject=Small Project Request&body=Hi CedarWolf,%0D%0A%0D%0AI’d like a quote for:%0D%0A- Location (Kelowna/West Kelowna/etc.):%0D%0A- What needs to be done:%0D%0A- Photos attached:%0D%0A- Timeline:%0D%0A%0D%0AThanks,"}
             class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
           >
-            Request availability by email
+            Get a quote by email
           </a>
 
           <a
@@ -104,13 +110,14 @@ const IMAGES = [
       </div>
     </section>
 
-    <!-- IMAGE GRID -->
+    <!-- GALLERY -->
     <section class="mt-14">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 class="text-xl font-semibold text-slate-900">Examples of small projects</h2>
-          <p class="mt-1 text-sm text-slate-600">Real project photos. Click “Get a quote” to send details by email.</p>
+          <p class="mt-1 text-sm text-slate-600">Tap any photo to view it larger.</p>
         </div>
+
         <a
           href="/contact/?service=small-projects"
           class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
@@ -120,69 +127,95 @@ const IMAGES = [
       </div>
 
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {IMAGES.map((img) => (
+        {IMAGES.map((img, idx) => (
           <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div class="aspect-[4/3] bg-slate-100">
-              <img
-                src={img.src}
-                alt={img.alt}
-                class="h-full w-full object-contain"
-                loading="lazy"
-              />
-            </div>
+            <button
+              type="button"
+              class="block w-full"
+              data-src={img.src}
+              data-title={img.title}
+              data-caption={img.caption}
+              data-alt={img.alt}
+              aria-label={"View " + img.title + " photo"}
+            >
+              <div class="aspect-[4/3] bg-slate-50 p-2">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  class="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </button>
+
             <figcaption class="p-4">
-              <p class="text-sm font-semibold text-slate-900">{img.label}</p>
-              <p class="mt-1 text-xs text-slate-600">Kelowna + Okanagan</p>
+              <p class="text-sm font-semibold text-slate-900">{img.title}</p>
+              <p class="mt-1 text-sm text-slate-700">{img.caption}</p>
+              <p class="mt-2 text-xs text-slate-600">Kelowna + Okanagan</p>
             </figcaption>
           </figure>
         ))}
       </div>
     </section>
+
+    <!-- LIGHTBOX -->
     <dialog id="lightbox" class="backdrop:bg-black/70 rounded-2xl p-0 max-w-5xl w-[min(92vw,1100px)]">
-    <div class="relative overflow-hidden rounded-2xl bg-white">
-      <button id="lightboxClose" type="button" class="absolute right-3 top-3 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold text-slate-900 shadow hover:bg-white">
-        Close
-      </button>
-      <img id="lightboxImg" src="" alt="" class="block h-auto w-full max-h-[82vh] object-contain bg-slate-950" />
-      <div class="border-t border-slate-200 bg-white px-5 py-3">
-        <p id="lightboxCaption" class="text-sm text-slate-700"></p>
+      <div class="relative overflow-hidden rounded-2xl bg-white">
+        <button
+          id="lightboxClose"
+          type="button"
+          class="absolute right-3 top-3 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold text-slate-900 shadow hover:bg-white"
+        >
+          Close
+        </button>
+
+        <img id="lightboxImg" src="" alt="" class="block h-auto w-full max-h-[82vh] object-contain bg-slate-950" />
+
+        <div class="border-t border-slate-200 bg-white px-5 py-4">
+          <p id="lightboxTitle" class="text-sm font-semibold text-slate-900"></p>
+          <p id="lightboxCaption" class="mt-1 text-sm text-slate-700"></p>
+        </div>
       </div>
-    </div>
-  </dialog>
+    </dialog>
 
-  <script>
-    const dlg = document.getElementById("lightbox");
-    const imgEl = document.getElementById("lightboxImg");
-    const capEl = document.getElementById("lightboxCaption");
-    const closeBtn = document.getElementById("lightboxClose");
+    <script>
+      const dlg = document.getElementById("lightbox");
+      const imgEl = document.getElementById("lightboxImg");
+      const titleEl = document.getElementById("lightboxTitle");
+      const capEl = document.getElementById("lightboxCaption");
+      const closeBtn = document.getElementById("lightboxClose");
 
-    function openLightbox(src, alt) {
-      imgEl.src = src;
-      imgEl.alt = alt || "";
-      capEl.textContent = alt || "";
-      if (typeof dlg.showModal === "function") dlg.showModal();
-      else dlg.setAttribute("open", "");
-    }
+      function openLightbox(src, alt, title, caption) {
+        imgEl.src = src;
+        imgEl.alt = alt || "";
+        titleEl.textContent = title || "";
+        capEl.textContent = caption || "";
+        if (typeof dlg.showModal === "function") dlg.showModal();
+        else dlg.setAttribute("open", "");
+      }
 
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-src]");
-      if (!btn) return;
-      openLightbox(btn.getAttribute("data-src"), btn.getAttribute("data-alt"));
-    });
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-src]");
+        if (!btn) return;
+        openLightbox(
+          btn.getAttribute("data-src"),
+          btn.getAttribute("data-alt"),
+          btn.getAttribute("data-title"),
+          btn.getAttribute("data-caption")
+        );
+      });
 
-    closeBtn.addEventListener("click", () => dlg.close());
+      closeBtn.addEventListener("click", () => dlg.close());
 
-    // Click outside content to close
-    dlg.addEventListener("click", (e) => {
-      const rect = dlg.getBoundingClientRect();
-      const inDialog = (
-        e.clientX >= rect.left && e.clientX <= rect.right &&
-        e.clientY >= rect.top  && e.clientY <= rect.bottom
-      );
-      if (!inDialog) dlg.close();
-    });
-
-    // Esc closes by default with <dialog>
-  </script>
-</main>
+      dlg.addEventListener("click", (e) => {
+        const box = dlg.querySelector("div");
+        if (!box) return;
+        const r = box.getBoundingClientRect();
+        const inside =
+          e.clientX >= r.left && e.clientX <= r.right &&
+          e.clientY >= r.top && e.clientY <= r.bottom;
+        if (!inside) dlg.close();
+      });
+    </script>
+  </main>
 </BaseLayout>
