@@ -35,7 +35,14 @@ const canonicalUrl = canonical || url.toString();
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={image} />
-  </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "AW-17823183942");
+  </script>
+</head>
 
   <body class="min-h-screen bg-white text-slate-900">
     <Nav />
