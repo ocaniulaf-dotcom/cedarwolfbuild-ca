@@ -37,11 +37,11 @@ const canonicalUrl = canonical || url.toString();
     <meta name="twitter:image" content={image} />
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "AW-17823183942");
-  </script>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", "AW-17823183942");
+</script>
 </head>
 
   <body class="min-h-screen bg-white text-slate-900">
