@@ -11,6 +11,25 @@ const services = [
     bullets: ["Clear scope and sequencing", "Cabinetry and millwork install", "Clean, durable finishes"],
     image: asset("images/service-kitchen.png"),
     accent: "emerald",
+    href: asset("portfolio/kitchen-renovations/"),
+  },
+  {
+    label: "Outdoor",
+    title: "Deck Building",
+    description: "Custom cedar, composite, and pressure-treated decks built to BC code. Proper footings, clean railings, and a finished result that adds real value to your home.",
+    bullets: ["BC code compliant construction", "Cedar, composite, or pressure-treated", "Stairs, railings, and pergolas"],
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
+    accent: "emerald",
+    href: asset("deck-building-kelowna/"),
+  },
+  {
+    label: "Fencing",
+    title: "Fence Installation",
+    description: "Wood, cedar, and modern metal fences built straight, set deep, and finished clean. Posts set below frost line so your fence stays plumb for years.",
+    bullets: ["Privacy, semi-privacy, and horizontal styles", "Cedar, pressure-treated, and metal panels", "Custom gates and property line installs"],
+    image: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"),
+    accent: "slate",
+    href: asset("fence-installation-kelowna/"),
   },
   {
     label: "Millwork",
@@ -19,6 +38,7 @@ const services = [
     bullets: ["Built-ins and feature walls", "Cabinet upgrades and installs", "Trim and finishing details"],
     image: asset("images/service-cabinets.png"),
     accent: "slate",
+    href: asset("services/"),
   },
   {
     label: "Interiors",
@@ -27,6 +47,7 @@ const services = [
     bullets: ["Subfloor prep and leveling", "Install and transitions", "Baseboards and trim as needed"],
     image: asset("images/service-flooring.png"),
     accent: "amber",
+    href: asset("services/"),
   },
   {
     label: "Finishes",
@@ -35,16 +56,20 @@ const services = [
     bullets: ["Patch, prep, sand properly", "Interior walls and trim", "Clean edges and even coverage"],
     image: asset("images/service-painting.png"),
     accent: "sky",
+    href: asset("services/"),
   },
 ];
 ---
 
-<BaseLayout title="Services | CedarWolf Build + Design">
+<BaseLayout
+  title="Services | CedarWolf Build + Design"
+  description="Residential renovation services in Kelowna and West Kelowna. Kitchens, decks, fencing, flooring, cabinets, and painting. Licensed and insured. Get a free quote."
+>
   <main class="bg-slate-50">
     <section class="mx-auto max-w-7xl px-6 py-14">
       <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Services</h1>
       <p class="mt-4 max-w-2xl text-slate-600">
-        High-end residential renovations in the Okanagan. Clear scope, solid execution, clean finishes.
+        Residential renovations and outdoor builds in Kelowna and West Kelowna. Clear scope, solid execution, clean finishes.
       </p>
 
       <div class="mt-10 grid gap-8 md:grid-cols-2">
