@@ -1,0 +1,146 @@
+---
+import { asset } from "../lib/asset";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const photos = [
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"), alt: "Custom deck build Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-2.jpeg"), alt: "Deck construction Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-3.jpeg"), alt: "Deck framing Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-4.jpeg"), alt: "Deck build West Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-5.jpeg"), alt: "Outdoor deck Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-6.jpeg"), alt: "Cedar deck Kelowna CedarWolf" },
+  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-7.jpeg"), alt: "Deck railing stairs Kelowna CedarWolf" },
+];
+---
+
+<BaseLayout
+  title="Deck Building Kelowna | CedarWolf Build + Design"
+  description="Custom deck building in Kelowna and West Kelowna. Cedar, composite, and pressure-treated decks built to BC code. Clear scope, clean execution. Get a free quote."
+>
+  <main class="bg-slate-50">
+
+    <section class="relative isolate">
+      <div class="absolute inset-0 -z-10">
+        <img
+          src={asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg")}
+          alt="Deck building Kelowna"
+          class="h-[60vh] w-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-slate-950/55"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
+        <div class="max-w-2xl">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
+            Kelowna & West Kelowna • Outdoor Construction
+          </p>
+          <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+            Deck Building in Kelowna
+          </h1>
+          <p class="mt-4 text-lg text-white/90 sm:text-xl">
+            Custom decks built to BC code — cedar, composite, or pressure-treated. Clear scope, clean execution.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={asset("contact/")}
+              class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
+              Get a quote
+            </a>
+            <a href="#deck-projects"
+              class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+              View projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-14 bg-slate-50"></div>
+
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-semibold text-slate-900">Trusted Deck Builder in Kelowna and West Kelowna</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          CedarWolf Build + Design builds custom decks for homeowners in Kelowna, West Kelowna, Lake Country,
+          and Peachland. Whether you want a simple ground-level platform, a multi-level cedar deck, or a covered
+          pergola structure, we deliver clean results with proper BC code compliance, permit support, and durable
+          materials that hold up to Okanagan summers and winters.
+        </p>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Every deck project starts with a clear written scope — no vague estimates, no surprises mid-build.
+          We handle framing, ledger attachment, decking, railings, stairs, and finishing details from start to finish.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-6">
+      <div class="grid gap-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm sm:grid-cols-3">
+        <div>
+          <p class="text-sm font-semibold text-slate-900">BC Code Compliant</p>
+          <p class="mt-1 text-sm text-slate-600">Proper footing depth, ledger flashing, and railing heights — built to pass inspection.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Material Options</p>
+          <p class="mt-1 text-sm text-slate-600">Cedar, pressure-treated, or composite. We help you choose what fits your budget and lifestyle.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Clear Written Scope</p>
+          <p class="mt-1 text-sm text-slate-600">You know exactly what is included before we start. No hidden costs mid-project.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">What We Build</h2>
+      <p class="mt-2 text-slate-600">Deck projects of all sizes across the Okanagan.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "Ground-Level Decks", desc: "Clean, low-profile platforms perfect for patios and backyard entertaining." },
+          { title: "Elevated and Multi-Level Decks", desc: "Framed structures with proper footings, stairs, and railings to match your home." },
+          { title: "Cedar Decks", desc: "Natural cedar with a warm look that ages beautifully in the Okanagan climate." },
+          { title: "Composite Decks", desc: "Low-maintenance, splinter-free, and built to last with no annual staining required." },
+          { title: "Pergolas and Covered Structures", desc: "Shade structures and outdoor rooms that extend your living space." },
+          { title: "Deck Repairs and Rebuilds", desc: "Rotten boards, failing railings, sagging frames — we fix it right or rebuild from scratch." },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
+            <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wider">Outdoor</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="deck-projects" class="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Recent Deck Projects</h2>
+      <p class="mt-2 text-slate-600">Built in Kelowna and West Kelowna.</p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {photos.map((photo) => (
+          <div class="overflow-hidden rounded-2xl ring-1 ring-slate-200/70 shadow-sm">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-64 w-full object-cover object-center transition hover:scale-105 duration-300"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+      <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-slate-900">Ready to build your deck in Kelowna?</p>
+            <p class="mt-1 text-sm text-slate-600">Tell us what you are planning. We will respond with a clear scope and next steps.</p>
+          </div>
+          <a href={asset("contact/")}
+            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 whitespace-nowrap">
+            Get a free quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

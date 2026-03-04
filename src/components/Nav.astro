@@ -4,9 +4,10 @@ const SITE_NAME = "CedarWolf Build + Design";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services/" },
+  { label: "Decks", href: "/deck-building-kelowna/" },
+  { label: "Fencing", href: "/fence-installation-kelowna/" },
   { label: "Small Projects", href: "/small-projects/" },
   { label: "Portfolio", href: "/portfolio/" },
-  { label: "Kitchen Renovations", href: "/portfolio/kitchen-renovations/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
@@ -19,7 +20,6 @@ const CTA = {
 const { pathname } = Astro.url;
 
 const isActive = (href) => {
-  // Treat "/" as exact match, others as prefix match
   if (href === "/") return pathname === "/";
   return pathname.startsWith(href);
 };
@@ -31,8 +31,7 @@ const isActive = (href) => {
       {SITE_NAME}
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
       {NAV_ITEMS.map((item) => (
         <a
           href={item.href}
@@ -48,15 +47,13 @@ const isActive = (href) => {
       ))}
     </nav>
 
-    <!-- Desktop CTA -->
     <a
       href={CTA.href}
-      class="hidden md:inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+      class="hidden md:inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
     >
       {CTA.label}
     </a>
 
-    <!-- Mobile menu button -->
     <button
       id="navToggle"
       type="button"
@@ -74,7 +71,6 @@ const isActive = (href) => {
     </button>
   </div>
 
-  <!-- Mobile panel -->
   <div id="mobileNav" class="hidden border-t border-slate-200 bg-white md:hidden">
     <div class="mx-auto max-w-6xl px-4 py-4">
       <nav class="flex flex-col gap-3" aria-label="Mobile navigation">
@@ -125,13 +121,11 @@ const isActive = (href) => {
         setOpen(!isOpen);
       });
 
-      // Close after clicking a link
       panel.addEventListener("click", (e) => {
-        const a = e.target.closest('a[data-nav-link="true"]');
+        const a = e.target.closest("a[data-nav-link='true']");
         if (a) setOpen(false);
       });
 
-      // Close on ESC
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") setOpen(false);
       });
