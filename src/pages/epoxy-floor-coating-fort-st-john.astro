@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const photos = [
+  { src: "/images/epoxy/blue-grey-garage-epoxy-flake-floor-coating-bc.jpg", alt: "Blue grey garage epoxy flake floor coating Fort St. John BC" },
+  { src: "/images/epoxy/commercial-epoxy-flake-floor-coating-fort-st-john.jpg", alt: "Commercial epoxy flake floor coating Fort St. John" },
+  { src: "/images/epoxy/commercial-metallic-epoxy-hallway-floor-coating.jpg", alt: "Commercial metallic epoxy hallway floor coating" },
+  { src: "/images/epoxy/decorative-metallic-epoxy-basement-floor-coating.jpg", alt: "Decorative metallic epoxy basement floor coating" },
+  { src: "/images/epoxy/epoxy-flake-stair-coating-anti-slip-residential.jpg", alt: "Epoxy flake stair coating anti-slip residential" },
+  { src: "/images/epoxy/garage-epoxy-flake-floor-coating-control-joints.jpg", alt: "Garage epoxy flake floor coating with control joints" },
+  { src: "/images/epoxy/garage-epoxy-flake-floor-coating-with-cove-base.jpg", alt: "Garage epoxy flake floor coating with cove base" },
+  { src: "/images/epoxy/outdoor-porch-polyaspartic-floor-coating-bc.jpg", alt: "Outdoor porch polyaspartic floor coating BC" },
+  { src: "/images/epoxy/underground-parking-epoxy-floor-coating-commercial.jpg", alt: "Underground parking epoxy floor coating commercial" },
+];
+---
+
+<BaseLayout
+  title="Epoxy Floor Coating Fort St. John | CedarWolf Build + Design"
+  description="Professional epoxy and polyaspartic floor coatings in Fort St. John and Northeast BC. Garage, basement, and commercial floors. Installed in 1–2 days. Free on-site quote."
+>
+  <main class="bg-slate-50">
+
+    <section class="relative isolate">
+      <div class="absolute inset-0 -z-10">
+        <img
+          src="/images/epoxy/blue-grey-garage-epoxy-flake-floor-coating-bc.jpg"
+          alt="Epoxy floor coating Fort St. John"
+          class="h-[60vh] w-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-slate-950/55"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
+        <div class="max-w-2xl">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
+            Fort St. John & Northeast BC • Floor Coatings
+          </p>
+          <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+            Epoxy Floor Coating in Fort St. John
+          </h1>
+          <p class="mt-4 text-lg text-white/90 sm:text-xl">
+            Durable garage, basement, and commercial floor systems. Installed in 1–2 days. Built to handle BC winters.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contact/"
+              class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
+              Get a free quote
+            </a>
+            <a href="#epoxy-projects"
+              class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+              View our work
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-14 bg-slate-50"></div>
+
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-semibold text-slate-900">Fort St. John Epoxy Floor Specialists</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          CedarWolf installs professional epoxy and polyaspartic floor coatings for homeowners and businesses
+          in Fort St. John and Northeast BC. Whether it is a garage, basement, commercial shop, or outdoor patio,
+          we deliver a clean, durable finish that holds up to heavy use and harsh Canadian winters.
+        </p>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Most residential floors are completed in 1–2 days with minimal disruption. Every job starts with
+          a free on-site quote — no guessing, no surprises.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-6">
+      <div class="grid gap-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm sm:grid-cols-3">
+        <div>
+          <p class="text-sm font-semibold text-slate-900">1–2 Day Install</p>
+          <p class="mt-1 text-sm text-slate-600">Most garage and basement floors are done in a day or two with minimal disruption to your home.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Built for BC Winters</p>
+          <p class="mt-1 text-sm text-slate-600">Moisture-resistant, UV stable systems designed to handle temperature swings and heavy use year-round.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Free On-Site Quote</p>
+          <p class="mt-1 text-sm text-slate-600">We come to you, measure the space, and give you a clear written price before any work begins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Residential Services</h2>
+      <p class="mt-2 text-slate-600">Floor coating solutions for your home.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "Garage Epoxy Flake System", desc: "Our most popular system. Durable, non-slip flake finish installed in 2–3 days. Easy to clean, built to last." },
+          { title: "Premium Garage Poly Sparkle", desc: "Polyaspartic upgrade with UV stable, high-gloss sparkle finish. Installs in 1–2 days. Harder, shinier, longer lasting." },
+          { title: "Basement Epoxy Coating", desc: "Moisture-resistant system built for Canadian basements. Seamless, easy to maintain, protects your foundation." },
+          { title: "Patio and Outdoor Coating", desc: "Polyaspartic-only system for outdoor surfaces. UV resistant and weather durable for year-round performance." },
+          { title: "Stair Coatings", desc: "Full flake coating on interior and exterior stairs. Non-slip texture, clean look, same durable finish as your floor." },
+          { title: "Decorative Metallic Floors", desc: "High-end custom metallic effects in a wide range of colours. A show-stopping finish for the right space." },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
+            <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wider">Residential</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Commercial Services</h2>
+      <p class="mt-2 text-slate-600">Durable floor systems for businesses and industrial spaces.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "Commercial Flake Flooring", desc: "Same proven system as our garage floors — scaled for shops, gyms, and retail. Durable, clean, professional." },
+          { title: "Self-Leveling Epoxy", desc: "Smooth, seamless finish for offices and showrooms. Polished look with a professional-grade result." },
+          { title: "Heavy-Duty Industrial Coating", desc: "Multi-layer system for warehouses, mechanic shops, and forklift traffic. Serious prep, serious durability." },
+          { title: "Anti-Slip Safety Coating", desc: "Required in kitchens, restaurants, and building entrances. Meets safety standards and easy to maintain." },
+          { title: "Parking Structure Coating", desc: "High-traffic polyaspartic system for underground and surface parking. Resists salt, moisture, and heavy vehicles." },
+          { title: "Chemical-Resistant Floors", desc: "Specialized system for labs and industrial facilities. Niche application with premium durability." },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
+            <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wider">Commercial</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="epoxy-projects" class="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Recent Floor Coating Projects</h2>
+      <p class="mt-2 text-slate-600">Residential and commercial work in Fort St. John and Northeast BC.</p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {photos.map((photo) => (
+          <div class="overflow-hidden rounded-2xl ring-1 ring-slate-200/70 shadow-sm">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-64 w-full object-cover object-center transition hover:scale-105 duration-300"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+      <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-slate-900">Ready for a floor that lasts?</p>
+            <p class="mt-1 text-sm text-slate-600">We serve Fort St. John and surrounding areas. On-site quotes are free and fast.</p>
+          </div>
+          <a href="/contact/"
+            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 whitespace-nowrap">
+            Get a free quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
