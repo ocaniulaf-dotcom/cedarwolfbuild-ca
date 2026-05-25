@@ -197,9 +197,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       });
 
       if(res.ok){
-        if(typeof gtag==="function"){
-          window.gtag("event","conversion",{send_to:"AW-17823183942/6OhKCMb58_0bEMbo4LJC",value:1.0,currency:"CAD"});
-        }
         success.classList.remove("hidden");
         form.reset();
         setTimeout(() => {
