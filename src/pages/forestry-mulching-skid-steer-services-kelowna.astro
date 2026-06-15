@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Forestry Mulching & Skid Steer Services Kelowna | CedarWolf Build";
+const description =
+  "Forestry mulching, acreage clearing, brush cutting, land clearing, skid steer services, post hole drilling and site preparation in Kelowna and the Okanagan.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0">
+      <img
+        src="/images/kelowna-forestry-mulching-acreage-clearing-service.webp"
+        alt="Forestry mulching and acreage clearing service in Kelowna BC"
+        class="h-full w-full object-cover opacity-45"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-6 py-24 lg:py-32">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-400">
+        Land Clearing. Brush Mulching. Site Preparation.
+      </p>
+
+      <h1 class="mt-5 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        Forestry Mulching & Skid Steer Services in Kelowna
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-lg text-slate-200">
+        Efficient acreage clearing, brush removal, vegetation management, post hole drilling, grading, and site preparation across Kelowna and the Okanagan.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/contact/" class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 shadow-sm hover:bg-amber-400">
+          Request a Free Estimate
+        </a>
+        <a href="tel:+17785941722" class="rounded-xl border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10">
+          Call 778-594-1722
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600">
+          Acreage & Rural Property Clearing
+        </p>
+
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Clear overgrown land without hauling everything away.
+        </h2>
+
+        <p class="mt-5 text-lg text-slate-700">
+          Forestry mulching turns brush, saplings, branches, and vegetation into ground-cover mulch. It is a practical option for rural properties, fire-risk reduction preparation, trails, fence lines, building sites, and overgrown acreages.
+        </p>
+
+        <ul class="mt-6 grid gap-3 text-slate-700">
+          <li>• Brush and vegetation mulching</li>
+          <li>• Acreage clearing and access improvement</li>
+          <li>• FireSmart-style fuel reduction preparation</li>
+          <li>• Fence line and right-of-way clearing</li>
+          <li>• Site cleanup before landscaping or construction</li>
+        </ul>
+      </div>
+
+      <img
+        src="/images/forestry-mulcher-skid-steer-land-clearing-kelowna.webp"
+        alt="Tracked skid steer forestry mulchers for land clearing and brush removal"
+        class="rounded-3xl object-cover shadow-xl ring-1 ring-slate-200"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </section>
+
+  <section class="bg-slate-100">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600">
+          Services
+        </p>
+
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900">
+          Skid Steer Services Available
+        </h2>
+
+        <p class="mt-4 text-slate-700">
+          We help with land work, property cleanup, and site preparation where compact equipment is more efficient than hand labour.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          ["Forestry Mulching", "Brush, saplings, branches, and vegetation mulched directly on site."],
+          ["Brush Cutting", "Overgrown grass, weeds, light brush, and rough property edges."],
+          ["Acreage Clearing", "Clean up rural lots, access roads, trails, and future work areas."],
+          ["Site Preparation", "Light grading, material spreading, cleanup, and preparation before construction."],
+          ["Post Hole Drilling", "Post holes for fences, gates, small structures, and rural property improvements."],
+          ["Bucket Work", "Moving soil, mulch, gravel, debris, and small material loads around the site."]
+        ].map(([heading, text]) => (
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h3 class="text-xl font-semibold text-slate-900">{heading}</h3>
+            <p class="mt-3 text-slate-700">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 text-white">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center">
+      <img
+        src="/images/skid-steer-services-equipment-fleet-kelowna-bc.webp"
+        alt="Skid steer fleet with mulcher and brush cutter attachments in Kelowna"
+        class="rounded-3xl object-cover shadow-xl ring-1 ring-white/10"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-400">
+          Why CedarWolf
+        </p>
+
+        <h2 class="mt-4 text-3xl font-bold tracking-tight">
+          Practical equipment solutions for tough property cleanup.
+        </h2>
+
+        <p class="mt-5 text-slate-300">
+          We focus on clear scopes, safe access, realistic scheduling, and practical recommendations before starting work. If the job needs larger equipment or specialized attachments, we can plan the right rental setup before mobilizing.
+        </p>
+
+        <ul class="mt-6 grid gap-3 text-slate-200">
+          <li>• Local Kelowna and Okanagan service</li>
+          <li>• Residential, rural, and light commercial work</li>
+          <li>• Good fit for acreages and overgrown properties</li>
+          <li>• Can combine with fence, gate, deck, and landscaping work</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="rounded-3xl bg-amber-500 p-8 text-slate-950 md:p-10">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight">
+              Need land cleared or a property cleaned up?
+            </h2>
+            <p class="mt-3 text-lg">
+              Send photos, location, rough access details, and what you want cleared. We will review the scope and suggest the best next step.
+            </p>
+          </div>
+
+          <a href="/contact/" class="rounded-xl bg-slate-950 px-6 py-3 text-center font-semibold text-white hover:bg-slate-800">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
