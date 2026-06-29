@@ -1,0 +1,44 @@
+---
+const {
+  name,
+  description,
+  url,
+  image = "https://cedarwolfbuild.ca/images/CEDARWOLF_BUILD_DESIGN_LOGO.png",
+  serviceType = name,
+  areaServed = ["Kelowna", "West Kelowna", "Lake Country", "Peachland", "Vernon", "Okanagan"],
+} = Astro.props;
+
+const siteUrl = "https://cedarwolfbuild.ca";
+const serviceUrl = url.startsWith("http") ? url : new URL(url, siteUrl).toString();
+const imageUrl = image.startsWith("http") ? image : new URL(image, siteUrl).toString();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${serviceUrl}#service`,
+  "name": name,
+  "serviceType": serviceType,
+  "description": description,
+  "url": serviceUrl,
+  "image": imageUrl,
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "@id": "https://cedarwolfbuild.ca/#business",
+    "name": "CedarWolf Build + Design",
+    "url": "https://cedarwolfbuild.ca/"
+  },
+  "areaServed": areaServed.map((area) => ({
+    "@type": "Place",
+    "name": area
+  })),
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://cedarwolfbuild.ca/contact/",
+    "availableLanguage": ["English", "Spanish"]
+  }
+};
+
+const schemaJson = JSON.stringify(schema);
+---
+
+<script type="application/ld+json" set:html={schemaJson} />
