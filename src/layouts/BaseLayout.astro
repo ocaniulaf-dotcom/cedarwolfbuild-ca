@@ -1,6 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import SEO from "../components/seo/SEO.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 import "../styles/global.css";
 
@@ -11,8 +12,7 @@ const {
   canonical = "",
 } = Astro.props;
 
-const url = Astro.url;
-const canonicalUrl = canonical || url.toString();
+const canonicalUrl = canonical || Astro.url.toString();
 ---
 
 <!doctype html>
@@ -20,22 +20,12 @@ const canonicalUrl = canonical || url.toString();
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
-
-    <link rel="canonical" href={canonicalUrl} />
-
-    <!-- Basic social -->
-    <meta property="og:title" content={title} />
-    {description && <meta property="og:description" content={description} />}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={image} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    {description && <meta name="twitter:description" content={description} />}
-    <meta name="twitter:image" content={image} />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      canonical={canonicalUrl}
+    />
     <LocalBusinessSchema />
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>
   <script>

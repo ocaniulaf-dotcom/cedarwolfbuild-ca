@@ -1,0 +1,36 @@
+---
+const {
+  title = "CedarWolf Build + Design",
+  description = "",
+  image = "/images/CEDARWOLF_BUILD_DESIGN_LOGO.png",
+  canonical = "",
+  type = "website",
+  robots = "index, follow",
+} = Astro.props;
+
+const siteUrl = "https://cedarwolfbuild.ca";
+const currentUrl = Astro.url;
+const canonicalUrl = canonical || currentUrl.toString();
+const imageUrl = image.startsWith("http")
+  ? image
+  : new URL(image, siteUrl).toString();
+---
+
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<meta name="robots" content={robots} />
+
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="CedarWolf Build + Design" />
+<meta property="og:locale" content="en_CA" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+{description && <meta name="twitter:description" content={description} />}
+<meta name="twitter:image" content={imageUrl} />
