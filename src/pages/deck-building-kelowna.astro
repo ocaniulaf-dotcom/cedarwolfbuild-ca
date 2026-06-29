@@ -2,145 +2,280 @@
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const photos = [
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"), alt: "Custom deck build Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-2.jpeg"), alt: "Deck construction Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-3.jpeg"), alt: "Deck framing Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-4.jpeg"), alt: "Deck build West Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-5.jpeg"), alt: "Outdoor deck Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-6.jpeg"), alt: "Cedar deck Kelowna CedarWolf" },
-  { src: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-7.jpeg"), alt: "Deck railing stairs Kelowna CedarWolf" },
+const deckTypes = [
+  {
+    title: "Custom Deck Builds",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
+    desc: "New deck construction for outdoor living, backyard upgrades, rental properties, and commercial spaces.",
+  },
+  {
+    title: "Deck Repairs & Rebuilds",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-3.jpeg"),
+    desc: "Rotten boards, failing framing, stairs, railings, soft spots, and full deck rebuilds when repair is not enough.",
+  },
+  {
+    title: "Cedar Decks",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-6.jpeg"),
+    desc: "Natural cedar decking with a warm appearance for Okanagan homes and outdoor spaces.",
+  },
+  {
+    title: "Composite Decks",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-5.jpeg"),
+    desc: "Low-maintenance decking options for homeowners who want durability and less seasonal upkeep.",
+  },
+  {
+    title: "Stairs & Railings",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-7.jpeg"),
+    desc: "Deck stairs, guardrails, handrails, access upgrades, and finishing details.",
+  },
+  {
+    title: "Pergolas & Outdoor Structures",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-4.jpeg"),
+    desc: "Shade structures and outdoor features that extend usable space during Okanagan summers.",
+  },
+];
+
+const faq = [
+  ["Do you build new decks and repair existing decks?", "Yes. CedarWolf handles new deck builds, deck repairs, rebuilds, stairs, railings, framing repairs, and deck surface replacement."],
+  ["What areas do you serve?", "We serve Kelowna, West Kelowna, Lake Country, Peachland, Vernon, and nearby Okanagan communities."],
+  ["What decking materials do you install?", "Common options include pressure-treated lumber, cedar, and composite decking depending on the project, budget, and maintenance preference."],
+  ["Can you repair rotten or unsafe decks?", "Yes. We can review the existing structure and determine whether repair, partial rebuild, or full replacement makes more sense."],
+  ["Do you build stairs and railings?", "Yes. Deck stairs, guardrails, handrails, and access improvements can be included in the project scope."],
+  ["Can you help with deck design options?", "Yes. We can review layout, material options, access, railing choices, and practical construction considerations during the estimate process."],
 ];
 ---
 
 <BaseLayout
-  title="Deck Building Kelowna | CedarWolf Build + Design"
-  description="Custom deck building in Kelowna and West Kelowna. Cedar, composite, and pressure-treated decks built to BC code. Clear scope, clean execution. Get a free quote."
+  title="Deck Building & Deck Repair Kelowna | CedarWolf Build + Design"
+  description="Deck building and deck repair in Kelowna and the Okanagan. Cedar decks, composite decks, pressure-treated decks, stairs, railings, pergolas, and deck rebuilds."
 >
   <main class="bg-slate-50">
-
-    <section class="relative isolate">
+    <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
         <img
           src={asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg")}
-          alt="Deck building Kelowna"
-          class="h-[60vh] w-full object-cover object-center"
+          alt="Deck building and deck repair in Kelowna by CedarWolf Build + Design"
+          class="h-[72vh] min-h-[600px] w-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-slate-950/55"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
+        <div class="absolute inset-0 bg-slate-950/65"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
       </div>
-      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
-        <div class="max-w-2xl">
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
-            Kelowna & West Kelowna • Outdoor Construction
+
+      <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+        <div class="max-w-3xl">
+          <p class="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-amber-200 ring-1 ring-white/15">
+            Kelowna & Okanagan • Outdoor Construction
           </p>
+
           <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-            Deck Building in Kelowna
+            Deck Building & Repair in Kelowna
           </h1>
-          <p class="mt-4 text-lg text-white/90 sm:text-xl">
-            Custom decks built to BC code — cedar, composite, or pressure-treated. Clear scope, clean execution.
+
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            New decks, deck repairs, composite decking, cedar decks, stairs, railings, pergolas, and outdoor construction across Kelowna and the Okanagan.
           </p>
+
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href={asset("contact/")}
-              class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/30">
-              Get a quote
+            <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
+              Request Free Estimate
             </a>
-            <a href="#deck-projects"
-              class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
-              View projects
+            <a href="#deck-projects" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+              View Deck Projects
             </a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {["Registered BC Business", "Fully Insured", "WorkSafeBC Covered", "Free On-Site Estimates", "Residential & Commercial"].map((item) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-sm">
+                ✓ {item}
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <div class="h-14 bg-slate-50"></div>
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Deck Builder Kelowna</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">
+            Outdoor spaces built for Okanagan homes, rentals, and businesses.
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            CedarWolf Build + Design builds and repairs decks for homeowners, businesses, rental properties, and outdoor spaces across Kelowna and the Okanagan.
+          </p>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            We help with new deck builds, failing decks, stairs, railings, decking replacement, cedar decks, composite decks, and outdoor structures.
+          </p>
+        </div>
 
-    <section class="mx-auto max-w-7xl px-6 py-12">
-      <div class="max-w-3xl">
-        <h2 class="text-2xl font-semibold text-slate-900">Trusted Deck Builder in Kelowna and West Kelowna</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          CedarWolf Build + Design builds custom decks for homeowners in Kelowna, West Kelowna, Lake Country,
-          and Peachland. Whether you want a simple ground-level platform, a multi-level cedar deck, or a covered
-          pergola structure, we deliver clean results with proper BC code compliance, permit support, and durable
-          materials that hold up to Okanagan summers and winters.
-        </p>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Every deck project starts with a clear written scope — no vague estimates, no surprises mid-build.
-          We handle framing, ledger attachment, decking, railings, stairs, and finishing details from start to finish.
-        </p>
+        <div class="grid gap-4 rounded-3xl bg-white p-6 ring-1 ring-slate-200 shadow-sm sm:grid-cols-2">
+          {[
+            "New deck construction",
+            "Deck repairs and rebuilds",
+            "Cedar and pressure-treated decks",
+            "Composite decking",
+            "Deck stairs and railings",
+            "Pergolas and shade structures",
+            "Framing repairs",
+            "Outdoor living upgrades"
+          ].map((item) => (
+            <div class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-800 ring-1 ring-slate-200">
+              ✓ {item}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-7xl px-6 py-6">
-      <div class="grid gap-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm sm:grid-cols-3">
-        <div>
-          <p class="text-sm font-semibold text-slate-900">BC Code Compliant</p>
-          <p class="mt-1 text-sm text-slate-600">Proper footing depth, ledger flashing, and railing heights — built to pass inspection.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Material Options</p>
-          <p class="mt-1 text-sm text-slate-600">Cedar, pressure-treated, or composite. We help you choose what fits your budget and lifestyle.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Clear Written Scope</p>
-          <p class="mt-1 text-sm text-slate-600">You know exactly what is included before we start. No hidden costs mid-project.</p>
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Deck Services</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Deck Work We Build & Repair</h2>
+        <p class="mt-3 max-w-3xl text-slate-600">
+          From simple ground-level decks to repairs, stairs, railings, and composite upgrades.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {deckTypes.map((item) => (
+          <article class="overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
+            <img src={item.image} alt={item.title} class="h-60 w-full object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Repair or Rebuild?</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Some decks can be repaired. Others should be rebuilt.</h2>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+            <h3 class="text-xl font-semibold text-slate-900">Deck repair may be suitable when:</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li>✓ Only a few boards are damaged</li>
+              <li>✓ Railings or stairs need targeted repair</li>
+              <li>✓ The main structure is still solid</li>
+              <li>✓ You want to extend the usable life of the deck</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-slate-950 p-6 text-white">
+            <h3 class="text-xl font-semibold">Rebuild may be better when:</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>✓ Framing is rotten or unsafe</li>
+              <li>✓ Multiple areas are soft, loose, or failing</li>
+              <li>✓ Ledger attachment or footings are questionable</li>
+              <li>✓ You want a new layout, larger deck, or new material</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-7xl px-6 py-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">What We Build</h2>
-      <p class="mt-2 text-slate-600">Deck projects of all sizes across the Okanagan.</p>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section id="deck-projects" class="mx-auto max-w-7xl px-6 py-16 scroll-mt-24">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Recent Work</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Deck Projects & Outdoor Construction</h2>
+          <p class="mt-3 max-w-3xl text-slate-600">
+            Examples of deck construction, outdoor structures, stairs, railings, and completed deck work.
+          </p>
+        </div>
+        <a href={asset("contact/")} class="inline-flex rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">
+          Request Estimate
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { title: "Ground-Level Decks", desc: "Clean, low-profile platforms perfect for patios and backyard entertaining." },
-          { title: "Elevated and Multi-Level Decks", desc: "Framed structures with proper footings, stairs, and railings to match your home." },
-          { title: "Cedar Decks", desc: "Natural cedar with a warm look that ages beautifully in the Okanagan climate." },
-          { title: "Composite Decks", desc: "Low-maintenance, splinter-free, and built to last with no annual staining required." },
-          { title: "Pergolas and Covered Structures", desc: "Shade structures and outdoor rooms that extend your living space." },
-          { title: "Deck Repairs and Rebuilds", desc: "Rotten boards, failing railings, sagging frames — we fix it right or rebuild from scratch." },
-        ].map((item) => (
-          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
-            <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wider">Outdoor</p>
-            <h3 class="mt-2 text-base font-semibold text-slate-900">{item.title}</h3>
-            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-2.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-3.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-4.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-5.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-6.jpeg"),
+          asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-7.jpeg"),
+        ].map((src) => (
+          <div class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm">
+            <img src={src} alt="Deck project by CedarWolf Build + Design in Kelowna" class="h-56 w-full object-cover transition duration-300 hover:scale-105" loading="lazy" />
           </div>
         ))}
       </div>
     </section>
 
-    <section id="deck-projects" class="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Recent Deck Projects</h2>
-      <p class="mt-2 text-slate-600">Built in Kelowna and West Kelowna.</p>
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {photos.map((photo) => (
-          <div class="overflow-hidden rounded-2xl ring-1 ring-slate-200/70 shadow-sm">
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              class="h-64 w-full object-cover object-center transition hover:scale-105 duration-300"
-              loading="lazy"
-            />
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Common Reasons</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Why property owners call us for deck work.</h2>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            {["Rotten boards", "Unsafe stairs", "Loose railings", "Soft spots", "Old deck replacement", "Outdoor living upgrade", "Composite upgrade", "Pergola or shade structure"].map((item) => (
+              <div class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-800 ring-1 ring-slate-200">
+                ✓ {item}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div class="rounded-3xl bg-slate-950 p-8 text-white">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Material Options</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight">Popular deck materials.</h2>
+          <div class="mt-6 space-y-4 text-sm">
+            {[
+              ["Pressure-Treated Lumber", "Durable structural option commonly used for framing and budget-conscious builds."],
+              ["Cedar", "Natural appearance with a warm finish for outdoor living spaces."],
+              ["Composite Decking", "Low-maintenance decking option with less seasonal upkeep."],
+              ["Metal or Wood Railings", "Railing options based on layout, budget, and style."],
+              ["Stairs and Framing", "Structural components reviewed based on existing conditions and project requirements."]
+            ].map(([name, desc]) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p class="font-semibold text-white">{name}</p>
+                <p class="mt-1 text-slate-300">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">FAQ</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Deck questions homeowners often ask.</h2>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          {faq.map(([q, a]) => (
+            <div class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+              <h3 class="font-semibold text-slate-900">{q}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <section class="mx-auto max-w-7xl px-6 pb-20">
-      <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div class="rounded-3xl bg-emerald-700 p-8 text-white shadow-sm md:p-10">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p class="text-lg font-semibold text-slate-900">Ready to build your deck in Kelowna?</p>
-            <p class="mt-1 text-sm text-slate-600">Tell us what you are planning. We will respond with a clear scope and next steps.</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Need a deck built or repaired?</h2>
+            <p class="mt-3 max-w-2xl text-emerald-50">
+              Send your location, approximate deck size, photos if available, and whether you need a repair, rebuild, or new deck.
+            </p>
           </div>
-          <a href={asset("contact/")}
-            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 whitespace-nowrap">
-            Get a free quote
+          <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50">
+            Request Free Estimate
           </a>
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>
