@@ -1,0 +1,90 @@
+---
+const business = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://cedarwolfbuild.ca/#business",
+  "name": "CedarWolf Build + Design",
+  "url": "https://cedarwolfbuild.ca/",
+  "logo": "https://cedarwolfbuild.ca/images/CEDARWOLF_BUILD_DESIGN_LOGO.png",
+  "image": "https://cedarwolfbuild.ca/images/CEDARWOLF_BUILD_DESIGN_LOGO.png",
+  "description": "CedarWolf Build + Design provides fence installation, deck building, land clearing, epoxy flooring, small projects, and renovation services in Kelowna and the Okanagan.",
+  "telephone": "+1-778-594-1722",
+  "email": "projects@cedarwolfbuild.ca",
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Kelowna"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Okanagan"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "British Columbia"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kelowna",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "sameAs": [
+    "https://www.instagram.com/cedarwolf.build.design/",
+    "https://www.linkedin.com/company/cedarwolf-build-design/",
+    "https://www.facebook.com/profile.php?id=61583675863632"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Construction and renovation services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fence installation and repair",
+          "areaServed": "Kelowna, BC"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Deck building and repair",
+          "areaServed": "Kelowna, BC"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Forestry mulching and land clearing",
+          "areaServed": "Kelowna and the Okanagan"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Epoxy floor coating",
+          "areaServed": "Kelowna, BC"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kitchen renovations and small projects",
+          "areaServed": "Kelowna, BC"
+        }
+      }
+    ]
+  }
+};
+
+const schema = JSON.stringify(business);
+---
+
+<script type="application/ld+json" set:html={schema} />
