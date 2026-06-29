@@ -2,144 +2,272 @@
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const projects = [
+const outdoorServices = [
   {
-    title: "Kitchen Renovation",
-    image: asset("images/project-kitchen-1.png"),
-    tag: "Kitchens",
-    desc: "Full kitchen transformations — cabinets, countertops, lighting, and layout.",
-    href: asset("portfolio/kitchen-renovations/"),
+    title: "Fence Installation & Repair",
+    desc: "Wood, cedar, composite, corrugated steel, privacy fences, repairs, and custom gates.",
+    href: asset("fence-installation-kelowna/"),
   },
   {
-    title: "Deck Building",
-    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
-    tag: "Outdoor",
-    desc: "Custom cedar and composite decks built to BC code with clean finishes.",
+    title: "Deck Building & Repair",
+    desc: "Cedar, pressure-treated, and composite decks built for Okanagan homes and outdoor living.",
     href: asset("deck-building-kelowna/"),
   },
   {
-    title: "Fence Installation",
+    title: "Land Clearing",
+    desc: "Acreage clearing, forestry mulching, brush removal, skid steer work, and site preparation.",
+    href: asset("forestry-mulching-skid-steer-services-kelowna/"),
+  },
+  {
+    title: "Epoxy Floor Coatings",
+    desc: "Garage floors, shop floors, concrete coatings, and durable floor resurfacing.",
+    href: asset("epoxy-floor-coating-kelowna/"),
+  },
+];
+
+const renovationServices = [
+  {
+    title: "Kitchen Renovations",
+    desc: "Cabinets, flooring, lighting, painting, trim, and full kitchen upgrades.",
+    href: asset("portfolio/kitchen-renovations/"),
+  },
+  {
+    title: "Bathroom Renovations",
+    desc: "Vanities, flooring, tile, fixtures, drywall, painting, and finish details.",
+    href: asset("services/"),
+  },
+  {
+    title: "Flooring Installation",
+    desc: "Interior flooring upgrades for homes, suites, rental properties, and commercial spaces.",
+    href: asset("services/"),
+  },
+  {
+    title: "Painting & Finishing",
+    desc: "Interior and exterior painting, drywall repair, trim, doors, and finishing work.",
+    href: asset("small-projects/"),
+  },
+];
+
+const featuredProjects = [
+  {
+    title: "Modern Fence Installation",
     image: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"),
     tag: "Fencing",
-    desc: "Wood, cedar, and modern metal fences built straight and set to last.",
+    desc: "Modern cedar and metal fencing built for privacy, durability, and curb appeal.",
     href: asset("fence-installation-kelowna/"),
+  },
+  {
+    title: "Custom Deck Building",
+    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
+    tag: "Decks",
+    desc: "Outdoor deck construction with proper framing, clean finishes, stairs, and railings.",
+    href: asset("deck-building-kelowna/"),
+  },
+  {
+    title: "Acreage Land Clearing",
+    image: asset("images/kelowna-forestry-mulching-acreage-clearing-service.webp"),
+    tag: "Land Clearing",
+    desc: "Brush removal, forestry mulching, and acreage cleanup for rural properties.",
+    href: asset("forestry-mulching-skid-steer-services-kelowna/"),
   },
 ];
 ---
 
 <BaseLayout
-  title="General Contractor in Kelowna | CedarWolf Build + Design"
-  description="Licensed general contractor in Kelowna specializing in residential renovations, kitchens, decks, fencing, flooring, and finish carpentry. Clear scope. Clean execution."
+  title="Construction & Renovation Services Kelowna | CedarWolf Build + Design"
+  description="CedarWolf Build + Design provides construction and renovation services in Kelowna and the Okanagan. Fences, decks, land clearing, epoxy floors, kitchens, bathrooms, flooring, painting, and general renovations."
 >
   <main class="bg-slate-50">
-    <!-- HERO -->
-    <section class="relative isolate">
+    <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
-        <img src={import.meta.env.BASE_URL + "images/lake-sunset.png"} alt="Kelowna lake sunset" class="h-[70vh] w-full object-cover" />
-        <div class="absolute inset-0 bg-slate-950/55"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
+        <img src={asset("images/lake-sunset.png")} alt="Construction and renovation services in Kelowna and the Okanagan" class="h-[78vh] min-h-[620px] w-full object-cover" />
+        <div class="absolute inset-0 bg-slate-950/65"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
       </div>
 
-      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
-        <div class="max-w-2xl">
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
-            Kelowna & West Kelowna • Residential Renovation Contractor
+      <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-amber-200 ring-1 ring-white/15">
+            Kelowna & Okanagan • Residential & Commercial
           </p>
+
           <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-            General Contractor in Kelowna
+            Construction & Renovation Services in Kelowna
           </h1>
-          <p class="mt-4 text-lg text-white/90 sm:text-xl">
-            High-end residential renovations with clear scope, proper sequencing, and durable finishes.
+
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            Indoor and outdoor construction services for homeowners, businesses, and property owners throughout Kelowna and the Okanagan.
           </p>
-          <p class="mt-5 text-base leading-relaxed text-white/80 sm:text-lg">
-            Kitchens, decks, fencing, flooring, and finish work. Clear scope, clean execution, and a jobsite you can live with.
+
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+            Fences, decks, land clearing, epoxy floors, kitchens, bathrooms, flooring, painting, and general renovation work.
           </p>
+
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href={asset("contact/")}
-              class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
-              Get a quote
+            <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
+              Request Free Estimate
             </a>
-            <a href={asset("portfolio/")}
-              class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
-              View projects
+            <a href="#services" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+              Explore Services
             </a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {["Registered BC Business", "Fully Insured", "WorkSafeBC Covered", "Free On-Site Estimates", "Residential & Commercial"].map((item) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-sm">
+                ✓ {item}
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <div class="h-14 bg-slate-50"></div>
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Build With Confidence</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Professional standards from the first site visit.</h2>
 
-    <!-- LOCAL SEO -->
-    <section class="mx-auto max-w-7xl px-6 py-12">
-      <div class="max-w-3xl">
-        <h2 class="text-2xl font-semibold text-slate-900">
-          Trusted General Contractor in Kelowna
-        </h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          CedarWolf Build + Design is a licensed and insured general contractor serving Kelowna and West Kelowna.
-          We specialize in residential renovations including kitchens, decks, fencing, flooring, cabinetry, framing,
-          and finish carpentry. Our work is defined by clear scope, realistic schedules, and clean, well-managed jobsites.
-        </p>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <section class="mx-auto max-w-7xl px-6 py-10">
-      <div class="grid gap-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm sm:grid-cols-3">
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Clear scope</p>
-          <p class="mt-1 text-sm text-slate-600">No vague promises. You know what is included.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Clean finishes</p>
-          <p class="mt-1 text-sm text-slate-600">Tight details. Durable materials. Proper prep.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Respectful jobsite</p>
-          <p class="mt-1 text-sm text-slate-600">Dust control, protection, and communication.</p>
+        <div class="mt-8 grid gap-4 md:grid-cols-5">
+          {[
+            ["Registered BC Business", "Operating as a local British Columbia business."],
+            ["Fully Insured", "Insurance coverage for residential and commercial work."],
+            ["WorkSafeBC Covered", "WorkSafeBC coverage for compliant jobsite operations."],
+            ["Free On-Site Estimates", "Site visits available for suitable projects."],
+            ["Residential & Commercial", "Services for homes, businesses, and properties."]
+          ].map(([title, desc]) => (
+            <div class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+              <p class="text-base font-semibold text-slate-900">✓ {title}</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section class="mx-auto max-w-7xl px-6 pb-16">
-      <div class="flex items-end justify-between gap-6">
-        <div class="max-w-2xl">
-          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Featured projects</h2>
-          <p class="mt-2 text-slate-600">Recent work in Kelowna and West Kelowna.</p>
+    <section id="services" class="mx-auto max-w-7xl px-6 py-10">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Spring & Summer</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Outdoor Construction</h2>
+          <p class="mt-3 text-slate-600">
+            Outdoor projects for privacy, access, durability, property improvement, and seasonal upgrades.
+          </p>
+
+          <div class="mt-8 grid gap-4">
+            {outdoorServices.map((service) => (
+              <a href={service.href} class="group rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md">
+                <h3 class="text-lg font-semibold text-slate-900">{service.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">{service.desc}</p>
+                <p class="mt-3 text-sm font-semibold text-emerald-700 group-hover:underline">View service →</p>
+              </a>
+            ))}
+          </div>
         </div>
-        <a href={asset("portfolio/")} class="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex">
-          Portfolio
+
+        <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Year-Round</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Renovation Services</h2>
+          <p class="mt-3 text-slate-600">
+            Interior renovation and finishing services for homes, suites, rental properties, and commercial spaces.
+          </p>
+
+          <div class="mt-8 grid gap-4">
+            {renovationServices.map((service) => (
+              <a href={service.href} class="group rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md">
+                <h3 class="text-lg font-semibold text-slate-900">{service.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">{service.desc}</p>
+                <p class="mt-3 text-sm font-semibold text-emerald-700 group-hover:underline">View service →</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Recent Work</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Featured Projects & Services</h2>
+          <p class="mt-3 max-w-2xl text-slate-600">
+            A snapshot of the work CedarWolf provides across Kelowna and the Okanagan.
+          </p>
+        </div>
+        <a href={asset("portfolio/")} class="inline-flex rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+          View Portfolio
         </a>
       </div>
 
       <div class="mt-8 grid gap-8 md:grid-cols-3">
-        {projects.map((p) => (
-          <a href={p.href} class="group overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="relative">
-              <img src={p.image} alt={p.title} class="h-56 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-            </div>
-            <div class="p-5">
+        {featuredProjects.map((p) => (
+          <a href={p.href} class="group overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+            <img src={p.image} alt={p.title} class="h-64 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+            <div class="p-6">
               <p class="text-xs font-semibold uppercase tracking-wider text-emerald-800">{p.tag}</p>
-              <h3 class="mt-2 text-base font-semibold text-slate-900">{p.title}</h3>
-              <p class="mt-1 text-sm text-slate-600">{p.desc}</p>
-              <p class="mt-3 text-sm font-semibold text-emerald-700 group-hover:underline">See this service →</p>
+              <h3 class="mt-2 text-lg font-semibold text-slate-900">{p.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+              <p class="mt-4 text-sm font-semibold text-emerald-700 group-hover:underline">See more →</p>
             </div>
           </a>
         ))}
       </div>
+    </section>
 
-      <div class="mt-10 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-slate-950 p-8 text-white md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">How We Work</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight">A straightforward project process.</h2>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-5">
+          {[
+            ["1", "Site Visit", "Review the property, access, scope, and basic constraints."],
+            ["2", "Estimate", "Prepare pricing and scope based on the work discussed."],
+            ["3", "Planning", "Confirm materials, scheduling, access, and project requirements."],
+            ["4", "Construction", "Complete the work according to the agreed scope."],
+            ["5", "Walkthrough", "Review the completed work and close out the project."]
+          ].map(([num, title, desc]) => (
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-5">
+              <p class="flex h-9 w-9 items-center justify-center rounded-full bg-amber-400 text-sm font-bold text-slate-950">{num}</p>
+              <h3 class="mt-4 text-base font-semibold">{title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Service Area</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Serving Kelowna and the Okanagan.</h2>
+          <p class="mt-4 max-w-2xl text-slate-600">
+            CedarWolf provides construction and renovation services across Kelowna, West Kelowna, Lake Country, Peachland, Vernon, and nearby Okanagan communities.
+          </p>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          {["Kelowna", "West Kelowna", "Lake Country", "Peachland", "Vernon", "Okanagan Area"].map((city) => (
+            <div class="rounded-2xl bg-white p-4 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 shadow-sm">
+              {city}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+      <div class="rounded-3xl bg-emerald-700 p-8 text-white shadow-sm md:p-10">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p class="text-lg font-semibold text-slate-900">Want a quote with a clear scope?</p>
-            <p class="mt-1 text-sm text-slate-600">Tell us what you are planning. We will respond with next steps within one business day.</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Ready to plan your project?</h2>
+            <p class="mt-3 max-w-2xl text-emerald-50">
+              Tell us what you want built, repaired, renovated, or cleared. Include location, rough dimensions, timeline, and photos if available.
+            </p>
           </div>
-          <a href={asset("contact/")}
-            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">
-            Get a free quote
+          <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50">
+            Request Free Estimate
           </a>
         </div>
       </div>
