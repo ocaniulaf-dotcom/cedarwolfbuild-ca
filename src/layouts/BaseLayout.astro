@@ -10,6 +10,7 @@ const {
   description = "",
   image = "/images/og.jpg",
   canonical = "",
+  preloadImage = "",
 } = Astro.props;
 
 const canonicalUrl = canonical || Astro.url.toString();
@@ -25,6 +26,7 @@ const canonicalUrl = canonical || Astro.url.toString();
       description={description}
       image={image}
       canonical={canonicalUrl}
+      preloadImage={preloadImage}
     />
     <LocalBusinessSchema />
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823183942"></script>

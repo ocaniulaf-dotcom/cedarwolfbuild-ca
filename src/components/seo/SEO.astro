@@ -6,6 +6,7 @@ const {
   canonical = "",
   type = "website",
   robots = "index, follow",
+  preloadImage = "",
 } = Astro.props;
 
 const siteUrl = "https://cedarwolfbuild.ca";
@@ -14,11 +15,18 @@ const canonicalUrl = canonical || currentUrl.toString();
 const imageUrl = image.startsWith("http")
   ? image
   : new URL(image, siteUrl).toString();
+
+const preloadImageUrl = preloadImage
+  ? preloadImage.startsWith("http")
+    ? preloadImage
+    : new URL(preloadImage, siteUrl).toString()
+  : "";
 ---
 
 <title>{title}</title>
 {description && <meta name="description" content={description} />}
 <meta name="robots" content={robots} />
+{preloadImageUrl && <link rel="preload" as="image" href={preloadImageUrl} fetchpriority="high" />}
 
 <link rel="canonical" href={canonicalUrl} />
 
