@@ -203,7 +203,7 @@ const featuredProjects = [
       <div class="mt-8 grid gap-8 md:grid-cols-3">
         {featuredProjects.map((p) => (
           <a href={p.href} class="group overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <img src={p.image} alt={p.title} class="h-64 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+            <img src={p.image} alt={p.title} width="960" height="640" class="h-64 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
             <div class="p-6">
               <p class="text-xs font-semibold uppercase tracking-wider text-emerald-800">{p.tag}</p>
               <h3 class="mt-2 text-lg font-semibold text-slate-900">{p.title}</h3>

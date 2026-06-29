@@ -21,7 +21,7 @@ const a = ACCENT[accent] ?? ACCENT.emerald;
 
 <article class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
   <div class="relative">
-    <img src={image} alt={title} class="h-56 w-full object-cover" loading="lazy" />
+    <img src={image} alt={title} width="960" height="560" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
     <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
   </div>
 
