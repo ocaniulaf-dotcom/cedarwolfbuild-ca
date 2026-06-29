@@ -2,228 +2,281 @@
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const photos = [
-  { src: asset("images/portfolio/fence/kelowna-cedar-lattice-top-privacy-fence-cedarwolf.jpeg"), alt: "Cedar lattice top privacy fence Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-cedar-privacy-fence-install-cedarwolf.jpeg"), alt: "Cedar privacy fence installation Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-custom-fence-gate-black-cedar-cedarwolf.jpeg"), alt: "Custom black cedar fence gate Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-fence-construction-cedar-posts-cedarwolf.jpeg"), alt: "Fence construction cedar posts Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-fence-styles-wood-metal-cedar-cedarwolf.jpeg"), alt: "Fence styles wood metal cedar Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-horizontal-board-fence-install-cedarwolf.jpeg"), alt: "Horizontal board fence installation Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"), alt: "Modern black metal cedar fence Kelowna" },
-  { src: asset("images/portfolio/fence/kelowna-wood-privacy-fence-backyard-cedarwolf.jpeg"), alt: "Wood privacy fence backyard Kelowna" },
+const fenceTypes = [
+  {
+    title: "Cedar Privacy Fences",
+    image: asset("images/portfolio/fence/kelowna-cedar-privacy-fence-install-cedarwolf.jpeg"),
+    desc: "A classic choice for Kelowna homes. Natural cedar privacy fencing with a warm appearance and solid backyard separation.",
+  },
+  {
+    title: "Modern Metal & Cedar",
+    image: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"),
+    desc: "Corrugated metal panels framed with cedar for a strong, modern fence with low maintenance.",
+  },
+  {
+    title: "Horizontal Board Fences",
+    image: asset("images/portfolio/fence/kelowna-horizontal-board-fence-install-cedarwolf.jpeg"),
+    desc: "Clean horizontal lines for a modern residential look. Built with proper posts, alignment, and finish details.",
+  },
+  {
+    title: "Composite Fencing",
+    image: asset("images/cedarwolf-composite-fence-kelowna-01.jpg"),
+    desc: "Low-maintenance fencing for homeowners looking for a modern finish with long-term durability.",
+  },
+  {
+    title: "Custom Gates",
+    image: asset("images/portfolio/fence/kelowna-custom-fence-gate-black-cedar-cedarwolf.jpeg"),
+    desc: "Single gates, double gates, driveway gates, and gate repairs built to match the fence and site conditions.",
+  },
+  {
+    title: "Fence Repairs",
+    image: asset("images/handyman-fence-repairs-installation-kelowna.jpg"),
+    desc: "Leaning posts, broken panels, damaged gates, storm damage, and partial replacements.",
+  },
+];
+
+const faq = [
+  ["Do you install both new fences and fence repairs?", "Yes. CedarWolf handles new fence installations, fence replacements, fence repairs, post replacement, gate repairs, and custom gates."],
+  ["What areas do you serve?", "We serve Kelowna, West Kelowna, Lake Country, Peachland, Vernon, and nearby Okanagan communities."],
+  ["Do you remove old fences?", "Yes, old fence removal and disposal can be included in the estimate when requested."],
+  ["Do you build custom gates?", "Yes. We build single gates, double gates, wood gates, metal-framed gates, driveway gates, and sliding gate options depending on the project."],
+  ["What fence materials do you install?", "Common options include cedar, pressure-treated wood, composite, corrugated metal, metal panels, and chain link depending on the site and budget."],
+  ["Can neighbours split the cost?", "Yes. We can provide clear pricing that helps neighbours understand each side or section of the project."],
 ];
 ---
 
 <BaseLayout
-  title="Fence Installation Kelowna | CedarWolf Build + Design"
-  description="Wood and cedar fence installation in Kelowna and West Kelowna. Privacy fences, gates, and repairs. Licensed contractor, clean installs, clear pricing. Get a free quote."
+  title="Fence Installation & Repair Kelowna | CedarWolf Build + Design"
+  description="Fence installation and fence repair in Kelowna and the Okanagan. Cedar fences, privacy fences, composite fencing, corrugated metal fences, custom gates, and fence replacements."
 >
   <main class="bg-slate-50">
-
-    <section class="relative isolate">
+    <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
         <img
           src={asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg")}
-          alt="Fence installation Kelowna"
-          class="h-[60vh] w-full object-cover object-center"
+          alt="Fence installation and repair in Kelowna by CedarWolf Build + Design"
+          class="h-[72vh] min-h-[600px] w-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-slate-950/55"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/25 to-transparent"></div>
+        <div class="absolute inset-0 bg-slate-950/65"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
       </div>
-      <div class="mx-auto max-w-7xl px-6 pt-24 pb-16">
-        <div class="max-w-2xl">
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
-            Kelowna & West Kelowna • Fencing
+
+      <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+        <div class="max-w-3xl">
+          <p class="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-amber-200 ring-1 ring-white/15">
+            Kelowna & Okanagan • Residential & Commercial Fencing
           </p>
+
           <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-            Fence Installation in Kelowna
+            Fence Installation & Repair in Kelowna
           </h1>
-          <p class="mt-4 text-lg text-white/90 sm:text-xl">
-            Cedar and wood privacy fences built straight, set deep, and finished clean. Clear pricing, no surprises.
+
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            Cedar, wood, composite, corrugated metal, privacy fences, fence repairs, and custom gates across Kelowna and the Okanagan.
           </p>
+
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href={asset("contact/")}
-              class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
-              Get a quote
+            <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
+              Request Free Estimate
             </a>
-            <a href="#fence-projects"
-              class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
-              View projects
+            <a href="#fence-projects" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+              View Fence Projects
             </a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <div class="h-14 bg-slate-50"></div>
-
-    <section class="mx-auto max-w-7xl px-6 py-12">
-      <div class="max-w-3xl">
-        <h2 class="text-2xl font-semibold text-slate-900">Fence Contractor in Kelowna and West Kelowna</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          CedarWolf Build + Design installs wood and cedar fences for homeowners across Kelowna, West Kelowna,
-          Lake Country, and Peachland. We build privacy fences, semi-privacy panels, property line fences,
-          and custom gates — all set with proper post depth for BC frost conditions and finished to last.
-        </p>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          A properly built fence starts with the posts. We dig to the correct frost depth, use concrete footings,
-          and select materials that hold up to Okanagan freeze-thaw cycles. The result is a fence that stays
-          plumb and straight for years — not one that leans after the first winter.
-        </p>
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-7xl px-6 py-6">
-      <div class="grid gap-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm sm:grid-cols-3">
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Proper Post Depth</p>
-          <p class="mt-1 text-sm text-slate-600">Posts set below frost line with concrete footings so your fence stays straight season after season.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Cedar and Pressure-Treated</p>
-          <p class="mt-1 text-sm text-slate-600">Natural cedar for a warm look, or pressure-treated for maximum durability. We help you choose.</p>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Clean Line to Line</p>
-          <p class="mt-1 text-sm text-slate-600">Straight lines, level tops, and clean finishes. A fence that looks as good as it functions.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-7xl px-6 py-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Fence Types We Install</h2>
-      <p class="mt-2 text-slate-600">Built for Kelowna properties and BC climate conditions.</p>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          { title: "Wood Privacy Fences", desc: "Full 6ft privacy panels — the most popular choice for Kelowna backyards." },
-          { title: "Cedar Fences", desc: "Natural cedar boards with a warm tone that weathers beautifully in the Okanagan." },
-          { title: "Modern Metal and Cedar", desc: "Black corrugated metal panels framed in cedar — a bold, low-maintenance modern look." },
-          { title: "Horizontal Board Fences", desc: "Clean, contemporary horizontal slat fences for a modern West Kelowna aesthetic." },
-          { title: "Custom Gates", desc: "Single and double swing gates built to match your fence with proper hardware and latches." },
-          { title: "Fence Repairs and Replacements", desc: "Leaning posts, rotted boards, or storm damage — we repair or replace what needs fixing." },
-        ].map((item) => (
-          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200/70 shadow-sm">
-            <p class="text-sm font-semibold text-emerald-800 uppercase tracking-wider">Fencing</p>
-            <h3 class="mt-2 text-base font-semibold text-slate-900">{item.title}</h3>
-            <p class="mt-2 text-sm text-slate-600">{item.desc}</p>
+          <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {["Registered BC Business", "Fully Insured", "WorkSafeBC Covered", "Free On-Site Estimates", "Residential & Commercial"].map((item) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-sm">
+                ✓ {item}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
-
-    <section id="fence-projects" class="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Recent Fence Projects</h2>
-      <p class="mt-2 text-slate-600">Installed in Kelowna and West Kelowna.</p>
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {photos.map((photo) => (
-          <div class="overflow-hidden rounded-2xl ring-1 ring-slate-200/70 shadow-sm">
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              class="h-64 w-full object-cover object-center transition hover:scale-105 duration-300"
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </section>
-
 
     <section class="mx-auto max-w-7xl px-6 py-16">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
-        Fence Styles & Gate Options
-      </h2>
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Fence Contractor Kelowna</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">
+            Built for privacy, property lines, gates, and Okanagan weather.
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            CedarWolf Build + Design installs and repairs fences for homes, businesses, rental properties, strata properties, and acreage-style properties across the Okanagan.
+          </p>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            We help with full fence replacements, new fence builds, failing posts, damaged panels, custom gates, and modern fence upgrades.
+          </p>
+        </div>
 
-      <p class="mt-3 max-w-3xl text-slate-600">
-        CedarWolf Build + Design installs cedar privacy fences, composite fencing,
-        corrugated metal fences, driveway gates, sliding gates, and modern metal
-        fence systems throughout Kelowna, West Kelowna, Lake Country, and Peachland.
-      </p>
+        <div class="grid gap-4 rounded-3xl bg-white p-6 ring-1 ring-slate-200 shadow-sm sm:grid-cols-2">
+          {[
+            "Privacy fence installation",
+            "Fence repair and replacement",
+            "Cedar and wood fencing",
+            "Composite fencing",
+            "Corrugated metal fencing",
+            "Custom gates and driveway gates",
+            "Post replacement",
+            "Old fence removal available"
+          ].map((item) => (
+            <div class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-800 ring-1 ring-slate-200">
+              ✓ {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Fence Options</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Fence Types We Install & Repair</h2>
+        <p class="mt-3 max-w-3xl text-slate-600">
+          Choose from traditional cedar privacy fencing, modern composite and metal options, custom gates, and targeted repairs.
+        </p>
+      </div>
 
-        {[
-          {
-            src: "/images/cedarwolf-cedar-fence-kelowna-01.jpg",
-            alt: "Custom cedar privacy fence installation in Kelowna by CedarWolf Build + Design",
-            caption: "Custom cedar privacy fence built for durability, privacy, and long-term performance."
-          },
-          {
-            src: "/images/cedarwolf-cedar-fence-kelowna-02.jpg",
-            alt: "Completed cedar fence project in Kelowna by CedarWolf Build + Design",
-            caption: "Natural cedar fencing designed to complement Okanagan homes and landscapes."
-          },
-          {
-            src: "/images/cedarwolf-composite-fence-kelowna-01.jpg",
-            alt: "Composite fence installation in Kelowna by CedarWolf Build + Design",
-            caption: "Low-maintenance composite fence solution with a modern appearance and long service life."
-          },
-          {
-            src: "/images/cedarwolf-composite-fence-kelowna-02.jpg",
-            alt: "Modern composite privacy fence in Kelowna by CedarWolf Build + Design",
-            caption: "Modern composite privacy fencing for homeowners seeking minimal maintenance."
-          },
-          {
-            src: "/images/cedarwolf-corrugated-fence-installation-kelowna-01.jpg",
-            alt: "Corrugated metal fence installation in Kelowna by CedarWolf Build + Design",
-            caption: "Corrugated metal and cedar fencing combining privacy, strength, and contemporary design."
-          },
-          {
-            src: "/images/cedarwolf-corrugated-fence-kelowna-01.jpg",
-            alt: "Corrugated privacy fence in Kelowna by CedarWolf Build + Design",
-            caption: "Modern corrugated fence design built to withstand Okanagan weather conditions."
-          },
-          {
-            src: "/images/cedarwolf-metal-gate-kelowna-01.jpg",
-            alt: "Metal gate installation in Kelowna by CedarWolf Build + Design",
-            caption: "Metal gate systems providing security, durability, and clean architectural lines."
-          },
-          {
-            src: "/images/cedarwolf-metal-panel-fence-gate-kelowna-01.jpg",
-            alt: "Metal panel fence and gate in Kelowna by CedarWolf Build + Design",
-            caption: "Integrated fence and gate solutions for residential properties throughout Kelowna."
-          },
-          {
-            src: "/images/cedarwolf-metal-panel-fence-kelowna-01.jpg",
-            alt: "Modern metal panel fence in Kelowna by CedarWolf Build + Design",
-            caption: "Contemporary metal panel fencing designed for privacy and long-term performance."
-          },
-          {
-            src: "/images/cedarwolf-sliding-gate-kelowna-01.jpg",
-            alt: "Sliding driveway gate in Kelowna by CedarWolf Build + Design",
-            caption: "Sliding gate systems for driveways requiring secure access and space efficiency."
-          }
-        ].map((item) => (
-          <figure class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm">
-            <img
-              src={item.src}
-              alt={item.alt}
-              class="h-64 w-full object-cover object-center transition duration-300 hover:scale-105"
-              loading="lazy"
-            />
-            <figcaption class="p-4 text-sm leading-relaxed text-slate-600">
-              {item.caption}
-            </figcaption>
-          </figure>
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {fenceTypes.map((item) => (
+          <article class="overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
+            <img src={item.image} alt={item.title} class="h-60 w-full object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
+            </div>
+          </article>
         ))}
+      </div>
+    </section>
 
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Repair or Replace?</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Not every fence needs to be fully replaced.</h2>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+            <h3 class="text-xl font-semibold text-slate-900">Fence repair may be suitable when:</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li>✓ Only one or two posts have failed</li>
+              <li>✓ The gate needs adjustment or replacement</li>
+              <li>✓ A few panels or boards are damaged</li>
+              <li>✓ The rest of the fence is still straight and solid</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-slate-950 p-6 text-white">
+            <h3 class="text-xl font-semibold">Replacement may be better when:</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>✓ Multiple posts are leaning or rotted</li>
+              <li>✓ Large sections are failing</li>
+              <li>✓ The fence has already been repaired several times</li>
+              <li>✓ You want a new style, privacy level, or gate layout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fence-projects" class="mx-auto max-w-7xl px-6 py-16 scroll-mt-24">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Recent Work</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Fence Projects & Gate Options</h2>
+          <p class="mt-3 max-w-3xl text-slate-600">
+            Examples of fence styles, gate options, and completed work across Kelowna and nearby communities.
+          </p>
+        </div>
+        <a href={asset("contact/")} class="inline-flex rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">
+          Request Estimate
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          asset("images/portfolio/fence/kelowna-cedar-lattice-top-privacy-fence-cedarwolf.jpeg"),
+          asset("images/portfolio/fence/kelowna-fence-construction-cedar-posts-cedarwolf.jpeg"),
+          asset("images/cedarwolf-corrugated-fence-kelowna-01.jpg"),
+          asset("images/cedarwolf-sliding-gate-kelowna-01.jpg"),
+          asset("images/cedarwolf-metal-gate-kelowna-01.jpg"),
+          asset("images/cedarwolf-composite-fence-kelowna-02.jpg"),
+          asset("images/portfolio/fence/kelowna-wood-privacy-fence-backyard-cedarwolf.jpeg"),
+          asset("images/portfolio/fence/kelowna-fence-styles-wood-metal-cedar-cedarwolf.jpeg"),
+        ].map((src) => (
+          <div class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm">
+            <img src={src} alt="Fence and gate project by CedarWolf Build + Design in Kelowna" class="h-56 w-full object-cover transition duration-300 hover:scale-105" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Common Reasons</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Why property owners call us for fencing.</h2>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            {["Leaning fence", "Rotten posts", "Broken gate", "Storm damage", "Privacy upgrade", "Pet containment", "Property line separation", "Modern curb appeal"].map((item) => (
+              <div class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-800 ring-1 ring-slate-200">
+                ✓ {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-slate-950 p-8 text-white">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Material Options</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight">Popular fence materials.</h2>
+          <div class="mt-6 space-y-4 text-sm">
+            {[
+              ["Cedar", "Natural look, strong privacy, classic Okanagan style."],
+              ["Pressure-Treated Wood", "Durable structural option for posts and framing."],
+              ["Composite", "Low-maintenance modern fence option."],
+              ["Corrugated Metal", "Strong, private, contemporary, and low-maintenance."],
+              ["Chain Link", "Functional option for security, pets, and larger areas."]
+            ].map(([name, desc]) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p class="font-semibold text-white">{name}</p>
+                <p class="mt-1 text-slate-300">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="rounded-3xl bg-white p-8 ring-1 ring-slate-200 shadow-sm md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">FAQ</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Fence questions homeowners often ask.</h2>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          {faq.map(([q, a]) => (
+            <div class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+              <h3 class="font-semibold text-slate-900">{q}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <section class="mx-auto max-w-7xl px-6 pb-20">
-      <div class="rounded-2xl bg-white p-8 ring-1 ring-slate-200/70 shadow-sm">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div class="rounded-3xl bg-emerald-700 p-8 text-white shadow-sm md:p-10">
+        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p class="text-lg font-semibold text-slate-900">Need a fence installed in Kelowna?</p>
-            <p class="mt-1 text-sm text-slate-600">Tell us your property and what you need. We will respond with a clear scope and price.</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Need a fence installed or repaired?</h2>
+            <p class="mt-3 max-w-2xl text-emerald-50">
+              Send your location, approximate length, photos if available, and whether you need a repair, replacement, or new installation.
+            </p>
           </div>
-          <a href={asset("contact/")}
-            class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 whitespace-nowrap">
-            Get a free quote
+          <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50">
+            Request Free Estimate
           </a>
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>
