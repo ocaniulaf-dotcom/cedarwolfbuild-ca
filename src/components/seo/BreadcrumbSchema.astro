@@ -1,0 +1,20 @@
+---
+const { items = [] } = Astro.props;
+
+const siteUrl = "https://cedarwolfbuild.ca";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.url.startsWith("http") ? item.url : new URL(item.url, siteUrl).toString()
+  }))
+};
+
+const schemaJson = JSON.stringify(schema);
+---
+
+{items.length > 0 && <script type="application/ld+json" set:html={schemaJson} />}

@@ -3,6 +3,7 @@ import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceSchema from "../components/seo/ServiceSchema.astro";
 import FAQSchema from "../components/seo/FAQSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 
 const fenceTypes = [
   {
@@ -60,6 +61,13 @@ const faq = [
   />
 
   <FAQSchema items={faq} />
+
+  <BreadcrumbSchema
+    items={[
+      { name: "Home", url: "/" },
+      { name: "Fence Installation Kelowna", url: "/fence-installation-kelowna/" }
+    ]}
+  />
 
   <main class="bg-slate-50">
     <section class="relative isolate overflow-hidden">
