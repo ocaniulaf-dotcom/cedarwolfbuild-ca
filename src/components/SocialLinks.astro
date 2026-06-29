@@ -19,19 +19,19 @@ const links = [
 
 const icons = {
   instagram: `
-    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-7 w-7">
       <path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/>
       <path fill="currentColor" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
       <path fill="currentColor" d="M17.5 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
     </svg>
   `,
   linkedin: `
-    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-7 w-7">
       <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0.5 23.5h4V7.98h-4V23.5zM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.09v9.37h-4v-8.3c0-1.98-.04-4.52-2.75-4.52-2.75 0-3.17 2.15-3.17 4.38v8.44H8V7.98z"/>
     </svg>
   `,
   facebook: `
-    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-7 w-7">
       <path fill="currentColor" d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.5 1.6-1.5h1.7V5c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.7V11H7v3h2.6v8h3.9z"/>
     </svg>
   `,
@@ -46,7 +46,14 @@ const icons = {
       rel="noopener noreferrer"
       aria-label={l.name}
       title={l.name}
-      class="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-700 shadow-sm transition hover:bg-white hover:text-slate-900 hover:shadow"
+      class:list={[
+        "group inline-flex h-14 w-14 items-center justify-center rounded-2xl shadow-lg",
+        "transition duration-200 hover:-translate-y-1 hover:scale-105 hover:shadow-xl",
+        "focus:outline-none focus:ring-2 focus:ring-[#d6a354] focus:ring-offset-2 focus:ring-offset-[#111]",
+        l.svg === "instagram" && "border-0 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white",
+        l.svg === "linkedin" && "border-0 bg-[#0A66C2] text-white",
+        l.svg === "facebook" && "border-0 bg-[#1877F2] text-white",
+      ]}
       set:html={icons[l.svg]}
     />
   ))}
