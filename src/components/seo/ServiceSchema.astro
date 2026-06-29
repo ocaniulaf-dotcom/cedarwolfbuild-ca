@@ -5,6 +5,7 @@ const {
   url,
   image = "https://cedarwolfbuild.ca/images/CEDARWOLF_BUILD_DESIGN_LOGO.png",
   serviceType = name,
+  serviceOutput = "Completed construction or renovation service",
   areaServed = ["Kelowna", "West Kelowna", "Lake Country", "Peachland", "Vernon", "Okanagan"],
 } = Astro.props;
 
@@ -16,26 +17,45 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": `${serviceUrl}#service`,
-  "name": name,
-  "serviceType": serviceType,
-  "description": description,
-  "url": serviceUrl,
-  "image": imageUrl,
-  "provider": {
+  name,
+  serviceType,
+  description,
+  url: serviceUrl,
+  image: imageUrl,
+  serviceOutput,
+  providerMobility: "dynamic",
+  provider: {
     "@type": "HomeAndConstructionBusiness",
     "@id": "https://cedarwolfbuild.ca/#business",
-    "name": "CedarWolf Build + Design",
-    "url": "https://cedarwolfbuild.ca/"
+    name: "CedarWolf Build + Design",
+    url: "https://cedarwolfbuild.ca/",
+    telephone: "+1-778-594-1722",
+    email: "projects@cedarwolfbuild.ca",
+    brand: {
+      "@type": "Brand",
+      name: "CedarWolf Build + Design"
+    }
   },
-  "areaServed": areaServed.map((area) => ({
+  areaServed: areaServed.map((area) => ({
     "@type": "Place",
-    "name": area
+    name: area
   })),
-  "availableChannel": {
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "CAD",
+    url: serviceUrl,
+    eligibleRegion: {
+      "@type": "AdministrativeArea",
+      name: "Okanagan, British Columbia"
+    }
+  },
+  availableChannel: {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://cedarwolfbuild.ca/contact/",
-    "availableLanguage": ["English", "Spanish"]
-  }
+    serviceUrl: "https://cedarwolfbuild.ca/contact/",
+    availableLanguage: ["English", "Spanish"]
+  },
+  termsOfService: "https://cedarwolfbuild.ca/contact/"
 };
 
 const schemaJson = JSON.stringify(schema);
