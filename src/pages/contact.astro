@@ -80,9 +80,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <div class="rounded-2xl bg-white/90 p-6 shadow-sm ring-1 ring-slate-200">
-            <h2 class="text-xl font-semibold text-slate-900">Request a quote</h2>
+            <h2 class="text-xl font-semibold text-slate-900">Tell Us About Your Project</h2>
             <p class="mt-2 text-sm text-slate-600">
-              Send a short scope, rough dimensions, and photos. We’ll respond with next steps.
+              Send your project type, location, timeline, and a short description. We’ll review it and respond with next steps.
             </p>
 
             <div class="mt-6">
@@ -120,14 +120,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-slate-800">Phone (optional)</label>
+                  <label class="block text-sm font-medium text-slate-800">Phone</label>
                   <input
                     type="tel"
                     name="phone"
+                    required
                     autocomplete="tel"
                     class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
-                    placeholder="+1 778..."
+                    placeholder="+1 778 594 1722"
                   />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-slate-800">Project type</label>
+                  <select
+                    name="project_type"
+                    required
+                    class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+                  >
+                    <option value="">Select a service</option>
+                    <option>Fence Installation / Repair</option>
+                    <option>Deck Building / Repair</option>
+                    <option>Land Clearing / Forestry Mulching</option>
+                    <option>Epoxy Floor Coating</option>
+                    <option>Kitchen Renovation</option>
+                    <option>Bathroom Renovation</option>
+                    <option>Flooring</option>
+                    <option>Painting</option>
+                    <option>Small Projects</option>
+                    <option>General Renovation</option>
+                    <option>Other</option>
+                  </select>
                 </div>
 
                 <div>
@@ -136,20 +159,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     type="text"
                     name="location"
                     class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
-                    placeholder="Kelowna, West Kelowna, Lake Country..."
+                    placeholder="Example: Lower Mission, Kelowna"
                   />
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-slate-800">Scope</label>
+                  <label class="block text-sm font-medium text-slate-800">Preferred timeline</label>
+                  <select
+                    name="timeline"
+                    class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
+                  >
+                    <option value="">Select timeline</option>
+                    <option>As soon as possible</option>
+                    <option>Within 1 month</option>
+                    <option>1 to 3 months</option>
+                    <option>Just planning</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-slate-800">Project details</label>
                   <textarea
                     name="message"
                     rows="7"
                     minlength="20"
                     required
                     class="mt-2 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-0 focus:border-slate-300"
-                    placeholder="Tell us what you want done, rough dimensions, timeline, and any constraints. Attach photos by replying to the email you receive."
+                    placeholder="Example: Replace approximately 90 ft of cedar fence with one gate. Existing fence needs removal. Looking to complete the project this summer."
                   ></textarea>
+                  <p class="mt-2 text-xs leading-relaxed text-slate-500">
+                    Have photos? After submitting the form, reply to our email with project photos so we can review the site conditions before the estimate.
+                  </p>
                 </div>
 
                 <input type="hidden" name="_gotcha" value="" style="display:none" tabindex="-1" autocomplete="off" />
