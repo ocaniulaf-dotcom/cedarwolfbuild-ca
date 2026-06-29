@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 
 const PHONE_DISPLAY = "778-594-1722";
 const PHONE_TEL = "+17785941722";
@@ -10,6 +11,15 @@ const EMAIL = "projects@cedarwolfbuild.ca";
   title="Kitchen Renovations in Kelowna | CedarWolf Build + Design"
   description="Kitchen renovations in Kelowna and the Okanagan. Licensed and insured general contractor. Clear scope, realistic timelines, and high-quality finishes. Free estimates by email."
 >
+  <ServiceSchema
+    name="Kitchen Renovations Kelowna"
+    serviceType="Kitchen renovation"
+    serviceOutput="Renovated kitchen with updated cabinetry, flooring, lighting, paint, drywall, or finishes"
+    description="Kitchen renovation services in Kelowna and the Okanagan with clear scope, realistic timelines, durable finishes, cabinetry, flooring, lighting, drywall, and paint."
+    url="/kitchen-renovations/"
+    image="/images/portfolio/kitchen-renovations/hero.jpg"
+  />
+
   <main class="mx-auto max-w-6xl px-4 py-10">
     <section class="grid gap-8 md:grid-cols-2 md:items-center">
       <div class="space-y-5">

@@ -1,6 +1,7 @@
 ---
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 
 const deckTypes = [
   {
@@ -49,6 +50,15 @@ const faq = [
   title="Deck Building & Deck Repair Kelowna | CedarWolf Build + Design"
   description="Deck building and deck repair in Kelowna and the Okanagan. Cedar decks, composite decks, pressure-treated decks, stairs, railings, pergolas, and deck rebuilds."
 >
+  <ServiceSchema
+    name="Deck Building & Deck Repair Kelowna"
+    serviceType="Deck building and deck repair"
+    serviceOutput="Built, repaired, or rebuilt residential and commercial deck"
+    description="Deck building and deck repair services in Kelowna and the Okanagan, including cedar decks, composite decks, pressure-treated decks, stairs, railings, pergolas, and deck rebuilds."
+    url="/deck-building-kelowna/"
+    image="/images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"
+  />
+
   <main class="bg-slate-50">
     <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
