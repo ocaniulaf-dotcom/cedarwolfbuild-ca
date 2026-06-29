@@ -2,6 +2,7 @@
 import { asset } from "../lib/asset";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceSchema from "../components/seo/ServiceSchema.astro";
+import FAQSchema from "../components/seo/FAQSchema.astro";
 
 const fenceTypes = [
   {
@@ -57,6 +58,8 @@ const faq = [
     url="/fence-installation-kelowna/"
     image="/images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"
   />
+
+  <FAQSchema items={faq} />
 
   <main class="bg-slate-50">
     <section class="relative isolate overflow-hidden">

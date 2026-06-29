@@ -1,0 +1,20 @@
+---
+const { items = [] } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(([question, answer]) => ({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": answer
+    }
+  }))
+};
+
+const schemaJson = JSON.stringify(schema);
+---
+
+{items.length > 0 && <script type="application/ld+json" set:html={schemaJson} />}
