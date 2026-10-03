@@ -11,11 +11,14 @@ const base = baseRaw.endsWith("/") ? baseRaw : baseRaw + "/";
 const withBase = (p) => new URL(p, Astro.url.origin + base).pathname;
 
 const services = [
+  ["Interior Renovations", "/interior-renovations-kelowna/"],
+  ["Kitchen Renovations", "/kitchen-renovations/"],
+  ["Bathroom Renovations", "/bathroom-renovations-kelowna/"],
+  ["Basement Renovations", "/basement-renovations-kelowna/"],
   ["Fence Installation & Repair", "/fence-installation-kelowna/"],
   ["Deck Building & Repair", "/deck-building-kelowna/"],
-  ["Land Clearing", "/forestry-mulching-skid-steer-services-kelowna/"],
   ["Epoxy Floor Coating", "/epoxy-floor-coating-kelowna/"],
-  ["Kitchen Renovations", "/portfolio/kitchen-renovations/"],
+  ["Land Clearing", "/forestry-mulching-skid-steer-services-kelowna/"],
   ["Small Projects", "/small-projects/"],
 ];
 

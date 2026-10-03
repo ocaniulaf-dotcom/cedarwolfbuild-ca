@@ -1,0 +1,103 @@
+---
+import RenovationLanding from "../components/RenovationLanding.astro";
+
+const services = [
+  {
+    title: "Complete Bathroom Renovations",
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-after.jpg",
+    alt: "Completed bathroom renovation in Kelowna",
+    desc: "Bathroom renovation projects from demolition and preparation through tile, fixtures, vanities and finishing."
+  },
+  {
+    title: "Tile & Surface Upgrades",
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-progress.jpg",
+    alt: "Bathroom tile installation during renovation in Kelowna",
+    desc: "Wall and floor preparation, tile installation and finish work incorporated into bathroom renovations."
+  },
+  {
+    title: "Bathroom Finishing",
+    image: "/images/Renovation/bathroom-renovation-kelowna-03-after.jpg",
+    alt: "Finished bathroom renovation in Kelowna",
+    desc: "Vanities, trim, flooring, painting and final details to complete the renovated space."
+  }
+];
+
+const projects = [
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-before.jpg",
+    alt: "Bathroom before renovation in Kelowna",
+    title: "Bathroom 01 Before",
+    desc: "Existing bathroom before renovation."
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-progress.jpg",
+    alt: "Bathroom renovation progress with tile installation in Kelowna",
+    title: "Bathroom 01 In Progress",
+    desc: "Preparation and tile work during construction."
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-after.jpg",
+    alt: "Bathroom after renovation in Kelowna",
+    title: "Bathroom 01 After",
+    desc: "Completed bathroom renovation."
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-02-before.jpg",
+    alt: "Bathroom before renovation project in Kelowna",
+    title: "Bathroom 02 Before"
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-02-after.jpg",
+    alt: "Bathroom after renovation project in Kelowna",
+    title: "Bathroom 02 After"
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-03-after.jpg",
+    alt: "Completed bathroom renovation project in Kelowna",
+    title: "Bathroom 03 After"
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-04-before.jpg",
+    alt: "Bathroom before renovation in Kelowna BC",
+    title: "Bathroom 04 Before"
+  },
+  {
+    image: "/images/Renovation/bathroom-renovation-kelowna-04-after.jpg",
+    alt: "Bathroom after renovation in Kelowna BC",
+    title: "Bathroom 04 After"
+  }
+];
+
+const faq = [
+  ["What can be included in a bathroom renovation?", "Bathroom projects can include demolition, preparation, flooring, tile, vanities, drywall, painting, trim and coordination of required specialized trades."],
+  ["Can you renovate the entire bathroom?", "Yes. We can review complete bathroom renovation projects as well as projects where selected parts of the existing bathroom remain."],
+  ["Do you handle tile installation?", "Tile and surface work can be incorporated into the bathroom renovation scope depending on the project."],
+  ["Do you provide on-site estimates?", "Yes. We review existing conditions, measurements, access and the desired scope during the estimate process."],
+  ["What areas do you serve?", "We serve Kelowna and surrounding Okanagan communities depending on project location and scope."],
+  ["Can I send photos before the site visit?", "Yes. Photos are useful for understanding the existing bathroom and the type of renovation you are considering."]
+];
+
+const related = [
+  { title: "Interior Renovations", href: "/interior-renovations-kelowna/", desc: "Complete home interior renovation projects." },
+  { title: "Kitchen Renovations", href: "/kitchen-renovations/", desc: "Kitchen cabinetry, islands and complete renovation work." },
+  { title: "Basement Renovations", href: "/basement-renovations-kelowna/", desc: "Basement renovations and additional living spaces." }
+];
+---
+
+<RenovationLanding
+  title="Bathroom Renovations Kelowna | CedarWolf Build + Design"
+  description="Bathroom renovations in Kelowna and the Okanagan. Complete bathroom renovations, tile, flooring, vanities, drywall, painting and finishing."
+  h1="Bathroom Renovations in Kelowna"
+  eyebrow="Kelowna & Okanagan • Bathroom Renovations"
+  intro="Bathroom renovation projects managed from demolition and preparation through installation, finishing and final details."
+  serviceName="Bathroom Renovations Kelowna"
+  serviceType="Bathroom renovation"
+  serviceOutput="Renovated residential bathroom"
+  url="/bathroom-renovations-kelowna/"
+  hero="/images/Renovation/bathroom-renovation-kelowna-01-after.jpg"
+  heroAlt="Completed bathroom renovation in Kelowna by CedarWolf Build + Design"
+  {services}
+  {projects}
+  {faq}
+  {related}
+/>

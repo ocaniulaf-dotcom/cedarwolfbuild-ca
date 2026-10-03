@@ -1,0 +1,114 @@
+---
+import RenovationLanding from "../components/RenovationLanding.astro";
+
+const services = [
+  {
+    title: "Complete Interior Renovations",
+    image: "/images/Renovation/home-interior-renovation-kelowna.jpg",
+    alt: "Completed home interior renovation in Kelowna",
+    desc: "Interior renovation projects combining demolition, preparation, flooring, walls, trim, doors, cabinetry and finishing."
+  },
+  {
+    title: "Living Rooms & Bedrooms",
+    image: "/images/Renovation/living-room-renovation-kelowna-after.jpg",
+    alt: "Living room renovation completed in Kelowna",
+    desc: "Updates to living areas and bedrooms including flooring, walls, trim, feature walls and finishing details."
+  },
+  {
+    title: "Flooring & Interior Finishing",
+    image: "/images/Renovation/interior-flooring-renovation-kelowna.jpg",
+    alt: "Interior flooring renovation in Kelowna",
+    desc: "Flooring, transitions, baseboards, trim, doors and other finishing work incorporated into larger renovation projects."
+  },
+  {
+    title: "Kitchen Renovations",
+    image: "/images/Renovation/kitchen-cabinet-installation-kelowna-01.jpg",
+    alt: "Kitchen cabinet installation during renovation in Kelowna",
+    desc: "Kitchen transformations including cabinetry, islands, flooring, walls, lighting coordination and finish work."
+  },
+  {
+    title: "Bathroom Renovations",
+    image: "/images/Renovation/bathroom-renovation-kelowna-01-after.jpg",
+    alt: "Completed bathroom renovation in Kelowna",
+    desc: "Bathroom renovation projects including demolition, preparation, tile, flooring, vanities and finishing."
+  },
+  {
+    title: "Basement Renovations",
+    image: "/images/Renovation/basement-renovation-kelowna-after.jpg",
+    alt: "Completed basement renovation in Kelowna",
+    desc: "Basement improvements for additional living space, rental properties and functional home upgrades."
+  }
+];
+
+const projects = [
+  {
+    image: "/images/Renovation/home-interior-renovation-kelowna.jpg",
+    alt: "Home interior renovation project by CedarWolf Build + Design",
+    title: "Home Interior Renovation",
+    desc: "Interior improvements combining construction, installation and finishing."
+  },
+  {
+    image: "/images/Renovation/living-room-renovation-kelowna-after.jpg",
+    alt: "Living room after renovation in Kelowna",
+    title: "Living Room Renovation",
+    desc: "Updated living space with new interior finishes."
+  },
+  {
+    image: "/images/Renovation/bedroom-renovation-kelowna-after.jpg",
+    alt: "Bedroom after renovation in Kelowna",
+    title: "Bedroom Renovation",
+    desc: "Finished bedroom renovation and interior upgrade."
+  },
+  {
+    image: "/images/Renovation/interior-feature-wall-renovation-kelowna.jpg",
+    alt: "Interior feature wall renovation in Kelowna",
+    title: "Interior Feature Wall",
+    desc: "Feature wall and interior finishing work."
+  },
+  {
+    image: "/images/Renovation/interior-renovation-kelowna-apartment-01.jpg",
+    alt: "Apartment interior renovation in Kelowna",
+    title: "Apartment Renovation",
+    desc: "Interior improvements for residential and rental properties."
+  },
+  {
+    image: "/images/Renovation/stair-renovation-kelowna-after.jpg",
+    alt: "Stair renovation completed in Kelowna",
+    title: "Stair Renovation",
+    desc: "Updated stairs and interior finishing."
+  }
+];
+
+const faq = [
+  ["What types of interior renovations do you take on?", "We work on kitchens, bathrooms, basements, living areas, bedrooms, flooring and broader interior renovation projects."],
+  ["Can you manage several parts of the renovation?", "Yes. We can manage multiple construction and finishing components and coordinate specialized trades when required."],
+  ["Do you provide on-site estimates?", "Yes. An on-site visit helps us review existing conditions, measurements, access and the scope before preparing an estimate."],
+  ["Do you work on rental properties?", "Yes. We work with homeowners, rental properties and other residential property improvement projects."],
+  ["What areas do you serve?", "We serve Kelowna and surrounding Okanagan communities, with project availability depending on location and scope."],
+  ["Can I send photos before arranging a visit?", "Yes. Photos, project details and approximate measurements are useful for an initial review before scheduling a site visit."]
+];
+
+const related = [
+  { title: "Kitchen Renovations", href: "/kitchen-renovations/", desc: "Cabinetry, islands, flooring and complete kitchen improvements." },
+  { title: "Bathroom Renovations", href: "/bathroom-renovations-kelowna/", desc: "Bathroom upgrades, tile, vanities and finishing." },
+  { title: "Basement Renovations", href: "/basement-renovations-kelowna/", desc: "Basement living spaces, kitchens and interior improvements." }
+];
+---
+
+<RenovationLanding
+  title="Interior & Home Renovations Kelowna | CedarWolf Build + Design"
+  description="Interior and home renovations in Kelowna and the Okanagan. Kitchens, bathrooms, basements, flooring, interior finishing and complete renovation projects."
+  h1="Interior & Home Renovations in Kelowna"
+  eyebrow="Kelowna & Okanagan • Home Renovations"
+  intro="Complete interior renovation projects for homeowners and property owners, from demolition and preparation through construction, installation and finishing."
+  serviceName="Interior Renovations Kelowna"
+  serviceType="Home and interior renovation"
+  serviceOutput="Renovated residential interior"
+  url="/interior-renovations-kelowna/"
+  hero="/images/Renovation/home-interior-renovation-kelowna.jpg"
+  heroAlt="Interior home renovation in Kelowna by CedarWolf Build + Design"
+  {services}
+  {projects}
+  {faq}
+  {related}
+/>

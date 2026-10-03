@@ -1,0 +1,96 @@
+---
+import RenovationLanding from "../components/RenovationLanding.astro";
+
+const services = [
+  {
+    title: "Basement Interior Renovations",
+    image: "/images/Renovation/basement-renovation-kelowna-after.jpg",
+    alt: "Completed basement renovation in Kelowna",
+    desc: "Basement renovation projects for additional living space, property improvements and functional interior upgrades."
+  },
+  {
+    title: "Basement Kitchens",
+    image: "/images/Renovation/basement-kitchen-renovation-kelowna.jpg",
+    alt: "Basement kitchen renovation in Kelowna",
+    desc: "Kitchen cabinetry, flooring and finishing incorporated into basement renovation projects."
+  },
+  {
+    title: "Flooring & Finishing",
+    image: "/images/Renovation/flooring-installation-kelowna-01.jpg",
+    alt: "Flooring installation during renovation in Kelowna",
+    desc: "Flooring, baseboards, trim, walls and finishing details to complete renovated basement spaces."
+  }
+];
+
+const projects = [
+  {
+    image: "/images/Renovation/basement-renovation-kelowna-before.jpg",
+    alt: "Basement before renovation in Kelowna",
+    title: "Basement Before",
+    desc: "Existing basement space before renovation."
+  },
+  {
+    image: "/images/Renovation/basement-renovation-kelowna-after.jpg",
+    alt: "Basement after renovation in Kelowna",
+    title: "Basement After",
+    desc: "Completed basement interior renovation."
+  },
+  {
+    image: "/images/Renovation/basement-kitchen-renovation-kelowna.jpg",
+    alt: "Completed basement kitchen renovation in Kelowna",
+    title: "Basement Kitchen",
+    desc: "Kitchen and finishing work incorporated into a basement renovation."
+  },
+  {
+    image: "/images/Renovation/flooring-installation-kelowna-01.jpg",
+    alt: "Flooring installation in Kelowna renovation project",
+    title: "Flooring Installation",
+    desc: "Interior flooring installation and finishing."
+  },
+  {
+    image: "/images/Renovation/interior-renovation-kelowna-apartment-02.jpg",
+    alt: "Interior renovation project in Kelowna",
+    title: "Interior Finishing",
+    desc: "Interior improvements and finishing work."
+  },
+  {
+    image: "/images/Renovation/bedroom-renovation-kelowna-after.jpg",
+    alt: "Finished bedroom renovation in Kelowna",
+    title: "Finished Living Space",
+    desc: "Completed residential interior renovation."
+  }
+];
+
+const faq = [
+  ["What can be included in a basement renovation?", "Basement projects can include demolition, framing, drywall, flooring, doors, trim, painting, cabinetry and other interior finishing work."],
+  ["Can you add a kitchen as part of a basement renovation?", "Kitchen cabinetry and related finishing can be included depending on the project scope and requirements."],
+  ["Can you renovate an existing finished basement?", "Yes. We can review existing finished or partially finished spaces and determine the appropriate renovation scope."],
+  ["Do you provide on-site estimates?", "Yes. A site visit allows us to review the existing basement, access, measurements and project requirements."],
+  ["Do you work on rental property renovations?", "Yes. We work with homeowners and property owners on residential and rental property improvements."],
+  ["What areas do you serve?", "We serve Kelowna and surrounding Okanagan communities depending on project location and scope."]
+];
+
+const related = [
+  { title: "Interior Renovations", href: "/interior-renovations-kelowna/", desc: "Complete interior construction and finishing projects." },
+  { title: "Kitchen Renovations", href: "/kitchen-renovations/", desc: "Kitchen cabinetry, islands and renovation work." },
+  { title: "Bathroom Renovations", href: "/bathroom-renovations-kelowna/", desc: "Complete bathroom renovation projects." }
+];
+---
+
+<RenovationLanding
+  title="Basement Renovations Kelowna | CedarWolf Build + Design"
+  description="Basement renovations in Kelowna and the Okanagan. Basement interiors, kitchens, flooring, drywall, trim and complete renovation projects."
+  h1="Basement Renovations in Kelowna"
+  eyebrow="Kelowna & Okanagan • Basement Renovations"
+  intro="Transform unfinished, dated or underused basement space into a more functional part of your home with coordinated construction and finishing."
+  serviceName="Basement Renovations Kelowna"
+  serviceType="Basement renovation"
+  serviceOutput="Renovated residential basement"
+  url="/basement-renovations-kelowna/"
+  hero="/images/Renovation/basement-renovation-kelowna-after.jpg"
+  heroAlt="Completed basement renovation in Kelowna by CedarWolf Build + Design"
+  {services}
+  {projects}
+  {faq}
+  {related}
+/>

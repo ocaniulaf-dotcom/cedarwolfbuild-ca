@@ -1,78 +1,96 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ServiceSchema from "../components/seo/ServiceSchema.astro";
+import RenovationLanding from "../components/RenovationLanding.astro";
 
-const PHONE_DISPLAY = "778-594-1722";
-const PHONE_TEL = "+17785941722";
-const EMAIL = "projects@cedarwolfbuild.ca";
+const services = [
+  {
+    title: "Complete Kitchen Renovations",
+    image: "/images/Renovation/kitchen-renovation-kelowna-cabinets.jpg",
+    alt: "Kitchen renovation with new cabinets in Kelowna",
+    desc: "Kitchen renovation projects combining demolition, preparation, cabinetry, flooring, walls and finish work."
+  },
+  {
+    title: "Cabinet Installation",
+    image: "/images/Renovation/kitchen-cabinet-installation-kelowna-01.jpg",
+    alt: "Kitchen cabinet installation in Kelowna",
+    desc: "Cabinet installation and layout improvements as part of kitchen renovation projects."
+  },
+  {
+    title: "Kitchen Islands",
+    image: "/images/Renovation/kitchen-island-renovation-after.jpg",
+    alt: "Kitchen island after renovation",
+    desc: "Island replacement and upgrades to improve storage, preparation space and functionality."
+  }
+];
+
+const projects = [
+  {
+    image: "/images/Renovation/kitchen-island-renovation-before.jpg",
+    alt: "Kitchen island before renovation",
+    title: "Kitchen Island Before",
+    desc: "Existing kitchen island before renovation work."
+  },
+  {
+    image: "/images/Renovation/kitchen-island-renovation-after.jpg",
+    alt: "Kitchen island after renovation",
+    title: "Kitchen Island After",
+    desc: "Completed kitchen island renovation."
+  },
+  {
+    image: "/images/Renovation/kitchen-renovation-kelowna-before.jpg",
+    alt: "Kitchen before renovation in Kelowna",
+    title: "Kitchen Renovation Before",
+    desc: "Existing kitchen before renovation."
+  },
+  {
+    image: "/images/Renovation/kitchen-renovation-kelowna-progress.jpg",
+    alt: "Kitchen renovation in progress in Kelowna",
+    title: "Kitchen Renovation in Progress",
+    desc: "Cabinet and interior work during construction."
+  },
+  {
+    image: "/images/Renovation/kitchen-renovation-kelowna-cabinets.jpg",
+    alt: "Kitchen cabinets installed during Kelowna renovation",
+    title: "Kitchen Cabinet Upgrade",
+    desc: "Updated cabinetry and kitchen finishes."
+  },
+  {
+    image: "/images/Renovation/basement-kitchen-renovation-kelowna.jpg",
+    alt: "Completed basement kitchen renovation in Kelowna",
+    title: "Basement Kitchen",
+    desc: "Completed kitchen installation as part of a basement renovation."
+  }
+];
+
+const faq = [
+  ["What can be included in a kitchen renovation?", "Kitchen projects can include demolition, cabinets, islands, flooring, drywall, painting, trim, lighting coordination and other finishing work."],
+  ["Can you install new kitchen cabinets?", "Yes. Cabinet installation and related finishing can be included in the renovation scope."],
+  ["Can you renovate an existing kitchen without changing everything?", "Yes. The scope can be based on the existing condition, priorities and budget. Some projects focus on selected upgrades while others involve a more complete renovation."],
+  ["Do you provide an on-site estimate?", "Yes. We can review the kitchen, measurements, existing conditions and desired changes before preparing the project scope."],
+  ["Do you work in Kelowna and surrounding areas?", "Yes. We serve Kelowna and surrounding Okanagan communities depending on project location and scope."],
+  ["Can I send photos of my kitchen first?", "Yes. Photos and a short description of what you want to change are helpful for the initial project review."]
+];
+
+const related = [
+  { title: "Interior Renovations", href: "/interior-renovations-kelowna/", desc: "Complete interior renovation and finishing projects." },
+  { title: "Bathroom Renovations", href: "/bathroom-renovations-kelowna/", desc: "Bathroom renovations, tile, vanities and finishing." },
+  { title: "Basement Renovations", href: "/basement-renovations-kelowna/", desc: "Basement living spaces and complete interior improvements." }
+];
 ---
 
-<BaseLayout
-  title="Kitchen Renovations in Kelowna | CedarWolf Build + Design"
-  description="Kitchen renovations in Kelowna and the Okanagan. Licensed and insured general contractor. Clear scope, realistic timelines, and high-quality finishes. Free estimates by email."
->
-  <ServiceSchema
-    name="Kitchen Renovations Kelowna"
-    serviceType="Kitchen renovation"
-    serviceOutput="Renovated kitchen with updated cabinetry, flooring, lighting, paint, drywall, or finishes"
-    description="Kitchen renovation services in Kelowna and the Okanagan with clear scope, realistic timelines, durable finishes, cabinetry, flooring, lighting, drywall, and paint."
-    url="/kitchen-renovations/"
-    image="/images/portfolio/kitchen-renovations/hero.jpg"
-  />
-
-  <main class="mx-auto max-w-6xl px-4 py-10">
-    <section class="grid gap-8 md:grid-cols-2 md:items-center">
-      <div class="space-y-5">
-        <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700">
-          Licensed & insured . Kelowna + Okanagan
-        </p>
-
-        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-          Kitchen Renovations in Kelowna and the Okanagan
-        </h1>
-
-        <p class="text-base leading-relaxed text-slate-700 md:text-lg">
-          Well-managed kitchen renovations with clear scope, realistic timelines, and durable finishes.
-          Email works best while we’re on site. We respond within 1 business day.
-        </p>
-
-        <ul class="grid gap-2 text-sm text-slate-700">
-          <li>Design-build renovation delivery</li>
-          <li>Cabinetry, flooring, lighting, drywall, paint</li>
-          <li>Email-first quotes . Clear written scope</li>
-        </ul>
-
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            href={"mailto:" + EMAIL + "?subject=Kitchen Renovation Request"}
-            class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
-          >
-            Request a quote by email
-          </a>
-
-          <a
-            href={"tel:" + PHONE_TEL}
-            class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-          >
-            Call if urgent
-          </a>
-        </div>
-
-        <p class="text-xs text-slate-500">
-          Email: <a class="underline hover:no-underline" href={"mailto:" + EMAIL}>{EMAIL}</a> . Phone is answered when available.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <div class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-100">
-          <img
-            src="/images/portfolio/kitchen-renovations/hero.jpg"
-            alt="Kitchen renovation project in Kelowna"
-            class="h-full w-full object-cover"
-            loading="eager"
-          />
-        </div>
-      </div>
-    </section>
-  </main>
-</BaseLayout>
+<RenovationLanding
+  title="Kitchen Renovations Kelowna | CedarWolf Build + Design"
+  description="Kitchen renovations in Kelowna and the Okanagan. Cabinet installation, kitchen islands, flooring, walls, finishing and complete kitchen renovation projects."
+  h1="Kitchen Renovations in Kelowna"
+  eyebrow="Kelowna & Okanagan • Kitchen Renovations"
+  intro="Kitchen renovations focused on practical layouts, durable construction and clean finishing, from demolition and preparation through cabinets, flooring and final details."
+  serviceName="Kitchen Renovations Kelowna"
+  serviceType="Kitchen renovation"
+  serviceOutput="Renovated residential kitchen"
+  url="/kitchen-renovations/"
+  hero="/images/Renovation/kitchen-renovation-kelowna-cabinets.jpg"
+  heroAlt="Kitchen renovation and cabinet installation in Kelowna"
+  {services}
+  {projects}
+  {faq}
+  {related}
+/>
