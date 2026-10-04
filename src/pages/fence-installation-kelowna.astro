@@ -8,32 +8,32 @@ import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 const fenceTypes = [
   {
     title: "Cedar Privacy Fences",
-    image: asset("images/portfolio/fence/kelowna-cedar-privacy-fence-install-cedarwolf.jpeg"),
+    image: asset("images/real-projects/fence-cedar-privacy-01.jpg"),
     desc: "A classic choice for Kelowna homes. Natural cedar privacy fencing with a warm appearance and solid backyard separation.",
   },
   {
     title: "Modern Metal & Cedar",
-    image: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"),
+    image: asset("images/real-projects/fence-corrugated-metal-cedar-01.jpg"),
     desc: "Corrugated metal panels framed with cedar for a strong, modern fence with low maintenance.",
   },
   {
     title: "Horizontal Board Fences",
-    image: asset("images/portfolio/fence/kelowna-horizontal-board-fence-install-cedarwolf.jpeg"),
+    image: asset("images/real-projects/fence-cedar-finished-01.jpg"),
     desc: "Clean horizontal lines for a modern residential look. Built with proper posts, alignment, and finish details.",
   },
   {
     title: "Composite Fencing",
-    image: asset("images/cedarwolf-composite-fence-kelowna-01.jpg"),
+    image: asset("images/real-projects/fence-composite-modern-01.jpg"),
     desc: "Low-maintenance fencing for homeowners looking for a modern finish with long-term durability.",
   },
   {
     title: "Custom Gates",
-    image: asset("images/portfolio/fence/kelowna-custom-fence-gate-black-cedar-cedarwolf.jpeg"),
+    image: asset("images/real-projects/gate-corrugated-metal-cedar-01.jpg"),
     desc: "Single gates, double gates, driveway gates, and gate repairs built to match the fence and site conditions.",
   },
   {
     title: "Fence Repairs",
-    image: asset("images/handyman-fence-repairs-installation-kelowna.jpg"),
+    image: asset("images/real-projects/fence-cedar-construction-detail-01.jpg"),
     desc: "Leaning posts, broken panels, damaged gates, storm damage, and partial replacements.",
   },
 ];
@@ -73,16 +73,15 @@ const faq = [
     <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
         <img
-          src={asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg")}
-          alt="Fence installation and repair in Kelowna by CedarWolf Build + Design"
+          src={asset("images/real-projects/fence-composite-modern-01.jpg")}
+          alt="Modern composite fence installation in Kelowna by CedarWolf Build + Design"
           width="5712"
           height="4284"
           fetchpriority="high"
           decoding="async"
           class="h-[72vh] min-h-[600px] w-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-slate-950/65"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-slate-950/5"></div>
       </div>
 
       <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
@@ -220,14 +219,14 @@ const faq = [
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          asset("images/portfolio/fence/kelowna-cedar-lattice-top-privacy-fence-cedarwolf.jpeg"),
-          asset("images/portfolio/fence/kelowna-fence-construction-cedar-posts-cedarwolf.jpeg"),
-          asset("images/cedarwolf-corrugated-fence-kelowna-01.jpg"),
-          asset("images/cedarwolf-sliding-gate-kelowna-01.jpg"),
-          asset("images/cedarwolf-metal-gate-kelowna-01.jpg"),
-          asset("images/cedarwolf-composite-fence-kelowna-02.jpg"),
-          asset("images/portfolio/fence/kelowna-wood-privacy-fence-backyard-cedarwolf.jpeg"),
-          asset("images/portfolio/fence/kelowna-fence-styles-wood-metal-cedar-cedarwolf.jpeg"),
+          asset("images/real-projects/fence-corrugated-metal-cedar-01.jpg"),
+          asset("images/real-projects/fence-corrugated-metal-cedar-02.jpg"),
+          asset("images/real-projects/fence-metal-cedar-long-run-01.jpg"),
+          asset("images/real-projects/fence-composite-modern-01.jpg"),
+          asset("images/real-projects/fence-cedar-privacy-01.jpg"),
+          asset("images/real-projects/fence-cedar-finished-01.jpg"),
+          asset("images/real-projects/gate-corrugated-metal-cedar-01.jpg"),
+          asset("images/real-projects/gate-cedar-driveway-01.jpg"),
         ].map((src) => (
           <div class="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm">
             <img src={src} alt="Fence and gate project by CedarWolf Build + Design in Kelowna" width="960" height="560" class="h-56 w-full object-cover transition duration-300 hover:scale-105" loading="lazy" decoding="async" />

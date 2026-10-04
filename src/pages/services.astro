@@ -5,14 +5,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const outdoorServices = [
   {
     title: "Fence Installation & Repair",
-    image: asset("images/portfolio/fence/kelowna-modern-black-metal-cedar-fence-cedarwolf.jpeg"),
+    image: asset("images/real-projects/fence-composite-modern-01.jpg"),
     desc: "Cedar, wood, composite, corrugated metal, privacy fences, repairs, and custom gates.",
     href: asset("fence-installation-kelowna/"),
     items: ["Privacy Fences", "Fence Repairs", "Custom Gates", "Composite & Metal"],
   },
   {
     title: "Deck Building & Repair",
-    image: asset("images/portfolio/deck/kelowna-deck-build-cedarwolf-1.jpeg"),
+    image: asset("images/real-projects/deck-cedar-finished-01.jpg"),
     desc: "New decks, deck repairs, cedar decks, composite decks, stairs, railings, and pergolas.",
     href: asset("deck-building-kelowna/"),
     items: ["Deck Builds", "Deck Repairs", "Stairs & Railings", "Pergolas"],
@@ -25,25 +25,25 @@ const outdoorServices = [
     items: ["Forestry Mulching", "Brush Removal", "Acreage Clearing", "Site Preparation"],
   },
   {
-    title: "Epoxy Floor Coatings",
-    image: asset("images/service-flooring.png"),
-    desc: "Garage floors, shop floors, concrete coatings, floor resurfacing, and durable surface upgrades.",
+    title: "Garage & Concrete Floor Coatings",
+    image: asset("images/Epoxy/garage-epoxy-flake-floor-coating-control-joints.jpg"),
+    desc: "Epoxy and protective floor coating solutions for garages, shops, concrete floors, stairs, and selected commercial spaces.",
     href: asset("epoxy-floor-coating-kelowna/"),
-    items: ["Garage Floors", "Shop Floors", "Concrete Coating", "Floor Resurfacing"],
+    items: ["Garage Floors", "Epoxy Flake", "Concrete Coatings", "Floor Resurfacing"],
   },
 ];
 
 const renovationServices = [
   {
     title: "Kitchen Renovations",
-    image: asset("images/Renovation/kitchen-renovation-kelowna-cabinets.jpg"),
+    image: asset("images/real-projects/renovation-kitchen-open-concept-01.jpg"),
     desc: "Complete kitchen renovations, cabinetry, islands, flooring, walls, trim, and finishing.",
     href: asset("kitchen-renovations/"),
     items: ["Complete Renovations", "Cabinets", "Kitchen Islands", "Finishing"],
   },
   {
     title: "Bathroom Renovations",
-    image: asset("images/Renovation/bathroom-renovation-kelowna-01-after.jpg"),
+    image: asset("images/real-projects/renovation-condo-bathroom-01.jpg"),
     desc: "Complete bathroom renovations, tile, flooring, vanities, drywall, painting, and finishing.",
     href: asset("bathroom-renovations-kelowna/"),
     items: ["Complete Renovations", "Tile", "Vanities", "Finishing"],
@@ -57,10 +57,17 @@ const renovationServices = [
   },
   {
     title: "Interior Renovations",
-    image: asset("images/Renovation/home-interior-renovation-kelowna.jpg"),
+    image: asset("images/real-projects/renovation-open-concept-01.jpg"),
     desc: "Complete interior renovation projects for homes, rental properties, and residential spaces.",
     href: asset("interior-renovations-kelowna/"),
     items: ["Home Renovations", "Flooring", "Doors & Trim", "Finishing"],
+  },
+  {
+    title: "Property Maintenance & Repairs",
+    image: asset("images/real-projects/renovation-hardwood-living-room-01.jpg"),
+    desc: "Renovation, repair, and property improvement services for homeowners, landlords, property managers, and small commercial properties.",
+    href: asset("contact/"),
+    items: ["Interior Repairs", "Doors & Trim", "Drywall & Painting", "Flooring & Finishing"],
   },
 ];
 
@@ -85,8 +92,7 @@ const trust = [
           alt="Construction and renovation services in Kelowna"
           class="h-[68vh] min-h-[560px] w-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-slate-950/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-slate-950/5"></div>
       </div>
 
       <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
@@ -107,7 +113,7 @@ const trust = [
             <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-2xl bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600">
               Request Free Estimate
             </a>
-            <a href="#outdoor-services" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
+            <a href="#renovation-services" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15">
               View Services
             </a>
           </div>
@@ -123,44 +129,7 @@ const trust = [
       </div>
     </section>
 
-    <section id="outdoor-services" class="mx-auto max-w-7xl px-6 py-16 scroll-mt-24">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Spring & Summer</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Outdoor Construction</h2>
-        <p class="mt-3 text-slate-600">
-          Outdoor services for privacy, outdoor living, property access, concrete surfaces, and acreage improvement.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-8 md:grid-cols-2">
-        {outdoorServices.map((s) => (
-          <article class="overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
-            <img src={s.image} alt={s.title} width="960" height="720" class="h-72 w-full object-cover" loading="lazy" decoding="async" />
-            <div class="p-7">
-              <h3 class="text-2xl font-semibold tracking-tight text-slate-900">{s.title}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">{s.desc}</p>
-              <ul class="mt-5 flex flex-wrap gap-2">
-                {s.items.map((item) => (
-                  <li class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href={s.href} class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-                  Learn More
-                </a>
-                <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">
-                  Request Estimate
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-7xl px-6 py-16">
+    <section id="renovation-services" class="mx-auto max-w-7xl px-6 py-16 scroll-mt-24">
       <div class="max-w-3xl">
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Year-Round</p>
         <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Renovation Services</h2>
@@ -171,10 +140,10 @@ const trust = [
 
       <div class="mt-10 grid gap-8 md:grid-cols-2">
         {renovationServices.map((s) => (
-          <article class="overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
+          <article class="min-w-0 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
             <img src={s.image} alt={s.title} width="960" height="720" class="h-72 w-full object-cover" loading="lazy" decoding="async" />
-            <div class="p-7">
-              <h3 class="text-2xl font-semibold tracking-tight text-slate-900">{s.title}</h3>
+            <div class="p-5 sm:p-7">
+              <h3 class="break-words text-2xl font-semibold tracking-tight text-slate-900">{s.title}</h3>
               <p class="mt-3 text-sm leading-relaxed text-slate-600">{s.desc}</p>
               <ul class="mt-5 flex flex-wrap gap-2">
                 {s.items.map((item) => (
@@ -183,11 +152,162 @@ const trust = [
                   </li>
                 ))}
               </ul>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href={s.href} class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+              <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a href={s.href} class="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto">
                   Learn More
                 </a>
-                <a href={asset("contact/")} class="inline-flex items-center justify-center rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">
+                <a href={asset("contact/")} class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 sm:w-auto">
+                  Request Estimate
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- AUTUMN / WINTER -->
+    <section class="bg-slate-900 text-white">
+      <div class="mx-auto max-w-7xl px-6 py-16">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">
+              Autumn & Winter
+            </p>
+
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Keep improving your property through the colder months.
+            </h2>
+
+            <p class="mt-5 text-lg leading-relaxed text-slate-300">
+              Cooler weather is a good time to focus on interior renovations, repairs,
+              maintenance, and finishing work while many exterior projects become more
+              dependent on weather conditions.
+            </p>
+
+            <div class="mt-7">
+              <a
+                href={asset("interior-renovations-kelowna/")}
+                class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+              >
+                Explore Interior Renovations
+              </a>
+            </div>
+
+            <div class="mt-8 overflow-hidden rounded-3xl ring-1 ring-white/10">
+              <img
+                src={asset("images/real-projects/renovation-kitchen-open-concept-01.jpg")}
+                alt="Interior kitchen renovation by CedarWolf Build + Design in Kelowna"
+                class="h-72 w-full object-cover sm:h-80"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-2">
+            {[
+              ["Kitchen Renovations", "Cabinetry, flooring, walls, trim, and complete kitchen improvements."],
+              ["Bathroom Renovations", "Vanities, flooring, tile, drywall, painting, and finishing."],
+              ["Basement Finishing", "Living spaces, flooring, drywall, trim, repairs, and finishing."],
+              ["Flooring", "Floor replacement and installation as part of renovation and property improvement work."],
+              ["Painting & Drywall", "Interior wall repairs, drywall work, preparation, painting, and finishing."],
+              ["Maintenance & Repairs", "Practical repair and improvement work for homes and managed properties."]
+            ].map(([title, desc]) => (
+              <div class="rounded-2xl border border-white/10 bg-white/10 p-5">
+                <h3 class="font-semibold text-white">{title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">
+          Who We Help
+        </p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">
+          Renovation, maintenance, and property improvement support.
+        </h2>
+        <p class="mt-3 text-slate-600">
+          CedarWolf works with homeowners, landlords, property managers, and businesses that need practical construction, renovation, repair, and property improvement services.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+
+        <article class="rounded-3xl bg-white p-7 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+            Homeowners
+          </p>
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Renovations & Improvements
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            Interior renovations, repairs, flooring, painting, fences, decks, gates, and improvements that help maintain and upgrade your home.
+          </p>
+        </article>
+
+        <article class="rounded-3xl bg-white p-7 ring-1 ring-slate-200 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+            Property Managers & Landlords
+          </p>
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Maintenance & Turnover Work
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            Repairs, flooring, painting, drywall, doors, trim, fencing, gates, and renovation work for rental and managed properties.
+          </p>
+        </article>
+
+        <article class="rounded-3xl bg-slate-950 p-7 text-white shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-wider text-amber-300">
+            Commercial & Strata
+          </p>
+          <h3 class="mt-3 text-xl font-semibold">
+            Property Improvement
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-300">
+            Selected renovation, repair, fencing, gate, coating, and exterior improvement work for businesses and strata properties.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="outdoor-services" class="mx-auto max-w-7xl px-6 py-16 scroll-mt-24">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-800">Outdoor Season</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900">Outdoor Construction</h2>
+        <p class="mt-3 text-slate-600">
+          Outdoor services for privacy, outdoor living, property access, concrete surfaces, and acreage improvement.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        {outdoorServices.map((s) => (
+          <article class="min-w-0 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-sm">
+            <img src={s.image} alt={s.title} width="960" height="720" class="h-72 w-full object-cover" loading="lazy" decoding="async" />
+            <div class="p-5 sm:p-7">
+              <h3 class="break-words text-2xl font-semibold tracking-tight text-slate-900">{s.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {s.items.map((item) => (
+                  <li class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a href={s.href} class="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto">
+                  Learn More
+                </a>
+                <a href={asset("contact/")} class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 sm:w-auto">
                   Request Estimate
                 </a>
               </div>

@@ -32,12 +32,11 @@ const serviceAreas = [
     <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 -z-10">
         <img
-          src={asset("images/Collage-1.png")}
+          src={asset("images/real-projects/renovation-hardwood-living-room-01.jpg")}
           alt="CedarWolf Build + Design project collage"
           class="h-[68vh] min-h-[560px] w-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-slate-950/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-slate-950/5"></div>
       </div>
 
       <div class="mx-auto max-w-7xl px-6 py-24 lg:py-32">
@@ -82,20 +81,43 @@ const serviceAreas = [
             A Kelowna contractor focused on practical construction solutions.
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            CedarWolf Build + Design works on indoor and outdoor projects, including fences, decks, land clearing, epoxy floors, kitchens, bathrooms, flooring, painting, and general renovation work.
+            CedarWolf Build + Design provides practical indoor and outdoor construction services, from kitchens, bathrooms, flooring, and general renovations to fences, gates, decks, land clearing, and property improvements.
           </p>
           <p class="mt-4 text-slate-600 leading-relaxed">
-            The goal is simple: review the project, define the scope, plan the work, and complete the project according to the agreed scope.
+            Our approach starts with understanding the property and what the customer wants to accomplish. From there, we define the scope, review suitable materials and options, prepare the estimate, plan the work, and complete the project with clear communication throughout the process.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-white p-6 ring-1 ring-slate-200 shadow-sm">
-          <img
-            src={asset("images/Collage-1.png")}
-            alt="CedarWolf Build + Design renovation and construction work"
-            class="h-full max-h-[520px] w-full rounded-2xl object-contain"
-            loading="lazy"
-          />
+        <div class="grid grid-cols-2 gap-3">
+          <div class="col-span-2 overflow-hidden rounded-3xl">
+            <img
+              src={asset("images/real-projects/renovation-open-concept-01.jpg")}
+              alt="Interior renovation project by CedarWolf Build + Design"
+              class="h-72 w-full object-cover sm:h-80"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="overflow-hidden rounded-3xl">
+            <img
+              src={asset("images/real-projects/fence-composite-modern-01.jpg")}
+              alt="Modern composite fence project by CedarWolf Build + Design"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="overflow-hidden rounded-3xl">
+            <img
+              src={asset("images/real-projects/deck-cedar-finished-01.jpg")}
+              alt="Cedar deck project by CedarWolf Build + Design"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </section>
